@@ -1,0 +1,8 @@
+classes=10
+train  = /home/avees/secure-inference/tz_datasets/data/mnist/mnist.train.list
+valid  = /home/avees/secure-inference/tz_datasets/data/mnist/mnist.valid.list
+test  = /home/avees/secure-inference/tz_datasets/data/mnist/mnist.test.list
+backup = tmp/backup/
+labels = /home/avees/secure-inference/tz_datasets/data/mnist/mnist.labels.list
+names  = /home/avees/secure-inference/tz_datasets/data/mnist/mnist.names.list
+top = 5

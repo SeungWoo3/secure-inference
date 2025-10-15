@@ -1,0 +1,16 @@
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.009342 sec
+vmsize: 4152 kB; vmrss: 2196 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 596 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.177489 sec
+vmsize: 4156 kB; vmrss: 2584 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.178108 sec
+vmsize: 4156 kB; vmrss: 2728 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.176818 sec
+vmsize: 4156 kB; vmrss: 2696 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.176256 sec
+vmsize: 4156 kB; vmrss: 2204 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.025664 sec
+vmsize: 4156 kB; vmrss: 2280 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.025525 sec
+vmsize: 4156 kB; vmrss: 2308 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.025835 sec
+vmsize: 4156 kB; vmrss: 2696 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 600 kB; vmlib: 2264 kB

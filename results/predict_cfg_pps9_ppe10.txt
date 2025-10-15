@@ -1,0 +1,2 @@
+../tz_datasets/data/mnist/images/t_00007_c3.png: 0.005274 sec
+vmsize: 4152 kB; vmrss: 2668 kB; vmdata: 872 kB; vmstk: 132 kB; vmexe: 596 kB; vmlib: 2264 kB

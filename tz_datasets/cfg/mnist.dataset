@@ -1,0 +1,8 @@
+classes=10
+train  = /home/avees/tee/tz_datasets/data/mnist/mnist.train.list
+valid  = /home/avees/tee/tz_datasets/data/mnist/mnist.valid.list
+test  = /home/avees/tee/tz_datasets/data/mnist/mnist.test.list
+backup = tmp/backup/
+labels = /home/avees/tee/tz_datasets/data/mnist/mnist.labels.list
+names  = /home/avees/tee/tz_datasets/data/mnist/mnist.names.list
+top = 5

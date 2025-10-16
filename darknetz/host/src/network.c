@@ -244,6 +244,7 @@ void forward_network(network *netp)
     network net = *netp;
     int i;
     for(i = 0; i < net.n; ++i){
+        char label[32];
 #ifdef TIME_PROFILE_LAYER
         double t_start_layer, t_end_layer;
         t_start_layer = get_time_ms();
@@ -251,18 +252,63 @@ void forward_network(network *netp)
         net.index = i;
         layer l = net.layers[i];
         if (i > partition_point1 && i <= partition_point2) {
+#ifdef TIME_PROFILE_TASK
+            double t_start_in, t_end_in;
+            t_start_in = get_time_ms();
+#endif
             forward_input_CA(net.input, l.inputs, net.batch, net.train);
+#ifdef TIME_PROFILE_TASK
+            t_end_in = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "IN[%d]", partition_point1+1);
+            record_segment(label, t_end_in - t_start_in);
+#endif
+#ifdef TIME_PROFILE_TASK
+            double t_start_infer, t_end_infer;
+            t_start_infer = get_time_ms();
+#endif
             forward_network_CA(net.input, l.inputs, net.batch, net.train);
+#ifdef TIME_PROFILE_TASK
+            t_end_infer = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "INFER[%d-%d]", partition_point1+1, partition_point2);
+            record_segment(label, t_end_infer - t_start_infer);
+#endif
             i = partition_point2;
+
             if(partition_point2 < net.n - 1) {
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                t_start_out = get_time_ms();
+#endif
                 printf("here\n");
                 layer l_pp2 = net.layers[partition_point2];
                 forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
                 net.input = l_pp2.output;
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                memset(label, 0, sizeof(label));  
+                snprintf(label, sizeof(label), "OUT[%d]", partition_point2);
+                record_segment(label, t_end_out - t_start_out);
+#endif
+            }
+            if(partition_point2 == net.n - 1) {
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                t_start_out = get_time_ms();
+#endif
+                //call TA to return output
+                net_output_return_CA(net.outputs, 1);
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                char label[32];
+                snprintf(label, sizeof(label), "OUT[%d]", net.n-1);
+                record_segment(label, t_end_out - t_start_out);
+#endif
             }
 #ifdef TIME_PROFILE_LAYER
             t_end_layer = get_time_ms();
-            char label[32];
+            memset(label, 0, sizeof(label));  
             snprintf(label, sizeof(label), "TEE[%d-%d]", partition_point1+1, partition_point2);
             record_segment(label, t_end_layer - t_start_layer);
 #endif
@@ -695,10 +741,9 @@ float *network_predict(network *net, float *input)
 
          // end inside of TEE
          }else{
-             //call TA to return output
-             net_output_return_CA(net->outputs, 1);
-             out = net_output_back;
-         }
+            out = net_output_back;
+
+        }
      }
 
      *net = orig;

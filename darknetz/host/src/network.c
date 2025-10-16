@@ -251,9 +251,11 @@ void forward_network(network *netp)
         net.index = i;
         layer l = net.layers[i];
         if (i > partition_point1 && i <= partition_point2) {
+            forward_input_CA(net.input, l.inputs, net.batch, net.train);
             forward_network_CA(net.input, l.inputs, net.batch, net.train);
             i = partition_point2;
             if(partition_point2 < net.n - 1) {
+                printf("here\n");
                 layer l_pp2 = net.layers[partition_point2];
                 forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
                 net.input = l_pp2.output;

@@ -7,7 +7,7 @@ start address 0x0000000000006f88
 
 Program Header:
     LOAD off    0x0000000000001000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
-         filesz 0x0000000000020670 memsz 0x0000000000020670 flags r-x
+         filesz 0x0000000000020678 memsz 0x0000000000020678 flags r-x
     LOAD off    0x0000000000022000 vaddr 0x0000000000021000 paddr 0x0000000000021000 align 2**12
          filesz 0x0000000000000944 memsz 0x0000000000a04b40 flags rw-
  DYNAMIC off    0x0000000000022000 vaddr 0x0000000000021000 paddr 0x0000000000021000 align 2**3
@@ -16,14 +16,14 @@ Program Header:
          filesz 0x0000000000000000 memsz 0x0000000000000000 flags rw-
 
 Dynamic Section:
-  HASH                 0x00000000000202f8
-  GNU_HASH             0x0000000000020208
-  STRTAB               0x00000000000202c8
-  SYMTAB               0x0000000000020238
+  HASH                 0x0000000000020300
+  GNU_HASH             0x0000000000020210
+  STRTAB               0x00000000000202d0
+  SYMTAB               0x0000000000020240
   STRSZ                0x000000000000002e
   SYMENT               0x0000000000000018
   DEBUG                0x0000000000000000
-  RELA                 0x0000000000020328
+  RELA                 0x0000000000020330
   RELASZ               0x00000000000007f8
   RELAENT              0x0000000000000018
   FLAGS_1              0x0000000008000000
@@ -38,17 +38,17 @@ Idx Name          Size      VMA               LMA               File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .eh_frame     000051f4  00000000000196e0  00000000000196e0  0001a6e0  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .rodata       0000192d  000000000001e8d8  000000000001e8d8  0001f8d8  2**3
+  3 .rodata       00001931  000000000001e8d8  000000000001e8d8  0001f8d8  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .gnu.hash     00000030  0000000000020208  0000000000020208  00021208  2**3
+  4 .gnu.hash     00000030  0000000000020210  0000000000020210  00021210  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .dynsym       00000090  0000000000020238  0000000000020238  00021238  2**3
+  5 .dynsym       00000090  0000000000020240  0000000000020240  00021240  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  6 .dynstr       0000002e  00000000000202c8  00000000000202c8  000212c8  2**0
+  6 .dynstr       0000002e  00000000000202d0  00000000000202d0  000212d0  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .hash         0000002c  00000000000202f8  00000000000202f8  000212f8  2**3
+  7 .hash         0000002c  0000000000020300  0000000000020300  00021300  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .rela.dyn     00000348  0000000000020328  0000000000020328  00021328  2**3
+  8 .rela.dyn     00000348  0000000000020330  0000000000020330  00021330  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   9 .dynamic      00000110  0000000000021000  0000000000021000  00022000  2**3
                   CONTENTS, ALLOC, LOAD, DATA
@@ -60,34 +60,34 @@ Idx Name          Size      VMA               LMA               File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
  13 .bss          00a041f8  0000000000021948  0000000000021948  00022944  2**3
                   ALLOC
- 14 .debug_info   0003b657  0000000000000000  0000000000000000  00022944  2**0
+ 14 .debug_info   0003b6a7  0000000000000000  0000000000000000  00022944  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_abbrev 000079c6  0000000000000000  0000000000000000  0005df9b  2**0
+ 15 .debug_abbrev 000079c6  0000000000000000  0000000000000000  0005dfeb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_loc    00042da6  0000000000000000  0000000000000000  00065961  2**0
+ 16 .debug_loc    00042e1b  0000000000000000  0000000000000000  000659b1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_aranges 00000d70  0000000000000000  0000000000000000  000a8710  2**4
+ 17 .debug_aranges 00000d70  0000000000000000  0000000000000000  000a87d0  2**4
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_ranges 000030b0  0000000000000000  0000000000000000  000a9480  2**4
+ 18 .debug_ranges 000030a0  0000000000000000  0000000000000000  000a9540  2**4
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_macro  00026b67  0000000000000000  0000000000000000  000ac530  2**0
+ 19 .debug_macro  00026b6d  0000000000000000  0000000000000000  000ac5e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_line   0001abc1  0000000000000000  0000000000000000  000d3097  2**0
+ 20 .debug_line   0001abcb  0000000000000000  0000000000000000  000d314d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_str    0001dc2a  0000000000000000  0000000000000000  000edc58  2**0
+ 21 .debug_str    0001dc53  0000000000000000  0000000000000000  000edd18  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .comment      0000002b  0000000000000000  0000000000000000  0010b882  2**0
+ 22 .comment      0000002b  0000000000000000  0000000000000000  0010b96b  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 0000000000000000 l    d  .ta_head	0000000000000000 .ta_head
 0000000000000020 l    d  .text	0000000000000000 .text
 00000000000196e0 l    d  .eh_frame	0000000000000000 .eh_frame
 000000000001e8d8 l    d  .rodata	0000000000000000 .rodata
-0000000000020208 l    d  .gnu.hash	0000000000000000 .gnu.hash
-0000000000020238 l    d  .dynsym	0000000000000000 .dynsym
-00000000000202c8 l    d  .dynstr	0000000000000000 .dynstr
-00000000000202f8 l    d  .hash	0000000000000000 .hash
-0000000000020328 l    d  .rela.dyn	0000000000000000 .rela.dyn
+0000000000020210 l    d  .gnu.hash	0000000000000000 .gnu.hash
+0000000000020240 l    d  .dynsym	0000000000000000 .dynsym
+00000000000202d0 l    d  .dynstr	0000000000000000 .dynstr
+0000000000020300 l    d  .hash	0000000000000000 .hash
+0000000000020330 l    d  .rela.dyn	0000000000000000 .rela.dyn
 0000000000021000 l    d  .dynamic	0000000000000000 .dynamic
 0000000000021110 l    d  .got	0000000000000000 .got
 00000000000212c0 l    d  .rela.got	0000000000000000 .rela.got
@@ -120,13 +120,13 @@ SYMBOL TABLE:
 0000000000000574 l     F .text	000000000000010c make_cost_layer_TA_params
 0000000000000680 l     F .text	00000000000000bc make_maxpool_layer_TA_params.isra.0
 000000000000073c l     F .text	00000000000000b8 make_avgpool_layer_TA_params.isra.0
-000000000001e9f2 l     O .rodata	000000000000000e __func__.5467
-000000000001ea00 l     O .rodata	0000000000000014 __func__.5471
-000000000001ea14 l     O .rodata	0000000000000015 __func__.5475
-000000000001ea29 l     O .rodata	0000000000000019 __func__.5482
-000000000001ea42 l     O .rodata	000000000000001a __func__.5486
+000000000001e9f4 l     O .rodata	000000000000000e __func__.5467
+000000000001ea02 l     O .rodata	0000000000000014 __func__.5471
+000000000001ea16 l     O .rodata	0000000000000015 __func__.5475
+000000000001ea2b l     O .rodata	0000000000000019 __func__.5482
+000000000001ea44 l     O .rodata	000000000000001a __func__.5486
 0000000000000000 l    df *ABS*	0000000000000000 softmax_layer_TA.c
-000000000001f0a8 l     O .rodata	000000000000001a __func__.5256
+000000000001f0ac l     O .rodata	000000000000001a __func__.5256
 0000000000000000 l    df *ABS*	0000000000000000 utils_TA.c
 0000000000025b2c l     O .bss	0000000000000004 call.4103
 0000000000025b30 l     O .bss	0000000000000004 X2.4102
@@ -136,27 +136,27 @@ SYMBOL TABLE:
 0000000000001ca4 l     F .text	000000000000005c ta_exp.localalias
 0000000000001ee8 l     F .text	00000000000000e4 asr.localalias
 0000000000000000 l    df *ABS*	0000000000000000 parser_TA.c
-000000000001f0e5 l     O .rodata	000000000000000b __func__.4298
+000000000001f0e9 l     O .rodata	000000000000000b __func__.4298
 0000000000000000 l    df *ABS*	0000000000000000 activations_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 blas_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 maxpool_layer_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 network_TA.c
-000000000001f194 l     O .rodata	0000000000000015 __func__.5327
+000000000001f198 l     O .rodata	0000000000000015 __func__.5327
 0000000000000000 l    df *ABS*	0000000000000000 aes_TA.c
 0000000000004390 l     F .text	00000000000000c0 KeyExpansion
 0000000000004450 l     F .text	0000000000000044 AddRoundKey
 0000000000004494 l     F .text	0000000000000018 xtime
 00000000000044ac l     F .text	0000000000000228 Cipher
 00000000000046d4 l     F .text	00000000000002e4 InvCipher
-000000000001f1a9 l     O .rodata	0000000000000100 sbox
-000000000001f2a9 l     O .rodata	000000000000000b Rcon
-000000000001f2b4 l     O .rodata	0000000000000100 rsbox
+000000000001f1ad l     O .rodata	0000000000000100 sbox
+000000000001f2ad l     O .rodata	000000000000000b Rcon
+000000000001f2b8 l     O .rodata	0000000000000100 rsbox
 0000000000000000 l    df *ABS*	0000000000000000 im2col_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 batchnorm_layer_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 dropout_layer_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 convolutional_layer_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 cost_layer_TA.c
-000000000001eab5 l     O .rodata	0000000000000011 __func__.5232
+000000000001eab9 l     O .rodata	0000000000000011 __func__.5232
 0000000000000000 l    df *ABS*	0000000000000000 avgpool_layer_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 col2im_TA.c
 0000000000000000 l    df *ABS*	0000000000000000 gemm_TA.c
@@ -164,25 +164,25 @@ SYMBOL TABLE:
 0000000000000000 l    df *ABS*	0000000000000000 bget_malloc.c
 0000000000006fa4 l     F .text	0000000000000010 _assert_trap
 0000000000006fb4 l     F .text	0000000000000028 bget_buf_size.part.0
-000000000001f7c1 l     O .rodata	000000000000000e __func__.4016
-000000000001f7cf l     O .rodata	0000000000000005 __func__.3942
-000000000001f7d4 l     O .rodata	0000000000000006 __func__.3962
-000000000001f7da l     O .rodata	0000000000000005 __func__.3983
-000000000001f7df l     O .rodata	0000000000000006 __func__.3973
-000000000001f7e5 l     O .rodata	0000000000000006 __func__.3992
-000000000001f7eb l     O .rodata	0000000000000014 __func__.4202
-000000000001f7ff l     O .rodata	0000000000000013 __func__.4066
+000000000001f7c5 l     O .rodata	000000000000000e __func__.4016
+000000000001f7d3 l     O .rodata	0000000000000005 __func__.3942
+000000000001f7d8 l     O .rodata	0000000000000006 __func__.3962
+000000000001f7de l     O .rodata	0000000000000005 __func__.3983
+000000000001f7e3 l     O .rodata	0000000000000006 __func__.3973
+000000000001f7e9 l     O .rodata	0000000000000006 __func__.3992
+000000000001f7ef l     O .rodata	0000000000000014 __func__.4202
+000000000001f803 l     O .rodata	0000000000000013 __func__.4066
 0000000000021878 l     O .data	0000000000000030 malloc_ctx
 0000000000000000 l    df *ABS*	0000000000000000 stack_check.c
 0000000000000000 l    df *ABS*	0000000000000000 memset.c
 0000000000000000 l    df *ABS*	0000000000000000 strcmp.c
 0000000000000000 l    df *ABS*	0000000000000000 strncmp.c
 0000000000000000 l    df *ABS*	0000000000000000 trace.c
-000000000001f844 l     O .rodata	0000000000000005 lvl_strs.3647
+000000000001f848 l     O .rodata	0000000000000005 lvl_strs.3647
 0000000000000000 l    df *ABS*	0000000000000000 snprintk.c
 0000000000008260 l     F .text	0000000000000be0 kprintf.constprop.0
-000000000001eb56 l     O .rodata	0000000000000011 HEXDIGITS
-000000000001eb67 l     O .rodata	0000000000000011 hexdigits
+000000000001eb5a l     O .rodata	0000000000000011 HEXDIGITS
+000000000001eb6b l     O .rodata	0000000000000011 hexdigits
 0000000000000000 l    df *ABS*	0000000000000000 memchr.c
 0000000000000000 l    df *ABS*	0000000000000000 strlen.c
 0000000000000000 l    df *ABS*	0000000000000000 assert.c
@@ -194,7 +194,7 @@ SYMBOL TABLE:
 000000000000951c l     F .text	000000000000005c reset_operation_state
 0000000000009578 l     F .text	00000000000001e4 set_operation_key2
 000000000000975c l     F .text	00000000000000dc ae_update_helper.part.0
-000000000001eb82 l     O .rodata	0000000000000012 __func__.5474
+000000000001eb86 l     O .rodata	0000000000000012 __func__.5474
 0000000000000000 l    df *ABS*	0000000000000000 tee_api_panic.c
 000000000000d838 l     F .text	000000000000001c check_access
 000000000000d85c l     F .text	0000000000000010 check_res.isra.0
@@ -206,7 +206,7 @@ SYMBOL TABLE:
 000000000000dc28 l     F .text	000000000000005c from_utee_params
 000000000000dc84 l     F .text	0000000000000094 _init_iterate_phdr_cb
 000000000000de80 l     F .text	0000000000000098 ta_header_remove_session
-000000000001f930 l     O .rodata	0000000000000016 __func__.5424
+000000000001f934 l     O .rodata	0000000000000016 __func__.5424
 0000000000021a80 l     O .bss	0000000000000008 _num_mod_init
 0000000000021a88 l     O .bss	0000000000000001 init_done
 00000000000218b0 l     O .data	0000000000000010 ta_sessions
@@ -235,47 +235,47 @@ SYMBOL TABLE:
 000000000000f81c l     F .text	0000000000000574 mpi_egcd
 0000000000021b00 l     O .bss	0000000000004000 data.5267
 00000000000102bc l     F .text	00000000000001d0 bigint_binary_mod
-000000000001fa27 l     O .rodata	0000000000000008 __func__.5301
-000000000001fa2f l     O .rodata	000000000000000e __func__.5439
-000000000001fa3d l     O .rodata	0000000000000009 __func__.5603
-000000000001fa46 l     O .rodata	0000000000000012 __func__.5268
-000000000001fa58 l     O .rodata	000000000000000f __func__.5307
-000000000001fa67 l     O .rodata	000000000000001f __func__.5335
-000000000001fa86 l     O .rodata	0000000000000019 __func__.5349
-000000000001fa9f l     O .rodata	0000000000000012 __func__.5458
-000000000001fab1 l     O .rodata	0000000000000015 __func__.5380
-000000000001fac6 l     O .rodata	000000000000000e __func__.5479
-000000000001fad4 l     O .rodata	000000000000000e __func__.5508
-000000000001fae2 l     O .rodata	000000000000000e __func__.5516
-000000000001faf0 l     O .rodata	0000000000000011 __func__.5549
-000000000001fb01 l     O .rodata	0000000000000018 __func__.5562
-000000000001fb19 l     O .rodata	0000000000000011 __func__.5583
-000000000001fb2a l     O .rodata	000000000000001d __func__.5660
-000000000001fb47 l     O .rodata	0000000000000019 __func__.5733
-000000000001fb60 l     O .rodata	0000000000000015 __func__.5748
+000000000001fa2b l     O .rodata	0000000000000008 __func__.5301
+000000000001fa33 l     O .rodata	000000000000000e __func__.5439
+000000000001fa41 l     O .rodata	0000000000000009 __func__.5603
+000000000001fa4a l     O .rodata	0000000000000012 __func__.5268
+000000000001fa5c l     O .rodata	000000000000000f __func__.5307
+000000000001fa6b l     O .rodata	000000000000001f __func__.5335
+000000000001fa8a l     O .rodata	0000000000000019 __func__.5349
+000000000001faa3 l     O .rodata	0000000000000012 __func__.5458
+000000000001fab5 l     O .rodata	0000000000000015 __func__.5380
+000000000001faca l     O .rodata	000000000000000e __func__.5479
+000000000001fad8 l     O .rodata	000000000000000e __func__.5508
+000000000001fae6 l     O .rodata	000000000000000e __func__.5516
+000000000001faf4 l     O .rodata	0000000000000011 __func__.5549
+000000000001fb05 l     O .rodata	0000000000000018 __func__.5562
+000000000001fb1d l     O .rodata	0000000000000011 __func__.5583
+000000000001fb2e l     O .rodata	000000000000001d __func__.5660
+000000000001fb4b l     O .rodata	0000000000000019 __func__.5733
+000000000001fb64 l     O .rodata	0000000000000015 __func__.5748
 0000000000000000 l    df *ABS*	0000000000000000 tee_api_objects.c
 0000000000000000 l    df *ABS*	0000000000000000 tee_api_property.c
 0000000000013168 l     F .text	000000000000006c propset_get
 00000000000131d4 l     F .text	000000000000002c is_propset_pseudo_handle
 0000000000013200 l     F .text	0000000000000148 propget_get_ext_prop
 0000000000013348 l     F .text	00000000000001b0 propget_get_property
-000000000001eba4 l     O .rodata	0000000000000004 __compound_literal.3
-000000000001eba8 l     O .rodata	0000000000000004 __compound_literal.2
-000000000001ebac l     O .rodata	0000000000000004 __compound_literal.1
-000000000001ebb0 l     O .rodata	0000000000000004 __compound_literal.0
+000000000001eba8 l     O .rodata	0000000000000004 __compound_literal.3
+000000000001ebac l     O .rodata	0000000000000004 __compound_literal.2
+000000000001ebb0 l     O .rodata	0000000000000004 __compound_literal.1
+000000000001ebb4 l     O .rodata	0000000000000004 __compound_literal.0
 0000000000000000 l    df *ABS*	0000000000000000 tee_system_pta.c
 00000000000140e0 l     F .text	0000000000000088 invoke_system_pta
-000000000001ebb4 l     O .rodata	0000000000000010 uuid.4677
-000000000001ebc4 l     O .rodata	000000000000000a __func__.4697
-000000000001ebce l     O .rodata	0000000000000017 __func__.4709
+000000000001ebb8 l     O .rodata	0000000000000010 uuid.4677
+000000000001ebc8 l     O .rodata	000000000000000a __func__.4697
+000000000001ebd2 l     O .rodata	0000000000000017 __func__.4709
 0000000000025b00 l     O .bss	0000000000000008 sess.4676
 0000000000000000 l    df *ABS*	0000000000000000 tcb.c
-000000000001fcda l     O .rodata	0000000000000010 __func__.4134
-000000000001fcea l     O .rodata	0000000000000010 __func__.4161
+000000000001fcde l     O .rodata	0000000000000010 __func__.4134
+000000000001fcee l     O .rodata	0000000000000010 __func__.4161
 0000000000025b08 l     O .bss	0000000000000008 _tls_size
 0000000000025b10 l     O .bss	0000000000000008 _tcb
 0000000000000000 l    df *ABS*	0000000000000000 base64.c
-000000000001ebec l     O .rodata	0000000000000041 base64_table
+000000000001ebf0 l     O .rodata	0000000000000041 base64_table
 0000000000000000 l    df *ABS*	0000000000000000 bignum.c
 0000000000014994 l     F .text	0000000000000064 mpi_get_digit
 00000000000149f8 l     F .text	000000000000040c mpi_mul_hlp
@@ -287,8 +287,8 @@ SYMBOL TABLE:
 00000000000152f4 l     F .text	000000000000006c mbedtls_mpi_resize_clear
 000000000001702c l     F .text	00000000000000c4 mpi_check_small_factors
 0000000000017a10 l     F .text	00000000000002a4 mpi_miller_rabin
-000000000001ec30 l     O .rodata	00000000000002a0 small_prime
-000000000001eed0 l     O .rodata	0000000000000024 gcd_pairs
+000000000001ec34 l     O .rodata	00000000000002a0 small_prime
+000000000001eed4 l     O .rodata	0000000000000024 gcd_pairs
 0000000000000000 l    df *ABS*	0000000000000000 constant_time.c
 0000000000018b24 l     F .text	0000000000000020 mbedtls_ct_uchar_mask_of_range
 0000000000000000 l    df *ABS*	0000000000000000 platform_util.c
@@ -297,9 +297,9 @@ SYMBOL TABLE:
 0000000000000000 l    df *ABS*	0000000000000000 memmove.c
 0000000000000000 l    df *ABS*	0000000000000000 strlcpy.c
 0000000000000000 l    df *ABS*	0000000000000000 mempool.c
-00000000000201d9 l     O .rodata	0000000000000013 __func__.3748
-00000000000201ec l     O .rodata	000000000000000b __func__.3729
-00000000000201f7 l     O .rodata	000000000000000e __func__.3754
+00000000000201dd l     O .rodata	0000000000000013 __func__.3748
+00000000000201f0 l     O .rodata	000000000000000b __func__.3729
+00000000000201fb l     O .rodata	000000000000000e __func__.3754
 0000000000000000 l    df *ABS*	0000000000000000 consttime_memcmp.c
 0000000000000000 l    df *ABS*	0000000000000000 
 0000000000021000 l     O *ABS*	0000000000000000 _DYNAMIC
@@ -1625,9 +1625,9 @@ summary_array():
      8ac:	aa1703e5 	mov	x5, x23
      8b0:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
      8b4:	52800062 	mov	w2, #0x3                   	// #3
-     8b8:	913bd084 	add	x4, x4, #0xef4
+     8b8:	913be084 	add	x4, x4, #0xef8
      8bc:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     8c0:	9127c800 	add	x0, x0, #0x9f2
+     8c0:	9127d000 	add	x0, x0, #0x9f4
      8c4:	94001db5 	bl	7f98 <trace_printf>
 /home/avees/tee/darknetz/ta/darknetp_ta.c:67
      8c8:	b0000103 	adrp	x3, 21000 <_DYNAMIC>
@@ -1678,7 +1678,7 @@ TA_CreateEntryPoint():
      944:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
 /home/avees/tee/darknetz/ta/darknetp_ta.c:72
      948:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     94c:	9127c800 	add	x0, x0, #0x9f2
+     94c:	9127d000 	add	x0, x0, #0x9f4
 /home/avees/tee/darknetz/ta/darknetp_ta.c:71
      950:	910003fd 	mov	x29, sp
 /home/avees/tee/darknetz/ta/darknetp_ta.c:72
@@ -1687,7 +1687,7 @@ TA_CreateEntryPoint():
      95c:	52800062 	mov	w2, #0x3                   	// #3
      960:	52800901 	mov	w1, #0x48                  	// #72
      964:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
-     968:	913ca884 	add	x4, x4, #0xf2a
+     968:	913cb884 	add	x4, x4, #0xf2e
      96c:	94001d8b 	bl	7f98 <trace_printf>
 /home/avees/tee/darknetz/ta/darknetp_ta.c:75
      970:	52800000 	mov	w0, #0x0                   	// #0
@@ -1698,11 +1698,11 @@ TA_CreateEntryPoint():
 TA_DestroyEntryPoint():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:79
      97c:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     980:	9127c800 	add	x0, x0, #0x9f2
+     980:	9127d000 	add	x0, x0, #0x9f4
      984:	91008800 	add	x0, x0, #0x22
      988:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
      98c:	52800023 	mov	w3, #0x1                   	// #1
-     990:	913ca884 	add	x4, x4, #0xf2a
+     990:	913cb884 	add	x4, x4, #0xf2e
      994:	52800062 	mov	w2, #0x3                   	// #3
      998:	528009e1 	mov	w1, #0x4f                  	// #79
      99c:	14001d7f 	b	7f98 <trace_printf>
@@ -1719,12 +1719,12 @@ TA_OpenSessionEntryPoint():
      9b0:	a90153f3 	stp	x19, x20, [sp, #16]
 /home/avees/tee/darknetz/ta/darknetp_ta.c:91
      9b4:	d00000f3 	adrp	x19, 1e000 <__text_end+0x4920>
-     9b8:	9127ca73 	add	x19, x19, #0x9f2
+     9b8:	9127d273 	add	x19, x19, #0x9f4
      9bc:	9100de73 	add	x19, x19, #0x37
 /home/avees/tee/darknetz/ta/darknetp_ta.c:85
      9c0:	2a0003f4 	mov	w20, w0
 /home/avees/tee/darknetz/ta/darknetp_ta.c:91
-     9c4:	913ca884 	add	x4, x4, #0xf2a
+     9c4:	913cb884 	add	x4, x4, #0xf2e
      9c8:	aa1303e0 	mov	x0, x19
      9cc:	52800062 	mov	w2, #0x3                   	// #3
      9d0:	52800b61 	mov	w1, #0x5b                  	// #91
@@ -1734,7 +1734,7 @@ TA_OpenSessionEntryPoint():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:100
      9dc:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
      9e0:	aa1303e0 	mov	x0, x19
-     9e4:	913ce884 	add	x4, x4, #0xf3a
+     9e4:	913cf884 	add	x4, x4, #0xf3e
      9e8:	52800023 	mov	w3, #0x1                   	// #1
      9ec:	52800042 	mov	w2, #0x2                   	// #2
      9f0:	52800c81 	mov	w1, #0x64                  	// #100
@@ -1752,22 +1752,22 @@ TA_OpenSessionEntryPoint():
 TA_CloseSessionEntryPoint():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:108
      a10:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     a14:	9127c800 	add	x0, x0, #0x9f2
+     a14:	9127d000 	add	x0, x0, #0x9f4
      a18:	91014000 	add	x0, x0, #0x50
      a1c:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
      a20:	52800023 	mov	w3, #0x1                   	// #1
-     a24:	913d4084 	add	x4, x4, #0xf50
+     a24:	913d5084 	add	x4, x4, #0xf54
      a28:	52800042 	mov	w2, #0x2                   	// #2
      a2c:	52800d81 	mov	w1, #0x6c                  	// #108
      a30:	14001d5a 	b	7f98 <trace_printf>
 
 0000000000000a34 <TA_InvokeCommandEntryPoint>:
 TA_InvokeCommandEntryPoint():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:882
+/home/avees/tee/darknetz/ta/darknetp_ta.c:888
      a34:	51000421 	sub	w1, w1, #0x1
-     a38:	7100503f 	cmp	w1, #0x14
+     a38:	7100543f 	cmp	w1, #0x15
      a3c:	540034e8 	b.hi	10d8 <TA_InvokeCommandEntryPoint+0x6a4>  // b.pmore
-/home/avees/tee/darknetz/ta/darknetp_ta.c:879
+/home/avees/tee/darknetz/ta/darknetp_ta.c:885
      a40:	d10483ff 	sub	sp, sp, #0x120
      a44:	2a0203e0 	mov	w0, w2
      a48:	aa0303e5 	mov	x5, x3
@@ -1832,10 +1832,10 @@ make_netowork_TA_params():
      b20:	2d421504 	ldp	s4, s5, [x8, #16]
      b24:	94000c32 	bl	3bec <make_network_TA>
 backward_network_back_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:730
+/home/avees/tee/darknetz/ta/darknetp_ta.c:736
      b28:	52800000 	mov	w0, #0x0                   	// #0
 TA_InvokeCommandEntryPoint():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b2c:	a9487bfd 	ldp	x29, x30, [sp, #128]
      b30:	a94953f3 	ldp	x19, x20, [sp, #144]
      b34:	a94a5bf5 	ldp	x21, x22, [sp, #160]
@@ -1854,82 +1854,82 @@ update_net_agrv_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:178
      b5c:	17fffff3 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
 TA_InvokeCommandEntryPoint():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b60:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:890
+/home/avees/tee/darknetz/ta/darknetp_ta.c:896
      b64:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b68:	a94953f3 	ldp	x19, x20, [sp, #144]
      b6c:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      b70:	f9405bf7 	ldr	x23, [sp, #176]
      b74:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:890
+/home/avees/tee/darknetz/ta/darknetp_ta.c:896
      b78:	17fffd65 	b	10c <make_convolutional_layer_TA_params>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b7c:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:893
+/home/avees/tee/darknetz/ta/darknetp_ta.c:899
      b80:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b84:	a94953f3 	ldp	x19, x20, [sp, #144]
      b88:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      b8c:	f9405bf7 	ldr	x23, [sp, #176]
      b90:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:893
+/home/avees/tee/darknetz/ta/darknetp_ta.c:899
      b94:	17fffebb 	b	680 <make_maxpool_layer_TA_params.isra.0>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      b98:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:896
+/home/avees/tee/darknetz/ta/darknetp_ta.c:902
      b9c:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      ba0:	a94953f3 	ldp	x19, x20, [sp, #144]
      ba4:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      ba8:	f9405bf7 	ldr	x23, [sp, #176]
      bac:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:896
+/home/avees/tee/darknetz/ta/darknetp_ta.c:902
      bb0:	17fffee3 	b	73c <make_avgpool_layer_TA_params.isra.0>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bb4:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:899
+/home/avees/tee/darknetz/ta/darknetp_ta.c:905
      bb8:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bbc:	a94953f3 	ldp	x19, x20, [sp, #144]
      bc0:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      bc4:	f9405bf7 	ldr	x23, [sp, #176]
      bc8:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:899
+/home/avees/tee/darknetz/ta/darknetp_ta.c:905
      bcc:	17fffdab 	b	278 <make_dropout_layer_TA_params>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bd0:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:902
+/home/avees/tee/darknetz/ta/darknetp_ta.c:908
      bd4:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bd8:	a94953f3 	ldp	x19, x20, [sp, #144]
      bdc:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      be0:	f9405bf7 	ldr	x23, [sp, #176]
      be4:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:902
+/home/avees/tee/darknetz/ta/darknetp_ta.c:908
      be8:	17fffdf6 	b	3c0 <make_connected_layer_TA_params>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bec:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:905
+/home/avees/tee/darknetz/ta/darknetp_ta.c:911
      bf0:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      bf4:	a94953f3 	ldp	x19, x20, [sp, #144]
      bf8:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      bfc:	f9405bf7 	ldr	x23, [sp, #176]
      c00:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:905
+/home/avees/tee/darknetz/ta/darknetp_ta.c:911
      c04:	17fffe2a 	b	4ac <make_softmax_layer_TA_params>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      c08:	a9487bfd 	ldp	x29, x30, [sp, #128]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:908
+/home/avees/tee/darknetz/ta/darknetp_ta.c:914
      c0c:	aa0303e1 	mov	x1, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
      c10:	a94953f3 	ldp	x19, x20, [sp, #144]
      c14:	a94a5bf5 	ldp	x21, x22, [sp, #160]
      c18:	f9405bf7 	ldr	x23, [sp, #176]
      c1c:	910483ff 	add	sp, sp, #0x120
-/home/avees/tee/darknetz/ta/darknetp_ta.c:908
+/home/avees/tee/darknetz/ta/darknetp_ta.c:914
      c20:	17fffe55 	b	574 <make_cost_layer_TA_params>
 transfer_weights_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:443
@@ -1975,9 +1975,9 @@ save_weights_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:488
      c88:	aa1303e0 	mov	x0, x19
 net_output_return_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:870
+/home/avees/tee/darknetz/ta/darknetp_ta.c:876
      c8c:	94001b3c 	bl	797c <free>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:872
+/home/avees/tee/darknetz/ta/darknetp_ta.c:878
      c90:	17ffffa6 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
 save_weights_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:485
@@ -1986,358 +1986,358 @@ save_weights_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:484
      c9c:	91000442 	add	x2, x2, #0x1
      ca0:	17fffff8 	b	c80 <TA_InvokeCommandEntryPoint+0x24c>
-forward_network_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:505
+forward_input_TA_params():
+/home/avees/tee/darknetz/ta/darknetp_ta.c:504
      ca4:	7100541f 	cmp	w0, #0x15
      ca8:	540021c1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:511
+/home/avees/tee/darknetz/ta/darknetp_ta.c:510
      cac:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:509
-     cb0:	b9401062 	ldr	w2, [x3, #16]
 /home/avees/tee/darknetz/ta/darknetp_ta.c:508
+     cb0:	b9401062 	ldr	w2, [x3, #16]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:507
      cb4:	f9400061 	ldr	x1, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:511
+/home/avees/tee/darknetz/ta/darknetp_ta.c:510
      cb8:	f9410c80 	ldr	x0, [x4, #536]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:514
+/home/avees/tee/darknetz/ta/darknetp_ta.c:513
      cbc:	f940c084 	ldr	x4, [x4, #384]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:511
+/home/avees/tee/darknetz/ta/darknetp_ta.c:510
      cc0:	f9006c01 	str	x1, [x0, #216]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:512
+/home/avees/tee/darknetz/ta/darknetp_ta.c:511
      cc4:	b900f802 	str	w2, [x0, #248]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:514
+/home/avees/tee/darknetz/ta/darknetp_ta.c:513
      cc8:	b9400080 	ldr	w0, [x4]
      ccc:	7100041f 	cmp	w0, #0x1
-     cd0:	540000c1 	b.ne	ce8 <TA_InvokeCommandEntryPoint+0x2b4>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:515
+     cd0:	54fff2c1 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
+/home/avees/tee/darknetz/ta/darknetp_ta.c:514
      cd4:	f9400462 	ldr	x2, [x3, #8]
      cd8:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     cdc:	913d6800 	add	x0, x0, #0xf5a
+     cdc:	913d7800 	add	x0, x0, #0xf5e
      ce0:	d3428442 	ubfx	x2, x2, #2, #32
-     ce4:	97fffec4 	bl	7f4 <summary_array>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:517
-     ce8:	94000c71 	bl	3eac <forward_network_TA>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:519
-     cec:	17ffff8f 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
-backward_network_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:617
-     cf0:	7100541f 	cmp	w0, #0x15
-     cf4:	54001f61 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:624
-     cf8:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
-     cfc:	b9401061 	ldr	w1, [x3, #16]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:620
-     d00:	f9400073 	ldr	x19, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:624
-     d04:	f9410c80 	ldr	x0, [x4, #536]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:626
-     d08:	f940c084 	ldr	x4, [x4, #384]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:624
-     d0c:	b900f801 	str	w1, [x0, #248]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:626
-     d10:	b9400080 	ldr	w0, [x4]
-     d14:	7100041f 	cmp	w0, #0x1
-     d18:	540000e1 	b.ne	d34 <TA_InvokeCommandEntryPoint+0x300>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:627
-     d1c:	f9400462 	ldr	x2, [x3, #8]
-     d20:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     d24:	aa1303e1 	mov	x1, x19
-     d28:	913dd800 	add	x0, x0, #0xf76
-     d2c:	d3428442 	ubfx	x2, x2, #2, #32
-     d30:	97fffeb1 	bl	7f4 <summary_array>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:631
-     d34:	aa1303e0 	mov	x0, x19
-     d38:	94000d25 	bl	41cc <backward_network_TA>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:633
-     d3c:	17ffff7b 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
-backward_network_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:645
-     d40:	7101981f 	cmp	w0, #0x66
-     d44:	54001ce1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:656
-     d48:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
-     d4c:	aa0403f4 	mov	x20, x4
-/home/avees/tee/darknetz/ta/darknetp_ta.c:654
-     d50:	a9404c63 	ldp	x3, x19, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:656
-     d54:	f940d080 	ldr	x0, [x4, #416]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:653
-     d58:	f94008a6 	ldr	x6, [x5, #16]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:656
-     d5c:	f9400001 	ldr	x1, [x0]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:654
-     d60:	d342fe73 	lsr	x19, x19, #2
-/home/avees/tee/darknetz/ta/darknetp_ta.c:657
-     d64:	f9409c80 	ldr	x0, [x4, #312]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:654
-     d68:	2a1303e2 	mov	w2, w19
-/home/avees/tee/darknetz/ta/darknetp_ta.c:657
-     d6c:	f9400005 	ldr	x5, [x0]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:655
-     d70:	d2800000 	mov	x0, #0x0                   	// #0
-     d74:	6b00005f 	cmp	w2, w0
-     d78:	5400020c 	b.gt	db8 <TA_InvokeCommandEntryPoint+0x384>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:664
-     d7c:	f940c280 	ldr	x0, [x20, #384]
-     d80:	b9400000 	ldr	w0, [x0]
-     d84:	7100041f 	cmp	w0, #0x1
-     d88:	54ffed01 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:665
-     d8c:	2a1303e2 	mov	w2, w19
-     d90:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     d94:	913e5800 	add	x0, x0, #0xf96
-     d98:	97fffe97 	bl	7f4 <summary_array>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:666
-     d9c:	f9409e94 	ldr	x20, [x20, #312]
-     da0:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     da4:	2a1303e2 	mov	w2, w19
-     da8:	913efc00 	add	x0, x0, #0xfbf
-     dac:	f9400281 	ldr	x1, [x20]
 backward_network_back_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:727
-     db0:	97fffe91 	bl	7f4 <summary_array>
-     db4:	17ffff5d 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:733
+     ce4:	97fffec4 	bl	7f4 <summary_array>
+     ce8:	17ffff90 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
+forward_network_TA_params():
+/home/avees/tee/darknetz/ta/darknetp_ta.c:523
+     cec:	94000c70 	bl	3eac <forward_network_TA>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:525
+     cf0:	17ffff8e 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
+backward_network_TA_params():
+/home/avees/tee/darknetz/ta/darknetp_ta.c:623
+     cf4:	7100541f 	cmp	w0, #0x15
+     cf8:	54001f41 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
+/home/avees/tee/darknetz/ta/darknetp_ta.c:630
+     cfc:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
+     d00:	b9401061 	ldr	w1, [x3, #16]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:626
+     d04:	f9400073 	ldr	x19, [x3]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:630
+     d08:	f9410c80 	ldr	x0, [x4, #536]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:632
+     d0c:	f940c084 	ldr	x4, [x4, #384]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:630
+     d10:	b900f801 	str	w1, [x0, #248]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:632
+     d14:	b9400080 	ldr	w0, [x4]
+     d18:	7100041f 	cmp	w0, #0x1
+     d1c:	540000e1 	b.ne	d38 <TA_InvokeCommandEntryPoint+0x304>  // b.any
+/home/avees/tee/darknetz/ta/darknetp_ta.c:633
+     d20:	f9400462 	ldr	x2, [x3, #8]
+     d24:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
+     d28:	aa1303e1 	mov	x1, x19
+     d2c:	913de800 	add	x0, x0, #0xf7a
+     d30:	d3428442 	ubfx	x2, x2, #2, #32
+     d34:	97fffeb0 	bl	7f4 <summary_array>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:637
+     d38:	aa1303e0 	mov	x0, x19
+     d3c:	94000d24 	bl	41cc <backward_network_TA>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:639
+     d40:	17ffff7a 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
 backward_network_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:656
+/home/avees/tee/darknetz/ta/darknetp_ta.c:651
+     d44:	7101981f 	cmp	w0, #0x66
+     d48:	54001cc1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
+/home/avees/tee/darknetz/ta/darknetp_ta.c:662
+     d4c:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
+     d50:	aa0403f4 	mov	x20, x4
+/home/avees/tee/darknetz/ta/darknetp_ta.c:660
+     d54:	a9404c63 	ldp	x3, x19, [x3]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:662
+     d58:	f940d080 	ldr	x0, [x4, #416]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:659
+     d5c:	f94008a6 	ldr	x6, [x5, #16]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:662
+     d60:	f9400001 	ldr	x1, [x0]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:660
+     d64:	d342fe73 	lsr	x19, x19, #2
+/home/avees/tee/darknetz/ta/darknetp_ta.c:663
+     d68:	f9409c80 	ldr	x0, [x4, #312]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:660
+     d6c:	2a1303e2 	mov	w2, w19
+/home/avees/tee/darknetz/ta/darknetp_ta.c:663
+     d70:	f9400005 	ldr	x5, [x0]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:661
+     d74:	d2800000 	mov	x0, #0x0                   	// #0
+     d78:	6b00005f 	cmp	w2, w0
+     d7c:	540001ec 	b.gt	db8 <TA_InvokeCommandEntryPoint+0x384>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:670
+     d80:	f940c280 	ldr	x0, [x20, #384]
+     d84:	b9400000 	ldr	w0, [x0]
+     d88:	7100041f 	cmp	w0, #0x1
+     d8c:	54ffece1 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
+/home/avees/tee/darknetz/ta/darknetp_ta.c:671
+     d90:	2a1303e2 	mov	w2, w19
+     d94:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
+     d98:	913e6800 	add	x0, x0, #0xf9a
+     d9c:	97fffe96 	bl	7f4 <summary_array>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:672
+     da0:	f9409e94 	ldr	x20, [x20, #312]
+     da4:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
+     da8:	2a1303e2 	mov	w2, w19
+     dac:	913f0c00 	add	x0, x0, #0xfc3
+     db0:	f9400281 	ldr	x1, [x20]
+     db4:	17ffffcc 	b	ce4 <TA_InvokeCommandEntryPoint+0x2b0>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:662
      db8:	bc607820 	ldr	s0, [x1, x0, lsl #2]
      dbc:	bc207860 	str	s0, [x3, x0, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:657
+/home/avees/tee/darknetz/ta/darknetp_ta.c:663
      dc0:	bc6078a0 	ldr	s0, [x5, x0, lsl #2]
      dc4:	bc2078c0 	str	s0, [x6, x0, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:655
+/home/avees/tee/darknetz/ta/darknetp_ta.c:661
      dc8:	91000400 	add	x0, x0, #0x1
-     dcc:	17ffffea 	b	d74 <TA_InvokeCommandEntryPoint+0x340>
+     dcc:	17ffffeb 	b	d78 <TA_InvokeCommandEntryPoint+0x344>
 update_network_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:771
+/home/avees/tee/darknetz/ta/darknetp_ta.c:777
      dd0:	7101541f 	cmp	w0, #0x55
      dd4:	54001861 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:775
+/home/avees/tee/darknetz/ta/darknetp_ta.c:781
      dd8:	f94008a0 	ldr	x0, [x5, #16]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:788
+/home/avees/tee/darknetz/ta/darknetp_ta.c:794
      ddc:	910303e3 	add	x3, sp, #0xc0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:774
+/home/avees/tee/darknetz/ta/darknetp_ta.c:780
      de0:	f94000a1 	ldr	x1, [x5]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:781
+/home/avees/tee/darknetz/ta/darknetp_ta.c:787
      de4:	bd400000 	ldr	s0, [x0]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:778
-     de8:	b9400022 	ldr	w2, [x1]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:781
-     dec:	bd00ffe0 	str	s0, [sp, #252]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:782
-     df0:	bd400400 	ldr	s0, [x0, #4]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:778
-     df4:	b900fbe2 	str	w2, [sp, #248]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:780
-     df8:	29408422 	ldp	w2, w1, [x1, #4]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:782
-     dfc:	bd0103e0 	str	s0, [sp, #256]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:783
-     e00:	bd400800 	ldr	s0, [x0, #8]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:780
-     e04:	b9011be1 	str	w1, [sp, #280]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:788
-     e08:	9103e3e1 	add	x1, sp, #0xf8
-/home/avees/tee/darknetz/ta/darknetp_ta.c:779
-     e0c:	b9010be2 	str	w2, [sp, #264]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:788
-     e10:	d2800482 	mov	x2, #0x24                  	// #36
-/home/avees/tee/darknetz/ta/darknetp_ta.c:783
-     e14:	bd0107e0 	str	s0, [sp, #260]
 /home/avees/tee/darknetz/ta/darknetp_ta.c:784
+     de8:	b9400022 	ldr	w2, [x1]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:787
+     dec:	bd00ffe0 	str	s0, [sp, #252]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:788
+     df0:	bd400400 	ldr	s0, [x0, #4]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:784
+     df4:	b900fbe2 	str	w2, [sp, #248]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:786
+     df8:	29408422 	ldp	w2, w1, [x1, #4]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:788
+     dfc:	bd0103e0 	str	s0, [sp, #256]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:789
+     e00:	bd400800 	ldr	s0, [x0, #8]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:786
+     e04:	b9011be1 	str	w1, [sp, #280]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:794
+     e08:	9103e3e1 	add	x1, sp, #0xf8
+/home/avees/tee/darknetz/ta/darknetp_ta.c:785
+     e0c:	b9010be2 	str	w2, [sp, #264]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:794
+     e10:	d2800482 	mov	x2, #0x24                  	// #36
+/home/avees/tee/darknetz/ta/darknetp_ta.c:789
+     e14:	bd0107e0 	str	s0, [sp, #260]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:790
      e18:	bd400c00 	ldr	s0, [x0, #12]
      e1c:	bd010fe0 	str	s0, [sp, #268]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:785
+/home/avees/tee/darknetz/ta/darknetp_ta.c:791
      e20:	bd401000 	ldr	s0, [x0, #16]
      e24:	bd0113e0 	str	s0, [sp, #272]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:786
+/home/avees/tee/darknetz/ta/darknetp_ta.c:792
      e28:	bd401400 	ldr	s0, [x0, #20]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:788
+/home/avees/tee/darknetz/ta/darknetp_ta.c:794
      e2c:	aa0303e0 	mov	x0, x3
-/home/avees/tee/darknetz/ta/darknetp_ta.c:786
+/home/avees/tee/darknetz/ta/darknetp_ta.c:792
      e30:	bd0117e0 	str	s0, [sp, #276]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:788
+/home/avees/tee/darknetz/ta/darknetp_ta.c:794
      e34:	97fffc7b 	bl	20 <memcpy>
      e38:	94000bd0 	bl	3d78 <update_network_TA>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:791
+/home/avees/tee/darknetz/ta/darknetp_ta.c:797
      e3c:	17ffff3b 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
 net_truth_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:805
+/home/avees/tee/darknetz/ta/darknetp_ta.c:811
      e40:	7100141f 	cmp	w0, #0x5
      e44:	540014e1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:812
+/home/avees/tee/darknetz/ta/darknetp_ta.c:818
      e48:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:811
+/home/avees/tee/darknetz/ta/darknetp_ta.c:817
      e4c:	b9800861 	ldrsw	x1, [x3, #8]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:809
+/home/avees/tee/darknetz/ta/darknetp_ta.c:815
      e50:	f9400063 	ldr	x3, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:811
+/home/avees/tee/darknetz/ta/darknetp_ta.c:817
      e54:	d2800000 	mov	x0, #0x0                   	// #0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:812
+/home/avees/tee/darknetz/ta/darknetp_ta.c:818
      e58:	f940a484 	ldr	x4, [x4, #328]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:811
+/home/avees/tee/darknetz/ta/darknetp_ta.c:817
      e5c:	d342fc21 	lsr	x1, x1, #2
-/home/avees/tee/darknetz/ta/darknetp_ta.c:812
+/home/avees/tee/darknetz/ta/darknetp_ta.c:818
      e60:	f9400082 	ldr	x2, [x4]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:811
-     e64:	eb00003f 	cmp	x1, x0
+/home/avees/tee/darknetz/ta/darknetp_ta.c:817
+     e64:	eb01001f 	cmp	x0, x1
      e68:	540000a1 	b.ne	e7c <TA_InvokeCommandEntryPoint+0x448>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:814
+/home/avees/tee/darknetz/ta/darknetp_ta.c:820
      e6c:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
      e70:	f9410c84 	ldr	x4, [x4, #536]
      e74:	f9007082 	str	x2, [x4, #224]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:816
+/home/avees/tee/darknetz/ta/darknetp_ta.c:822
      e78:	17ffff2c 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:812
+/home/avees/tee/darknetz/ta/darknetp_ta.c:818
      e7c:	bc607860 	ldr	s0, [x3, x0, lsl #2]
      e80:	bc207840 	str	s0, [x2, x0, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:811
+/home/avees/tee/darknetz/ta/darknetp_ta.c:817
      e84:	91000400 	add	x0, x0, #0x1
      e88:	17fffff7 	b	e64 <TA_InvokeCommandEntryPoint+0x430>
 TA_InvokeCommandEntryPoint():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:932
+/home/avees/tee/darknetz/ta/darknetp_ta.c:941
      e8c:	f9400060 	ldr	x0, [x3]
 calc_network_loss_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:831
+/home/avees/tee/darknetz/ta/darknetp_ta.c:837
      e90:	b9400401 	ldr	w1, [x0, #4]
      e94:	b9400000 	ldr	w0, [x0]
      e98:	94000c8c 	bl	40c8 <calc_network_loss_TA>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:833
+/home/avees/tee/darknetz/ta/darknetp_ta.c:839
      e9c:	17ffff23 	b	b28 <TA_InvokeCommandEntryPoint+0xf4>
 net_output_return_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:845
+/home/avees/tee/darknetz/ta/darknetp_ta.c:851
      ea0:	7100181f 	cmp	w0, #0x6
      ea4:	540011e1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:848
+/home/avees/tee/darknetz/ta/darknetp_ta.c:854
      ea8:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:849
+/home/avees/tee/darknetz/ta/darknetp_ta.c:855
      eac:	a9400866 	ldp	x6, x2, [x3]
      eb0:	f9411c80 	ldr	x0, [x4, #568]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:851
+/home/avees/tee/darknetz/ta/darknetp_ta.c:857
      eb4:	f940fc84 	ldr	x4, [x4, #504]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:849
+/home/avees/tee/darknetz/ta/darknetp_ta.c:855
      eb8:	d3428442 	ubfx	x2, x2, #2, #32
-/home/avees/tee/darknetz/ta/darknetp_ta.c:851
+/home/avees/tee/darknetz/ta/darknetp_ta.c:857
      ebc:	f9400000 	ldr	x0, [x0]
      ec0:	b9400081 	ldr	w1, [x4]
      ec4:	35000281 	cbnz	w1, f14 <TA_InvokeCommandEntryPoint+0x4e0>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:853
+/home/avees/tee/darknetz/ta/darknetp_ta.c:859
      ec8:	d2800001 	mov	x1, #0x0                   	// #0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:866
+/home/avees/tee/darknetz/ta/darknetp_ta.c:872
      ecc:	6b01005f 	cmp	w2, w1
      ed0:	54ffeded 	b.le	c8c <TA_InvokeCommandEntryPoint+0x258>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:867
+/home/avees/tee/darknetz/ta/darknetp_ta.c:873
      ed4:	bc617800 	ldr	s0, [x0, x1, lsl #2]
      ed8:	bc2178c0 	str	s0, [x6, x1, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:866
+/home/avees/tee/darknetz/ta/darknetp_ta.c:872
      edc:	91000421 	add	x1, x1, #0x1
      ee0:	17fffffb 	b	ecc <TA_InvokeCommandEntryPoint+0x498>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:857
+/home/avees/tee/darknetz/ta/darknetp_ta.c:863
      ee4:	bc617801 	ldr	s1, [x0, x1, lsl #2]
      ee8:	1e202030 	fcmpe	s1, s0
      eec:	5400006d 	b.le	ef8 <TA_InvokeCommandEntryPoint+0x4c4>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:858
+/home/avees/tee/darknetz/ta/darknetp_ta.c:864
      ef0:	1e204020 	fmov	s0, s1
-/home/avees/tee/darknetz/ta/darknetp_ta.c:857
+/home/avees/tee/darknetz/ta/darknetp_ta.c:863
      ef4:	2a0103e3 	mov	w3, w1
-/home/avees/tee/darknetz/ta/darknetp_ta.c:861
+/home/avees/tee/darknetz/ta/darknetp_ta.c:867
      ef8:	b821781f 	str	wzr, [x0, x1, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:856
+/home/avees/tee/darknetz/ta/darknetp_ta.c:862
      efc:	91000421 	add	x1, x1, #0x1
      f00:	6b01005f 	cmp	w2, w1
      f04:	54ffff0c 	b.gt	ee4 <TA_InvokeCommandEntryPoint+0x4b0>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:863
+/home/avees/tee/darknetz/ta/darknetp_ta.c:869
      f08:	1e2e1000 	fmov	s0, #1.000000000000000000e+00
      f0c:	bc23d800 	str	s0, [x0, w3, sxtw #2]
      f10:	17ffffee 	b	ec8 <TA_InvokeCommandEntryPoint+0x494>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:853
+/home/avees/tee/darknetz/ta/darknetp_ta.c:859
      f14:	d00000e4 	adrp	x4, 1e000 <__text_end+0x4920>
      f18:	d2800001 	mov	x1, #0x0                   	// #0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:854
+/home/avees/tee/darknetz/ta/darknetp_ta.c:860
      f1c:	52800003 	mov	w3, #0x0                   	// #0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:853
-     f20:	bd4a5c80 	ldr	s0, [x4, #2652]
+/home/avees/tee/darknetz/ta/darknetp_ta.c:859
+     f20:	bd4a6080 	ldr	s0, [x4, #2656]
      f24:	17fffff7 	b	f00 <TA_InvokeCommandEntryPoint+0x4cc>
 forward_network_back_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:556
+/home/avees/tee/darknetz/ta/darknetp_ta.c:562
      f28:	7100181f 	cmp	w0, #0x6
      f2c:	54000da1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:562
+/home/avees/tee/darknetz/ta/darknetp_ta.c:568
      f30:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
      f34:	928090e0 	mov	x0, #0xfffffffffffffb78    	// #-1160
-/home/avees/tee/darknetz/ta/darknetp_ta.c:560
+/home/avees/tee/darknetz/ta/darknetp_ta.c:566
      f38:	a9400866 	ldp	x6, x2, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:562
+/home/avees/tee/darknetz/ta/darknetp_ta.c:568
      f3c:	52809105 	mov	w5, #0x488                 	// #1160
      f40:	f9410c84 	ldr	x4, [x4, #536]
      f44:	b9400081 	ldr	w1, [x4]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:560
+/home/avees/tee/darknetz/ta/darknetp_ta.c:566
      f48:	d342fc42 	lsr	x2, x2, #2
      f4c:	2a0203e3 	mov	w3, w2
-/home/avees/tee/darknetz/ta/darknetp_ta.c:562
+/home/avees/tee/darknetz/ta/darknetp_ta.c:568
      f50:	9b250020 	smaddl	x0, w1, w5, x0
      f54:	f9401081 	ldr	x1, [x4, #32]
      f58:	8b000021 	add	x1, x1, x0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:561
+/home/avees/tee/darknetz/ta/darknetp_ta.c:567
      f5c:	d2800000 	mov	x0, #0x0                   	// #0
      f60:	6b00007f 	cmp	w3, w0
      f64:	5400014c 	b.gt	f8c <TA_InvokeCommandEntryPoint+0x558>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:567
+/home/avees/tee/darknetz/ta/darknetp_ta.c:573
      f68:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
      f6c:	f940c084 	ldr	x4, [x4, #384]
      f70:	b9400080 	ldr	w0, [x4]
      f74:	7100041f 	cmp	w0, #0x1
      f78:	54ffdd81 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:568
+/home/avees/tee/darknetz/ta/darknetp_ta.c:574
      f7c:	d00000e0 	adrp	x0, 1e000 <__text_end+0x4920>
-     f80:	913f9c00 	add	x0, x0, #0xfe7
+     f80:	913fac00 	add	x0, x0, #0xfeb
      f84:	f9412821 	ldr	x1, [x1, #592]
-     f88:	17ffff8a 	b	db0 <TA_InvokeCommandEntryPoint+0x37c>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:562
+     f88:	17ffff57 	b	ce4 <TA_InvokeCommandEntryPoint+0x2b0>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:568
      f8c:	f9412824 	ldr	x4, [x1, #592]
      f90:	bc607880 	ldr	s0, [x4, x0, lsl #2]
      f94:	bc2078c0 	str	s0, [x6, x0, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:561
+/home/avees/tee/darknetz/ta/darknetp_ta.c:567
      f98:	91000400 	add	x0, x0, #0x1
      f9c:	17fffff1 	b	f60 <TA_InvokeCommandEntryPoint+0x52c>
 backward_network_back_TA_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:685
+/home/avees/tee/darknetz/ta/darknetp_ta.c:691
      fa0:	7101541f 	cmp	w0, #0x55
      fa4:	540009e1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:693
+/home/avees/tee/darknetz/ta/darknetp_ta.c:699
      fa8:	b0000104 	adrp	x4, 21000 <_DYNAMIC>
      fac:	928090e0 	mov	x0, #0xfffffffffffffb78    	// #-1160
-/home/avees/tee/darknetz/ta/darknetp_ta.c:690
+/home/avees/tee/darknetz/ta/darknetp_ta.c:696
      fb0:	a9405066 	ldp	x6, x20, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:693
+/home/avees/tee/darknetz/ta/darknetp_ta.c:699
      fb4:	52809105 	mov	w5, #0x488                 	// #1160
      fb8:	f9410c82 	ldr	x2, [x4, #536]
      fbc:	aa0403f3 	mov	x19, x4
-/home/avees/tee/darknetz/ta/darknetp_ta.c:689
+/home/avees/tee/darknetz/ta/darknetp_ta.c:695
      fc0:	f9400867 	ldr	x7, [x3, #16]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:693
+/home/avees/tee/darknetz/ta/darknetp_ta.c:699
      fc4:	b9400041 	ldr	w1, [x2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:690
+/home/avees/tee/darknetz/ta/darknetp_ta.c:696
      fc8:	d342fe94 	lsr	x20, x20, #2
      fcc:	2a1403e3 	mov	w3, w20
-/home/avees/tee/darknetz/ta/darknetp_ta.c:693
+/home/avees/tee/darknetz/ta/darknetp_ta.c:699
      fd0:	9b250020 	smaddl	x0, w1, w5, x0
      fd4:	f9401041 	ldr	x1, [x2, #32]
      fd8:	8b000021 	add	x1, x1, x0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:692
+/home/avees/tee/darknetz/ta/darknetp_ta.c:698
      fdc:	d2800000 	mov	x0, #0x0                   	// #0
      fe0:	6b00007f 	cmp	w3, w0
      fe4:	540002cc 	b.gt	103c <TA_InvokeCommandEntryPoint+0x608>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:697
+/home/avees/tee/darknetz/ta/darknetp_ta.c:703
      fe8:	f940c260 	ldr	x0, [x19, #384]
      fec:	b9400000 	ldr	w0, [x0]
      ff0:	7100041f 	cmp	w0, #0x1
      ff4:	54ffd9a1 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:698
+/home/avees/tee/darknetz/ta/darknetp_ta.c:704
      ff8:	f9412821 	ldr	x1, [x1, #592]
      ffc:	2a1403e2 	mov	w2, w20
-    1000:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    1004:	91002c00 	add	x0, x0, #0xb
+    1000:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    1004:	91003c00 	add	x0, x0, #0xf
     1008:	97fffdfb 	bl	7f4 <summary_array>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:699
+/home/avees/tee/darknetz/ta/darknetp_ta.c:705
     100c:	f9410e73 	ldr	x19, [x19, #536]
     1010:	52809102 	mov	w2, #0x488                 	// #1160
     1014:	928090e1 	mov	x1, #0xfffffffffffffb78    	// #-1160
@@ -2347,68 +2347,68 @@ backward_network_back_TA_params():
     1024:	f9401260 	ldr	x0, [x19, #32]
     1028:	8b010000 	add	x0, x0, x1
     102c:	f9412401 	ldr	x1, [x0, #584]
-    1030:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    1034:	9100c000 	add	x0, x0, #0x30
-    1038:	17ffff5e 	b	db0 <TA_InvokeCommandEntryPoint+0x37c>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:693
+    1030:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    1034:	9100d000 	add	x0, x0, #0x34
+    1038:	17ffff2b 	b	ce4 <TA_InvokeCommandEntryPoint+0x2b0>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:699
     103c:	f9412824 	ldr	x4, [x1, #592]
     1040:	d37ef402 	lsl	x2, x0, #2
     1044:	bc6078c0 	ldr	s0, [x6, x0, lsl #2]
     1048:	bc226880 	str	s0, [x4, x2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:694
+/home/avees/tee/darknetz/ta/darknetp_ta.c:700
     104c:	f9412424 	ldr	x4, [x1, #584]
     1050:	bc6078e0 	ldr	s0, [x7, x0, lsl #2]
     1054:	91000400 	add	x0, x0, #0x1
     1058:	bc226880 	str	s0, [x4, x2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:692
+/home/avees/tee/darknetz/ta/darknetp_ta.c:698
     105c:	17ffffe1 	b	fe0 <TA_InvokeCommandEntryPoint+0x5ac>
 backward_network_back_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:714
+/home/avees/tee/darknetz/ta/darknetp_ta.c:720
     1060:	7100181f 	cmp	w0, #0x6
     1064:	540003e1 	b.ne	10e0 <TA_InvokeCommandEntryPoint+0x6ac>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:722
+/home/avees/tee/darknetz/ta/darknetp_ta.c:728
     1068:	90000104 	adrp	x4, 21000 <_DYNAMIC>
     106c:	928090e0 	mov	x0, #0xfffffffffffffb78    	// #-1160
-/home/avees/tee/darknetz/ta/darknetp_ta.c:719
+/home/avees/tee/darknetz/ta/darknetp_ta.c:725
     1070:	a9400866 	ldp	x6, x2, [x3]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:722
+/home/avees/tee/darknetz/ta/darknetp_ta.c:728
     1074:	52809105 	mov	w5, #0x488                 	// #1160
     1078:	f9410c84 	ldr	x4, [x4, #536]
     107c:	b9400081 	ldr	w1, [x4]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:719
+/home/avees/tee/darknetz/ta/darknetp_ta.c:725
     1080:	d342fc42 	lsr	x2, x2, #2
     1084:	2a0203e3 	mov	w3, w2
-/home/avees/tee/darknetz/ta/darknetp_ta.c:722
+/home/avees/tee/darknetz/ta/darknetp_ta.c:728
     1088:	9b250020 	smaddl	x0, w1, w5, x0
     108c:	f9401081 	ldr	x1, [x4, #32]
     1090:	8b000021 	add	x1, x1, x0
-/home/avees/tee/darknetz/ta/darknetp_ta.c:721
+/home/avees/tee/darknetz/ta/darknetp_ta.c:727
     1094:	d2800000 	mov	x0, #0x0                   	// #0
     1098:	6b00007f 	cmp	w3, w0
     109c:	5400014c 	b.gt	10c4 <TA_InvokeCommandEntryPoint+0x690>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:726
+/home/avees/tee/darknetz/ta/darknetp_ta.c:732
     10a0:	90000104 	adrp	x4, 21000 <_DYNAMIC>
     10a4:	f940c084 	ldr	x4, [x4, #384]
     10a8:	b9400080 	ldr	w0, [x4]
     10ac:	7100041f 	cmp	w0, #0x1
     10b0:	54ffd3c1 	b.ne	b28 <TA_InvokeCommandEntryPoint+0xf4>  // b.any
-/home/avees/tee/darknetz/ta/darknetp_ta.c:727
-    10b4:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    10b8:	91015000 	add	x0, x0, #0x54
+/home/avees/tee/darknetz/ta/darknetp_ta.c:733
+    10b4:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    10b8:	91016000 	add	x0, x0, #0x58
     10bc:	f9412821 	ldr	x1, [x1, #592]
-    10c0:	17ffff3c 	b	db0 <TA_InvokeCommandEntryPoint+0x37c>
-/home/avees/tee/darknetz/ta/darknetp_ta.c:722
+    10c0:	17ffff09 	b	ce4 <TA_InvokeCommandEntryPoint+0x2b0>
+/home/avees/tee/darknetz/ta/darknetp_ta.c:728
     10c4:	f9412824 	ldr	x4, [x1, #592]
     10c8:	bc607880 	ldr	s0, [x4, x0, lsl #2]
     10cc:	bc2078c0 	str	s0, [x6, x0, lsl #2]
-/home/avees/tee/darknetz/ta/darknetp_ta.c:721
+/home/avees/tee/darknetz/ta/darknetp_ta.c:727
     10d0:	91000400 	add	x0, x0, #0x1
     10d4:	17fffff1 	b	1098 <TA_InvokeCommandEntryPoint+0x664>
-backward_network_TA_addidion_params():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:668
+backward_network_TA_params():
+/home/avees/tee/darknetz/ta/darknetp_ta.c:639
     10d8:	129fff20 	mov	w0, #0xffff0006            	// #-65530
 TA_InvokeCommandEntryPoint():
-/home/avees/tee/darknetz/ta/darknetp_ta.c:950
+/home/avees/tee/darknetz/ta/darknetp_ta.c:959
     10dc:	d65f03c0 	ret
 make_netowork_TA_params():
 /home/avees/tee/darknetz/ta/darknetp_ta.c:121
@@ -2540,12 +2540,12 @@ make_softmax_layer_TA_new():
     1258:	34000140 	cbz	w0, 1280 <make_softmax_layer_TA_new+0x54>
 _assert_trap():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/include/assert.h:19
-    125c:	d00000e3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    1260:	d00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    1264:	9102a063 	add	x3, x3, #0xa8
-    1268:	91020821 	add	x1, x1, #0x82
-    126c:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    1270:	91025400 	add	x0, x0, #0x95
+    125c:	d00000e3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    1260:	d00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    1264:	9102b063 	add	x3, x3, #0xac
+    1268:	91021821 	add	x1, x1, #0x86
+    126c:	d00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    1270:	91026400 	add	x0, x0, #0x99
     1274:	52800222 	mov	w2, #0x11                  	// #17
     1278:	94001f17 	bl	8ed4 <_assert_log>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/include/assert.h:20
@@ -4213,7 +4213,7 @@ aes_cbc_TA():
     2504:	a9ab7bfd 	stp	x29, x30, [sp, #-336]!
     2508:	f00000e3 	adrp	x3, 21000 <_DYNAMIC>
 /home/avees/tee/darknetz/ta/parser_TA.c:15
-    250c:	b00000e4 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    250c:	b00000e4 	adrp	x4, 1f000 <gcd_pairs+0x12c>
 /home/avees/tee/darknetz/ta/parser_TA.c:14
     2510:	910003fd 	mov	x29, sp
     2514:	f940b463 	ldr	x3, [x3, #360]
@@ -4228,11 +4228,11 @@ aes_cbc_TA():
 /home/avees/tee/darknetz/ta/parser_TA.c:15
     2538:	52800023 	mov	w3, #0x1                   	// #1
     253c:	aa1503e5 	mov	x5, x21
-    2540:	91030884 	add	x4, x4, #0xc2
+    2540:	91031884 	add	x4, x4, #0xc6
     2544:	52800042 	mov	w2, #0x2                   	// #2
     2548:	528001e1 	mov	w1, #0xf                   	// #15
-    254c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2550:	91039400 	add	x0, x0, #0xe5
+    254c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2550:	9103a400 	add	x0, x0, #0xe9
 /home/avees/tee/darknetz/ta/parser_TA.c:14
     2554:	a90363f7 	stp	x23, x24, [sp, #48]
     2558:	a9046bf9 	stp	x25, x26, [sp, #64]
@@ -4277,13 +4277,13 @@ aes_cbc_TA():
 /home/avees/tee/darknetz/ta/parser_TA.c:29
     25d4:	f2c0a080 	movk	x0, #0x504, lsl #32
 /home/avees/tee/darknetz/ta/parser_TA.c:36
-    25d8:	b00000fa 	adrp	x26, 1f000 <gcd_pairs+0x130>
+    25d8:	b00000fa 	adrp	x26, 1f000 <gcd_pairs+0x12c>
 /home/avees/tee/darknetz/ta/parser_TA.c:29
     25dc:	f2e0e0c0 	movk	x0, #0x706, lsl #48
     25e0:	f90097a0 	str	x0, [x29, #296]
     25e4:	d2812100 	mov	x0, #0x908                 	// #2312
 /home/avees/tee/darknetz/ta/parser_TA.c:38
-    25e8:	b00000fb 	adrp	x27, 1f000 <gcd_pairs+0x130>
+    25e8:	b00000fb 	adrp	x27, 1f000 <gcd_pairs+0x12c>
 /home/avees/tee/darknetz/ta/parser_TA.c:29
     25ec:	f2a16140 	movk	x0, #0xb0a, lsl #16
 /home/avees/tee/darknetz/ta/parser_TA.c:33
@@ -4298,11 +4298,11 @@ aes_cbc_TA():
 /home/avees/tee/darknetz/ta/parser_TA.c:30
     2604:	d28fc560 	mov	x0, #0x7e2b                	// #32299
 /home/avees/tee/darknetz/ta/parser_TA.c:36
-    2608:	9103575a 	add	x26, x26, #0xd5
+    2608:	9103675a 	add	x26, x26, #0xd9
 /home/avees/tee/darknetz/ta/parser_TA.c:30
     260c:	f2a2c2a0 	movk	x0, #0x1615, lsl #16
 /home/avees/tee/darknetz/ta/parser_TA.c:38
-    2610:	9103777b 	add	x27, x27, #0xdd
+    2610:	9103877b 	add	x27, x27, #0xe1
 /home/avees/tee/darknetz/ta/parser_TA.c:30
     2614:	f2d5c500 	movk	x0, #0xae28, lsl #32
 /home/avees/tee/darknetz/ta/parser_TA.c:34
@@ -4616,11 +4616,11 @@ save_weights_TA():
 /home/avees/tee/darknetz/ta/parser_TA.c:126
     2990:	a94153f3 	ldp	x19, x20, [sp, #16]
 /home/avees/tee/darknetz/ta/parser_TA.c:125
-    2994:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    2994:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
 /home/avees/tee/darknetz/ta/parser_TA.c:126
     2998:	a8c27bfd 	ldp	x29, x30, [sp], #32
 /home/avees/tee/darknetz/ta/parser_TA.c:125
-    299c:	91035400 	add	x0, x0, #0xd5
+    299c:	91036400 	add	x0, x0, #0xd9
     29a0:	17fffed9 	b	2504 <aes_cbc_TA>
 /home/avees/tee/darknetz/ta/parser_TA.c:111
     29a4:	7101dc7f 	cmp	w3, #0x77
@@ -4665,67 +4665,67 @@ get_activation_string_TA():
     2a14:	7100341f 	cmp	w0, #0xd
     2a18:	54000568 	b.hi	2ac4 <get_activation_string_TA+0xb0>  // b.pmore
     2a1c:	900000e1 	adrp	x1, 1e000 <__text_end+0x4920>
-    2a20:	91298021 	add	x1, x1, #0xa60
+    2a20:	91299021 	add	x1, x1, #0xa64
     2a24:	38604820 	ldrb	w0, [x1, w0, uxtw]
     2a28:	10000061 	adr	x1, 2a34 <get_activation_string_TA+0x20>
     2a2c:	8b208820 	add	x0, x1, w0, sxtb #2
     2a30:	d61f0000 	br	x0
 /home/avees/tee/darknetz/ta/activations_TA.c:37
-    2a34:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a38:	9104e400 	add	x0, x0, #0x139
+    2a34:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a38:	9104f400 	add	x0, x0, #0x13d
 /home/avees/tee/darknetz/ta/activations_TA.c:42
     2a3c:	d65f03c0 	ret
 /home/avees/tee/darknetz/ta/activations_TA.c:17
-    2a40:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a44:	9103c400 	add	x0, x0, #0xf1
+    2a40:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a44:	9103d400 	add	x0, x0, #0xf5
     2a48:	17fffffd 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:19
-    2a4c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a50:	9103f800 	add	x0, x0, #0xfe
+    2a4c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a50:	91040800 	add	x0, x0, #0x102
     2a54:	17fffffa 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:21
-    2a58:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a5c:	91040c00 	add	x0, x0, #0x103
+    2a58:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a5c:	91041c00 	add	x0, x0, #0x107
     2a60:	17fffff7 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:23
-    2a64:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a68:	91042400 	add	x0, x0, #0x109
+    2a64:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a68:	91043400 	add	x0, x0, #0x10d
     2a6c:	17fffff4 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:25
-    2a70:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a74:	91043800 	add	x0, x0, #0x10e
+    2a70:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a74:	91044800 	add	x0, x0, #0x112
     2a78:	17fffff1 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:27
-    2a7c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a80:	91045400 	add	x0, x0, #0x115
+    2a7c:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a80:	91046400 	add	x0, x0, #0x119
     2a84:	17ffffee 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:29
-    2a88:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a8c:	91046800 	add	x0, x0, #0x11a
+    2a88:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a8c:	91047800 	add	x0, x0, #0x11e
     2a90:	17ffffeb 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:31
-    2a94:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2a98:	91047c00 	add	x0, x0, #0x11f
+    2a94:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2a98:	91048c00 	add	x0, x0, #0x123
     2a9c:	17ffffe8 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:33
-    2aa0:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2aa4:	91049400 	add	x0, x0, #0x125
+    2aa0:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2aa4:	9104a400 	add	x0, x0, #0x129
     2aa8:	17ffffe5 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:35
-    2aac:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2ab0:	9104ac00 	add	x0, x0, #0x12b
+    2aac:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2ab0:	9104bc00 	add	x0, x0, #0x12f
     2ab4:	17ffffe2 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:37
-    2ab8:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2abc:	9104cc00 	add	x0, x0, #0x133
+    2ab8:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2abc:	9104dc00 	add	x0, x0, #0x137
     2ac0:	17ffffdf 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:41
-    2ac4:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2ac8:	9103c000 	add	x0, x0, #0xf0
+    2ac4:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2ac8:	9103d000 	add	x0, x0, #0xf4
     2acc:	17ffffdc 	b	2a3c <get_activation_string_TA+0x28>
 /home/avees/tee/darknetz/ta/activations_TA.c:11
-    2ad0:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    2ad4:	9103d400 	add	x0, x0, #0xf5
+    2ad0:	b00000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    2ad4:	9103e400 	add	x0, x0, #0xf9
     2ad8:	17ffffd9 	b	2a3c <get_activation_string_TA+0x28>
 
 0000000000002adc <get_activation_TA>:
@@ -4733,8 +4733,8 @@ get_activation_TA():
 /home/avees/tee/darknetz/ta/activations_TA.c:45
     2adc:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
 /home/avees/tee/darknetz/ta/activations_TA.c:46
-    2ae0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    2ae4:	9103d421 	add	x1, x1, #0xf5
+    2ae0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    2ae4:	9103e421 	add	x1, x1, #0xf9
 /home/avees/tee/darknetz/ta/activations_TA.c:45
     2ae8:	910003fd 	mov	x29, sp
     2aec:	f9000bf3 	str	x19, [sp, #16]
@@ -4743,81 +4743,81 @@ get_activation_TA():
     2af4:	9400147f 	bl	7cf0 <strcmp>
     2af8:	340008e0 	cbz	w0, 2c14 <get_activation_TA+0x138>
 /home/avees/tee/darknetz/ta/activations_TA.c:47
-    2afc:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2afc:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b00:	aa1303e0 	mov	x0, x19
-    2b04:	9104e421 	add	x1, x1, #0x139
+    2b04:	9104f421 	add	x1, x1, #0x13d
     2b08:	9400147a 	bl	7cf0 <strcmp>
     2b0c:	34000880 	cbz	w0, 2c1c <get_activation_TA+0x140>
 /home/avees/tee/darknetz/ta/activations_TA.c:48
-    2b10:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b10:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b14:	aa1303e0 	mov	x0, x19
-    2b18:	9103c021 	add	x1, x1, #0xf0
+    2b18:	9103d021 	add	x1, x1, #0xf4
     2b1c:	94001475 	bl	7cf0 <strcmp>
     2b20:	34000820 	cbz	w0, 2c24 <get_activation_TA+0x148>
 /home/avees/tee/darknetz/ta/activations_TA.c:49
-    2b24:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b24:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b28:	aa1303e0 	mov	x0, x19
-    2b2c:	9103c421 	add	x1, x1, #0xf1
+    2b2c:	9103d421 	add	x1, x1, #0xf5
     2b30:	94001470 	bl	7cf0 <strcmp>
     2b34:	340007c0 	cbz	w0, 2c2c <get_activation_TA+0x150>
 /home/avees/tee/darknetz/ta/activations_TA.c:50
-    2b38:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b38:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b3c:	aa1303e0 	mov	x0, x19
-    2b40:	9103f821 	add	x1, x1, #0xfe
+    2b40:	91040821 	add	x1, x1, #0x102
     2b44:	9400146b 	bl	7cf0 <strcmp>
     2b48:	34000760 	cbz	w0, 2c34 <get_activation_TA+0x158>
 /home/avees/tee/darknetz/ta/activations_TA.c:51
-    2b4c:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b4c:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b50:	aa1303e0 	mov	x0, x19
-    2b54:	91040c21 	add	x1, x1, #0x103
+    2b54:	91041c21 	add	x1, x1, #0x107
     2b58:	94001466 	bl	7cf0 <strcmp>
     2b5c:	34000700 	cbz	w0, 2c3c <get_activation_TA+0x160>
 /home/avees/tee/darknetz/ta/activations_TA.c:52
-    2b60:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b60:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b64:	aa1303e0 	mov	x0, x19
-    2b68:	91046821 	add	x1, x1, #0x11a
+    2b68:	91047821 	add	x1, x1, #0x11e
     2b6c:	94001461 	bl	7cf0 <strcmp>
     2b70:	340006a0 	cbz	w0, 2c44 <get_activation_TA+0x168>
 /home/avees/tee/darknetz/ta/activations_TA.c:53
-    2b74:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b74:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b78:	aa1303e0 	mov	x0, x19
-    2b7c:	9104ac21 	add	x1, x1, #0x12b
+    2b7c:	9104bc21 	add	x1, x1, #0x12f
     2b80:	9400145c 	bl	7cf0 <strcmp>
     2b84:	34000640 	cbz	w0, 2c4c <get_activation_TA+0x170>
 /home/avees/tee/darknetz/ta/activations_TA.c:54
-    2b88:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b88:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2b8c:	aa1303e0 	mov	x0, x19
-    2b90:	9104cc21 	add	x1, x1, #0x133
+    2b90:	9104dc21 	add	x1, x1, #0x137
     2b94:	94001457 	bl	7cf0 <strcmp>
     2b98:	340005e0 	cbz	w0, 2c54 <get_activation_TA+0x178>
 /home/avees/tee/darknetz/ta/activations_TA.c:55
-    2b9c:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2b9c:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2ba0:	aa1303e0 	mov	x0, x19
-    2ba4:	91043821 	add	x1, x1, #0x10e
+    2ba4:	91044821 	add	x1, x1, #0x112
     2ba8:	94001452 	bl	7cf0 <strcmp>
     2bac:	34000580 	cbz	w0, 2c5c <get_activation_TA+0x180>
 /home/avees/tee/darknetz/ta/activations_TA.c:56
-    2bb0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2bb0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2bb4:	aa1303e0 	mov	x0, x19
-    2bb8:	91042421 	add	x1, x1, #0x109
+    2bb8:	91043421 	add	x1, x1, #0x10d
     2bbc:	9400144d 	bl	7cf0 <strcmp>
     2bc0:	34000520 	cbz	w0, 2c64 <get_activation_TA+0x188>
 /home/avees/tee/darknetz/ta/activations_TA.c:57
-    2bc4:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2bc4:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2bc8:	aa1303e0 	mov	x0, x19
-    2bcc:	91047c21 	add	x1, x1, #0x11f
+    2bcc:	91048c21 	add	x1, x1, #0x123
     2bd0:	94001448 	bl	7cf0 <strcmp>
     2bd4:	340004c0 	cbz	w0, 2c6c <get_activation_TA+0x190>
 /home/avees/tee/darknetz/ta/activations_TA.c:58
-    2bd8:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    2bd8:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     2bdc:	aa1303e0 	mov	x0, x19
-    2be0:	91045421 	add	x1, x1, #0x115
+    2be0:	91046421 	add	x1, x1, #0x119
     2be4:	94001443 	bl	7cf0 <strcmp>
     2be8:	34000460 	cbz	w0, 2c74 <get_activation_TA+0x198>
 /home/avees/tee/darknetz/ta/activations_TA.c:59
     2bec:	aa1303e0 	mov	x0, x19
-    2bf0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    2bf4:	91049421 	add	x1, x1, #0x125
+    2bf0:	b00000e1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    2bf4:	9104a421 	add	x1, x1, #0x129
     2bf8:	9400143e 	bl	7cf0 <strcmp>
     2bfc:	7100001f 	cmp	w0, #0x0
     2c00:	52800140 	mov	w0, #0xa                   	// #10
@@ -4878,7 +4878,7 @@ activate_TA():
     2c94:	54000108 	b.hi	2cb4 <activate_TA+0x38>  // b.pmore
     2c98:	900000e1 	adrp	x1, 1e000 <__text_end+0x4920>
     2c9c:	1e204008 	fmov	s8, s0
-    2ca0:	9129c021 	add	x1, x1, #0xa70
+    2ca0:	9129d021 	add	x1, x1, #0xa74
     2ca4:	78605820 	ldrh	w0, [x1, w0, uxtw #1]
     2ca8:	10000061 	adr	x1, 2cb4 <activate_TA+0x38>
     2cac:	8b20a820 	add	x0, x1, w0, sxth #2
@@ -5132,7 +5132,7 @@ gradient_TA():
 /home/avees/tee/darknetz/ta/activations_TA.c:112
     2f88:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
     2f8c:	900000e1 	adrp	x1, 1e000 <__text_end+0x4920>
-    2f90:	912a3021 	add	x1, x1, #0xa8c
+    2f90:	912a4021 	add	x1, x1, #0xa90
     2f94:	910003fd 	mov	x29, sp
     2f98:	fd000be8 	str	d8, [sp, #16]
     2f9c:	1e204008 	fmov	s8, s0
@@ -5216,7 +5216,7 @@ relie_gradient_TA():
     3068:	1e202018 	fcmpe	s0, #0.0
     306c:	5400046c 	b.gt	30f8 <gradient_TA+0x178>
     3070:	f00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
-    3074:	bd4a9c00 	ldr	s0, [x0, #2716]
+    3074:	bd4aa000 	ldr	s0, [x0, #2720]
     3078:	17ffffd3 	b	2fc4 <gradient_TA+0x44>
 ramp_gradient_TA():
 /home/avees/tee/darknetz/ta/./include/activations_TA.h:84
@@ -5233,7 +5233,7 @@ leaky_gradient_TA():
     309c:	1e202018 	fcmpe	s0, #0.0
     30a0:	540002cc 	b.gt	30f8 <gradient_TA+0x178>
     30a4:	f00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
-    30a8:	bd4aa000 	ldr	s0, [x0, #2720]
+    30a8:	bd4aa400 	ldr	s0, [x0, #2724]
     30ac:	17ffffc6 	b	2fc4 <gradient_TA+0x44>
 tanh_gradient_TA():
 /home/avees/tee/darknetz/ta/./include/activations_TA.h:86
@@ -5283,7 +5283,7 @@ lhtan_gradient_TA():
     312c:	54fffe64 	b.mi	30f8 <gradient_TA+0x178>  // b.first
 /home/avees/tee/darknetz/ta/./include/activations_TA.h:60
     3130:	f00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
-    3134:	bd4aa400 	ldr	s0, [x0, #2724]
+    3134:	bd4aa800 	ldr	s0, [x0, #2728]
     3138:	17ffffa3 	b	2fc4 <gradient_TA+0x44>
 
 000000000000313c <gradient_array_TA>:
@@ -5641,7 +5641,7 @@ softmax_TA():
     34fc:	a9025bf5 	stp	x21, x22, [sp, #32]
     3500:	937e7c55 	sbfiz	x21, x2, #2, #32
 /home/avees/tee/darknetz/ta/blas_TA.c:86
-    3504:	bd4aa808 	ldr	s8, [x0, #2728]
+    3504:	bd4aac08 	ldr	s8, [x0, #2732]
 /home/avees/tee/darknetz/ta/blas_TA.c:87
     3508:	52800000 	mov	w0, #0x0                   	// #0
 /home/avees/tee/darknetz/ta/blas_TA.c:83
@@ -5974,7 +5974,7 @@ forward_maxpool_layer_TA_new():
     385c:	b90087e0 	str	w0, [sp, #132]
 /home/avees/tee/darknetz/ta/maxpool_layer_TA.c:86
     3860:	f00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
-    3864:	bd4aa801 	ldr	s1, [x0, #2728]
+    3864:	bd4aac01 	ldr	s1, [x0, #2732]
 /home/avees/tee/darknetz/ta/maxpool_layer_TA.c:81 (discriminator 1)
     3868:	b94083e0 	ldr	w0, [sp, #128]
     386c:	6b0a001f 	cmp	w0, w10
@@ -6626,8 +6626,8 @@ forward_network_TA():
     3f18:	f9408aa1 	ldr	x1, [x21, #272]
     3f1c:	b4000101 	cbz	x1, 3f3c <forward_network_TA+0x90>
 /home/avees/tee/darknetz/ta/network_TA.c:76
-    3f20:	900000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    3f24:	9104fc00 	add	x0, x0, #0x13f
+    3f20:	900000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    3f24:	91050c00 	add	x0, x0, #0x143
     3f28:	9400140d 	bl	8f5c <printf>
 /home/avees/tee/darknetz/ta/network_TA.c:77
     3f2c:	f9408aa1 	ldr	x1, [x21, #272]
@@ -6648,8 +6648,8 @@ forward_network_TA():
     3f54:	11000400 	add	w0, w0, #0x1
     3f58:	b9000020 	str	w0, [x1]
 /home/avees/tee/darknetz/ta/network_TA.c:94
-    3f5c:	900000e0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    3f60:	91054c00 	add	x0, x0, #0x153
+    3f5c:	900000e0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    3f60:	91055c00 	add	x0, x0, #0x157
     3f64:	f90037e0 	str	x0, [sp, #104]
 /home/avees/tee/darknetz/ta/network_TA.c:83 (discriminator 1)
     3f68:	f9410e60 	ldr	x0, [x19, #536]
@@ -6831,12 +6831,12 @@ calc_network_loss_TA():
     4170:	52801461 	mov	w1, #0xa3                  	// #163
     4174:	aa1503e6 	mov	x6, x21
     4178:	aa1403e5 	mov	x5, x20
-    417c:	f00000c4 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    417c:	f00000c4 	adrp	x4, 1f000 <gcd_pairs+0x12c>
     4180:	52800023 	mov	w3, #0x1                   	// #1
-    4184:	9105b884 	add	x4, x4, #0x16e
+    4184:	9105c884 	add	x4, x4, #0x172
     4188:	52800042 	mov	w2, #0x2                   	// #2
-    418c:	f00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    4190:	91065000 	add	x0, x0, #0x194
+    418c:	f00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    4190:	91066000 	add	x0, x0, #0x198
     4194:	94000f81 	bl	7f98 <trace_printf>
 /home/avees/tee/darknetz/ta/network_TA.c:164
     4198:	f9414660 	ldr	x0, [x19, #648]
@@ -7047,8 +7047,8 @@ KeyExpansion():
 /home/avees/tee/darknetz/ta/aes_TA.c:158 (discriminator 3)
     43c4:	54fffea1 	b.ne	4398 <KeyExpansion+0x8>  // b.any
 /home/avees/tee/darknetz/ta/aes_TA.c:197
-    43c8:	f00000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
-    43cc:	9106a442 	add	x2, x2, #0x1a9
+    43c8:	f00000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
+    43cc:	9106b442 	add	x2, x2, #0x1ad
 /home/avees/tee/darknetz/ta/aes_TA.c:203
     43d0:	91040048 	add	x8, x2, #0x100
 /home/avees/tee/darknetz/ta/aes_TA.c:167
@@ -7167,8 +7167,8 @@ Cipher():
     44d0:	910010eb 	add	x11, x7, #0x4
 SubBytes():
 /home/avees/tee/darknetz/ta/aes_TA.c:264
-    44d4:	f00000c8 	adrp	x8, 1f000 <gcd_pairs+0x130>
-    44d8:	9106a50d 	add	x13, x8, #0x1a9
+    44d4:	f00000c8 	adrp	x8, 1f000 <gcd_pairs+0x12c>
+    44d8:	9106b50d 	add	x13, x8, #0x1ad
 Cipher():
 /home/avees/tee/darknetz/ta/aes_TA.c:421
     44dc:	52800029 	mov	w9, #0x1                   	// #1
@@ -7306,7 +7306,7 @@ Cipher():
     4624:	54fff5e1 	b.ne	44e0 <Cipher+0x34>  // b.any
 SubBytes():
 /home/avees/tee/darknetz/ta/aes_TA.c:264
-    4628:	9106a508 	add	x8, x8, #0x1a9
+    4628:	9106b508 	add	x8, x8, #0x1ad
 Cipher():
 /home/avees/tee/darknetz/ta/aes_TA.c:421
     462c:	aa0e03e1 	mov	x1, x14
@@ -7413,8 +7413,8 @@ InvCipher():
     4700:	97ffff54 	bl	4450 <AddRoundKey>
 InvSubBytes():
 /home/avees/tee/darknetz/ta/aes_TA.c:376
-    4704:	f00000c9 	adrp	x9, 1f000 <gcd_pairs+0x130>
-    4708:	9106a52c 	add	x12, x9, #0x1a9
+    4704:	f00000c9 	adrp	x9, 1f000 <gcd_pairs+0x12c>
+    4708:	9106b52c 	add	x12, x9, #0x1ad
     470c:	910010ed 	add	x13, x7, #0x4
     4710:	91042d8c 	add	x12, x12, #0x10b
 InvCipher():
@@ -7608,7 +7608,7 @@ InvShiftRows():
     48fc:	394024e1 	ldrb	w1, [x7, #9]
 InvSubBytes():
 /home/avees/tee/darknetz/ta/aes_TA.c:376
-    4900:	9106a529 	add	x9, x9, #0x1a9
+    4900:	9106b529 	add	x9, x9, #0x1ad
 InvShiftRows():
 /home/avees/tee/darknetz/ta/aes_TA.c:386
     4904:	394034e0 	ldrb	w0, [x7, #13]
@@ -8163,7 +8163,7 @@ forward_batchnorm_layer_TA():
     4eb4:	d00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
     4eb8:	aa1903e1 	mov	x1, x25
     4ebc:	52800022 	mov	w2, #0x1                   	// #1
-    4ec0:	bd4aac00 	ldr	s0, [x0, #2732]
+    4ec0:	bd4ab000 	ldr	s0, [x0, #2736]
     4ec4:	2a1403e0 	mov	w0, w20
     4ec8:	97fff930 	bl	3388 <scal_cpu_TA>
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:18
@@ -8171,7 +8171,7 @@ forward_batchnorm_layer_TA():
     4ed0:	52800024 	mov	w4, #0x1                   	// #1
     4ed4:	aa1903e3 	mov	x3, x25
     4ed8:	2a0403e2 	mov	w2, w4
-    4edc:	bd4a9c00 	ldr	s0, [x0, #2716]
+    4edc:	bd4aa000 	ldr	s0, [x0, #2720]
     4ee0:	aa1703e1 	mov	x1, x23
     4ee4:	2a1403e0 	mov	w0, w20
     4ee8:	97fff932 	bl	33b0 <axpy_cpu_TA>
@@ -8179,7 +8179,7 @@ forward_batchnorm_layer_TA():
     4eec:	d00000c0 	adrp	x0, 1e000 <__text_end+0x4920>
     4ef0:	aa1a03e1 	mov	x1, x26
     4ef4:	52800022 	mov	w2, #0x1                   	// #1
-    4ef8:	bd4aac00 	ldr	s0, [x0, #2732]
+    4ef8:	bd4ab000 	ldr	s0, [x0, #2736]
     4efc:	2a1403e0 	mov	w0, w20
     4f00:	97fff922 	bl	3388 <scal_cpu_TA>
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:20
@@ -8187,7 +8187,7 @@ forward_batchnorm_layer_TA():
     4f08:	52800024 	mov	w4, #0x1                   	// #1
     4f0c:	aa1a03e3 	mov	x3, x26
     4f10:	2a0403e2 	mov	w2, w4
-    4f14:	bd4a9c00 	ldr	s0, [x0, #2716]
+    4f14:	bd4aa000 	ldr	s0, [x0, #2720]
     4f18:	aa1b03e1 	mov	x1, x27
     4f1c:	2a1403e0 	mov	w0, w20
     4f20:	97fff924 	bl	33b0 <axpy_cpu_TA>
@@ -8314,7 +8314,7 @@ mean_delta_cpu_TA():
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:50
     507c:	d2800013 	mov	x19, #0x0                   	// #0
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:58
-    5080:	bd4a5c08 	ldr	s8, [x0, #2652]
+    5080:	bd4a6008 	ldr	s8, [x0, #2656]
     5084:	1e7e1009 	fmov	d9, #-1.000000000000000000e+00
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:50 (discriminator 1)
     5088:	6b1302df 	cmp	w22, w19
@@ -8395,7 +8395,7 @@ variance_delta_cpu_TA():
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:67
     5174:	52800017 	mov	w23, #0x0                   	// #0
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:76
-    5178:	bd4a5c08 	ldr	s8, [x0, #2652]
+    5178:	bd4a6008 	ldr	s8, [x0, #2656]
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:67
     517c:	d2800013 	mov	x19, #0x0                   	// #0
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:76
@@ -8494,7 +8494,7 @@ normalize_delta_cpu_TA():
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:81
     5290:	6d0627e8 	stp	d8, d9, [sp, #96]
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:87
-    5294:	bd4a5c09 	ldr	s9, [x0, #2652]
+    5294:	bd4a6009 	ldr	s9, [x0, #2656]
 /home/avees/tee/darknetz/ta/batchnorm_layer_TA.c:83 (discriminator 1)
     5298:	6b16031f 	cmp	w24, w22
     529c:	540006ab 	b.lt	5370 <normalize_delta_cpu_TA+0x12c>  // b.tstop
@@ -10161,7 +10161,7 @@ forward_cost_layer_TA():
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:81
     65a0:	900000c4 	adrp	x4, 1e000 <__text_end+0x4920>
     65a4:	d2800000 	mov	x0, #0x0                   	// #0
-    65a8:	bd4ac880 	ldr	s0, [x4, #2760]
+    65a8:	bd4acc80 	ldr	s0, [x4, #2764]
     65ac:	14000006 	b	65c4 <forward_cost_layer_TA+0x64>
     65b0:	bc607841 	ldr	s1, [x2, x0, lsl #2]
     65b4:	1e202020 	fcmp	s1, s0
@@ -10226,8 +10226,8 @@ get_cost_type_TA():
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:15
     6654:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:16
-    6658:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    665c:	910ed021 	add	x1, x1, #0x3b4
+    6658:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    665c:	910ee021 	add	x1, x1, #0x3b8
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:15
     6660:	910003fd 	mov	x29, sp
     6664:	f9000bf3 	str	x19, [sp, #16]
@@ -10236,41 +10236,41 @@ get_cost_type_TA():
     666c:	940005a1 	bl	7cf0 <strcmp>
     6670:	340004a0 	cbz	w0, 6704 <get_cost_type_TA+0xb0>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:17
-    6674:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    6674:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     6678:	aa1303e0 	mov	x0, x19
-    667c:	910ee021 	add	x1, x1, #0x3b8
+    667c:	910ef021 	add	x1, x1, #0x3bc
     6680:	9400059c 	bl	7cf0 <strcmp>
     6684:	340003c0 	cbz	w0, 66fc <get_cost_type_TA+0xa8>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:18
-    6688:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    6688:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     668c:	aa1303e0 	mov	x0, x19
-    6690:	910ef021 	add	x1, x1, #0x3bc
+    6690:	910f0021 	add	x1, x1, #0x3c0
     6694:	94000597 	bl	7cf0 <strcmp>
     6698:	340003e0 	cbz	w0, 6714 <get_cost_type_TA+0xc0>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:19
-    669c:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    669c:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     66a0:	aa1303e0 	mov	x0, x19
-    66a4:	910f0c21 	add	x1, x1, #0x3c3
+    66a4:	910f1c21 	add	x1, x1, #0x3c7
     66a8:	94000592 	bl	7cf0 <strcmp>
     66ac:	34000380 	cbz	w0, 671c <get_cost_type_TA+0xc8>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:20
-    66b0:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    66b0:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     66b4:	aa1303e0 	mov	x0, x19
-    66b8:	910f2821 	add	x1, x1, #0x3ca
+    66b8:	910f3821 	add	x1, x1, #0x3ce
     66bc:	9400058d 	bl	7cf0 <strcmp>
     66c0:	34000320 	cbz	w0, 6724 <get_cost_type_TA+0xd0>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:21
-    66c4:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    66c4:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
     66c8:	aa1303e0 	mov	x0, x19
-    66cc:	910f3421 	add	x1, x1, #0x3cd
+    66cc:	910f4421 	add	x1, x1, #0x3d1
     66d0:	94000588 	bl	7cf0 <strcmp>
     66d4:	340002c0 	cbz	w0, 672c <get_cost_type_TA+0xd8>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:22
-    66d8:	b00000c4 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    66d8:	b00000c4 	adrp	x4, 1f000 <gcd_pairs+0x12c>
     66dc:	900000c0 	adrp	x0, 1e000 <__text_end+0x4920>
     66e0:	aa1303e5 	mov	x5, x19
-    66e4:	910f4884 	add	x4, x4, #0x3d2
-    66e8:	912ad400 	add	x0, x0, #0xab5
+    66e4:	910f5884 	add	x4, x4, #0x3d6
+    66e8:	912ae400 	add	x0, x0, #0xab9
     66ec:	52800023 	mov	w3, #0x1                   	// #1
     66f0:	52800042 	mov	w2, #0x2                   	// #2
     66f4:	528002c1 	mov	w1, #0x16                  	// #22
@@ -10304,35 +10304,35 @@ get_cost_string_TA():
     6738:	7100101f 	cmp	w0, #0x4
     673c:	540000e8 	b.hi	6758 <get_cost_string_TA+0x24>  // b.pmore
     6740:	900000c1 	adrp	x1, 1e000 <__text_end+0x4920>
-    6744:	912ac021 	add	x1, x1, #0xab0
+    6744:	912ad021 	add	x1, x1, #0xab4
     6748:	38604820 	ldrb	w0, [x1, w0, uxtw]
     674c:	10000061 	adr	x1, 6758 <get_cost_string_TA+0x24>
     6750:	8b208820 	add	x0, x1, w0, sxtb #2
     6754:	d61f0000 	br	x0
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:39
-    6758:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    675c:	910ee000 	add	x0, x0, #0x3b8
+    6758:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    675c:	910ef000 	add	x0, x0, #0x3bc
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:44
     6760:	d65f03c0 	ret
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:35
-    6764:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    6768:	910ef000 	add	x0, x0, #0x3bc
+    6764:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    6768:	910f0000 	add	x0, x0, #0x3c0
     676c:	17fffffd 	b	6760 <get_cost_string_TA+0x2c>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:37
-    6770:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    6774:	910f0c00 	add	x0, x0, #0x3c3
+    6770:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    6774:	910f1c00 	add	x0, x0, #0x3c7
     6778:	17fffffa 	b	6760 <get_cost_string_TA+0x2c>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:39
-    677c:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    6780:	910f2800 	add	x0, x0, #0x3ca
+    677c:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    6780:	910f3800 	add	x0, x0, #0x3ce
     6784:	17fffff7 	b	6760 <get_cost_string_TA+0x2c>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:41
-    6788:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    678c:	910f3400 	add	x0, x0, #0x3cd
+    6788:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    678c:	910f4400 	add	x0, x0, #0x3d1
     6790:	17fffff4 	b	6760 <get_cost_string_TA+0x2c>
 /home/avees/tee/darknetz/ta/cost_layer_TA.c:31
-    6794:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    6798:	910ed000 	add	x0, x0, #0x3b4
+    6794:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    6798:	910ee000 	add	x0, x0, #0x3b8
     679c:	17fffff1 	b	6760 <get_cost_string_TA+0x2c>
 
 00000000000067a0 <make_cost_layer_TA_new>:
@@ -11132,15 +11132,15 @@ bget_buf_size():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:191
     6fb4:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:208
-    6fb8:	b00000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    6fbc:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
+    6fb8:	b00000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    6fbc:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:191
     6fc0:	910003fd 	mov	x29, sp
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:208
-    6fc4:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    6fc8:	911f0463 	add	x3, x3, #0x7c1
-    6fcc:	9114c421 	add	x1, x1, #0x531
-    6fd0:	91154400 	add	x0, x0, #0x551
+    6fc4:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    6fc8:	911f1463 	add	x3, x3, #0x7c5
+    6fcc:	9114d421 	add	x1, x1, #0x535
+    6fd0:	91155400 	add	x0, x0, #0x555
     6fd4:	52801a02 	mov	w2, #0xd0                  	// #208
     6fd8:	97fffff3 	bl	6fa4 <_assert_trap>
 
@@ -11155,13 +11155,13 @@ bget():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:625
     6fe8:	5400014c 	b.gt	7010 <bget+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:625 (discriminator 1)
-    6fec:	b00000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    6ff0:	911f0463 	add	x3, x3, #0x7c1
-    6ff4:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    6ff8:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    6fec:	b00000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    6ff0:	911f1463 	add	x3, x3, #0x7c5
+    6ff4:	b00000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    6ff8:	b00000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     6ffc:	91003863 	add	x3, x3, #0xe
-    7000:	91156c21 	add	x1, x1, #0x55b
-    7004:	91154800 	add	x0, x0, #0x552
+    7000:	91157c21 	add	x1, x1, #0x55f
+    7004:	91155800 	add	x0, x0, #0x556
     7008:	52804e22 	mov	w2, #0x271                 	// #625
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:690
     700c:	97ffffe6 	bl	6fa4 <_assert_trap>
@@ -11245,13 +11245,13 @@ bget():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:690
     70cc:	eb05003f 	cmp	x1, x5
     70d0:	54000140 	b.eq	70f8 <bget+0x11c>  // b.none
-    70d4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    70d8:	911f0463 	add	x3, x3, #0x7c1
-    70dc:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    70e0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    70d4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    70d8:	911f1463 	add	x3, x3, #0x7c5
+    70dc:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    70e0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     70e4:	91003863 	add	x3, x3, #0xe
-    70e8:	91156c21 	add	x1, x1, #0x55b
-    70ec:	9115d000 	add	x0, x0, #0x574
+    70e8:	91157c21 	add	x1, x1, #0x55f
+    70ec:	9115e000 	add	x0, x0, #0x578
     70f0:	52805642 	mov	w2, #0x2b2                 	// #690
     70f4:	17ffffc6 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:698
@@ -11262,13 +11262,13 @@ bget():
     7100:	f9400828 	ldr	x8, [x1, #16]
     7104:	eb08005f 	cmp	x2, x8
     7108:	54000140 	b.eq	7130 <bget+0x154>  // b.none
-    710c:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7110:	911f0463 	add	x3, x3, #0x7c1
-    7114:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7118:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    710c:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7110:	911f1463 	add	x3, x3, #0x7c5
+    7114:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7118:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     711c:	91003863 	add	x3, x3, #0xe
-    7120:	91156c21 	add	x1, x1, #0x55b
-    7124:	91165000 	add	x0, x0, #0x594
+    7120:	91157c21 	add	x1, x1, #0x55f
+    7124:	91166000 	add	x0, x0, #0x598
     7128:	52805742 	mov	w2, #0x2ba                 	// #698
     712c:	17ffffb8 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:699
@@ -11276,13 +11276,13 @@ bget():
     7134:	f9400d09 	ldr	x9, [x8, #24]
     7138:	eb09005f 	cmp	x2, x9
     713c:	54000140 	b.eq	7164 <bget+0x188>  // b.none
-    7140:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7144:	911f0463 	add	x3, x3, #0x7c1
-    7148:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    714c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7140:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7144:	911f1463 	add	x3, x3, #0x7c5
+    7148:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    714c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7150:	91003863 	add	x3, x3, #0xe
-    7154:	91156c21 	add	x1, x1, #0x55b
-    7158:	9116bc00 	add	x0, x0, #0x5af
+    7154:	91157c21 	add	x1, x1, #0x55f
+    7158:	9116cc00 	add	x0, x0, #0x5b3
     715c:	52805762 	mov	w2, #0x2bb                 	// #699
     7160:	17ffffab 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:701
@@ -11299,13 +11299,13 @@ bget():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:721
     717c:	f9400402 	ldr	x2, [x0, #8]
     7180:	b7f801c2 	tbnz	x2, #63, 71b8 <bget+0x1dc>
-    7184:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7188:	911f0463 	add	x3, x3, #0x7c1
-    718c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7190:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7184:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7188:	911f1463 	add	x3, x3, #0x7c5
+    718c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7190:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7194:	91003863 	add	x3, x3, #0xe
-    7198:	91156c21 	add	x1, x1, #0x55b
-    719c:	91172800 	add	x0, x0, #0x5ca
+    7198:	91157c21 	add	x1, x1, #0x55f
+    719c:	91173800 	add	x0, x0, #0x5ce
     71a0:	52805a22 	mov	w2, #0x2d1                 	// #721
     71a4:	17ffff9a 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:716
@@ -11334,13 +11334,13 @@ bget():
     71e4:	f9400844 	ldr	x4, [x2, #16]
     71e8:	eb03009f 	cmp	x4, x3
     71ec:	54000140 	b.eq	7214 <bget+0x238>  // b.none
-    71f0:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    71f4:	911f0463 	add	x3, x3, #0x7c1
-    71f8:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    71fc:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    71f0:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    71f4:	911f1463 	add	x3, x3, #0x7c5
+    71f8:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    71fc:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7200:	91003863 	add	x3, x3, #0xe
-    7204:	91156c21 	add	x1, x1, #0x55b
-    7208:	91177400 	add	x0, x0, #0x5dd
+    7204:	91157c21 	add	x1, x1, #0x55f
+    7208:	91178400 	add	x0, x0, #0x5e1
     720c:	52805c42 	mov	w2, #0x2e2                 	// #738
     7210:	17ffff7f 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:740
@@ -11348,13 +11348,13 @@ bget():
     7218:	f9400c84 	ldr	x4, [x4, #24]
     721c:	eb03009f 	cmp	x4, x3
     7220:	54000140 	b.eq	7248 <bget+0x26c>  // b.none
-    7224:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7228:	911f0463 	add	x3, x3, #0x7c1
-    722c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7230:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7224:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7228:	911f1463 	add	x3, x3, #0x7c5
+    722c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7230:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7234:	91003863 	add	x3, x3, #0xe
-    7238:	91156c21 	add	x1, x1, #0x55b
-    723c:	91186000 	add	x0, x0, #0x618
+    7238:	91157c21 	add	x1, x1, #0x55f
+    723c:	91187000 	add	x0, x0, #0x61c
     7240:	52805c82 	mov	w2, #0x2e4                 	// #740
     7244:	17ffff72 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:743
@@ -11369,13 +11369,13 @@ bget():
     725c:	8b020021 	add	x1, x1, x2
     7260:	eb0100df 	cmp	x6, x1
     7264:	54000140 	b.eq	728c <bget+0x2b0>  // b.none
-    7268:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    726c:	911f0463 	add	x3, x3, #0x7c1
-    7270:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7274:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7268:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    726c:	911f1463 	add	x3, x3, #0x7c5
+    7270:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7274:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7278:	91003863 	add	x3, x3, #0xe
-    727c:	91156c21 	add	x1, x1, #0x55b
-    7280:	91194c00 	add	x0, x0, #0x653
+    727c:	91157c21 	add	x1, x1, #0x55f
+    7280:	91195c00 	add	x0, x0, #0x657
     7284:	52805d62 	mov	w2, #0x2eb                 	// #747
     7288:	17ffff61 	b	700c <bget+0x30>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:748
@@ -11413,13 +11413,13 @@ bgetz():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:865
     72d4:	eb13005f 	cmp	x2, x19
     72d8:	5400018a 	b.ge	7308 <bgetz+0x64>  // b.tcont
-    72dc:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    72e0:	911f0463 	add	x3, x3, #0x7c1
-    72e4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    72e8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    72dc:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    72e0:	911f1463 	add	x3, x3, #0x7c5
+    72e4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    72e8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     72ec:	91004c63 	add	x3, x3, #0x13
-    72f0:	91156c21 	add	x1, x1, #0x55b
-    72f4:	9119e400 	add	x0, x0, #0x679
+    72f0:	91157c21 	add	x1, x1, #0x55f
+    72f4:	9119f400 	add	x0, x0, #0x67d
     72f8:	52806c22 	mov	w2, #0x361                 	// #865
     72fc:	97ffff2a 	bl	6fa4 <_assert_trap>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:863
@@ -11449,13 +11449,13 @@ brel():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:932
     733c:	b5000140 	cbnz	x0, 7364 <brel+0x38>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:932 (discriminator 1)
-    7340:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7344:	911f0463 	add	x3, x3, #0x7c1
-    7348:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    734c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7340:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7344:	911f1463 	add	x3, x3, #0x7c5
+    7348:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    734c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7350:	91006463 	add	x3, x3, #0x19
-    7354:	91156c21 	add	x1, x1, #0x55b
-    7358:	911a1c00 	add	x0, x0, #0x687
+    7354:	91157c21 	add	x1, x1, #0x55f
+    7358:	911a2c00 	add	x0, x0, #0x68b
     735c:	52807482 	mov	w2, #0x3a4                 	// #932
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:965 (discriminator 1)
     7360:	97ffff11 	bl	6fa4 <_assert_trap>
@@ -11464,13 +11464,13 @@ brel():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:965
     7368:	b7f80145 	tbnz	x5, #63, 7390 <brel+0x64>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:965 (discriminator 1)
-    736c:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7370:	911f0463 	add	x3, x3, #0x7c1
-    7374:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7378:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    736c:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7370:	911f1463 	add	x3, x3, #0x7c5
+    7374:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7378:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     737c:	91006463 	add	x3, x3, #0x19
-    7380:	91156c21 	add	x1, x1, #0x55b
-    7384:	911a4c00 	add	x0, x0, #0x693
+    7380:	91157c21 	add	x1, x1, #0x55f
+    7384:	911a5c00 	add	x0, x0, #0x697
     7388:	528078a2 	mov	w2, #0x3c5                 	// #965
     738c:	17fffff5 	b	7360 <brel+0x34>
     7390:	d1004000 	sub	x0, x0, #0x10
@@ -11480,13 +11480,13 @@ brel():
     739c:	f9400042 	ldr	x2, [x2]
     73a0:	b4000142 	cbz	x2, 73c8 <brel+0x9c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:970 (discriminator 1)
-    73a4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    73a8:	911f0463 	add	x3, x3, #0x7c1
-    73ac:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    73b0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    73a4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    73a8:	911f1463 	add	x3, x3, #0x7c5
+    73ac:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    73b0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     73b4:	91006463 	add	x3, x3, #0x19
-    73b8:	91156c21 	add	x1, x1, #0x55b
-    73bc:	911a8c00 	add	x0, x0, #0x6a3
+    73b8:	91157c21 	add	x1, x1, #0x55f
+    73bc:	911a9c00 	add	x0, x0, #0x6a7
     73c0:	52807942 	mov	w2, #0x3ca                 	// #970
     73c4:	17ffffe7 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:979
@@ -11499,13 +11499,13 @@ brel():
     73dc:	eb01009f 	cmp	x4, x1
     73e0:	54000140 	b.eq	7408 <brel+0xdc>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:994 (discriminator 1)
-    73e4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    73e8:	911f0463 	add	x3, x3, #0x7c1
-    73ec:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    73f0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    73e4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    73e8:	911f1463 	add	x3, x3, #0x7c5
+    73ec:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    73f0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     73f4:	91006463 	add	x3, x3, #0x19
-    73f8:	91156c21 	add	x1, x1, #0x55b
-    73fc:	911b3c00 	add	x0, x0, #0x6cf
+    73f8:	91157c21 	add	x1, x1, #0x55f
+    73fc:	911b4c00 	add	x0, x0, #0x6d3
     7400:	52807c42 	mov	w2, #0x3e2                 	// #994
     7404:	17ffffd7 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:996
@@ -11523,13 +11523,13 @@ brel():
     7428:	eb04007f 	cmp	x3, x4
     742c:	540005c0 	b.eq	74e4 <brel+0x1b8>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1025 (discriminator 1)
-    7430:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7434:	911f0463 	add	x3, x3, #0x7c1
-    7438:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    743c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7430:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7434:	911f1463 	add	x3, x3, #0x7c5
+    7438:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    743c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7440:	91006463 	add	x3, x3, #0x19
-    7444:	91156c21 	add	x1, x1, #0x55b
-    7448:	911c2000 	add	x0, x0, #0x708
+    7444:	91157c21 	add	x1, x1, #0x55f
+    7448:	911c3000 	add	x0, x0, #0x70c
     744c:	52808022 	mov	w2, #0x401                 	// #1025
     7450:	17ffffc4 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1002
@@ -11538,13 +11538,13 @@ brel():
     745c:	eb01009f 	cmp	x4, x1
     7460:	54000140 	b.eq	7488 <brel+0x15c>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1002 (discriminator 1)
-    7464:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7468:	911f0463 	add	x3, x3, #0x7c1
-    746c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7470:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7464:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7468:	911f1463 	add	x3, x3, #0x7c5
+    746c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7470:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7474:	91006463 	add	x3, x3, #0x19
-    7478:	91156c21 	add	x1, x1, #0x55b
-    747c:	91177400 	add	x0, x0, #0x5dd
+    7478:	91157c21 	add	x1, x1, #0x55f
+    747c:	91178400 	add	x0, x0, #0x5e1
     7480:	52807d42 	mov	w2, #0x3ea                 	// #1002
     7484:	17ffffb7 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1003
@@ -11553,13 +11553,13 @@ brel():
     7490:	eb01009f 	cmp	x4, x1
     7494:	54000140 	b.eq	74bc <brel+0x190>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1003 (discriminator 1)
-    7498:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    749c:	911f0463 	add	x3, x3, #0x7c1
-    74a0:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    74a4:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7498:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    749c:	911f1463 	add	x3, x3, #0x7c5
+    74a0:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    74a4:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     74a8:	91006463 	add	x3, x3, #0x19
-    74ac:	91156c21 	add	x1, x1, #0x55b
-    74b0:	91186000 	add	x0, x0, #0x618
+    74ac:	91157c21 	add	x1, x1, #0x55f
+    74b0:	91187000 	add	x0, x0, #0x61c
     74b4:	52807d62 	mov	w2, #0x3eb                 	// #1003
     74b8:	17ffffaa 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1005
@@ -11586,13 +11586,13 @@ brel():
     74ec:	eb1400ff 	cmp	x7, x20
     74f0:	54000140 	b.eq	7518 <brel+0x1ec>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1026 (discriminator 1)
-    74f4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    74f8:	911f0463 	add	x3, x3, #0x7c1
-    74fc:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7500:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    74f4:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    74f8:	911f1463 	add	x3, x3, #0x7c5
+    74fc:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7500:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7504:	91006463 	add	x3, x3, #0x19
-    7508:	91156c21 	add	x1, x1, #0x55b
-    750c:	911d0400 	add	x0, x0, #0x741
+    7508:	91157c21 	add	x1, x1, #0x55f
+    750c:	911d1400 	add	x0, x0, #0x745
     7510:	52808042 	mov	w2, #0x402                 	// #1026
     7514:	17ffff93 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1027
@@ -11601,13 +11601,13 @@ brel():
     7520:	eb07011f 	cmp	x8, x7
     7524:	54000140 	b.eq	754c <brel+0x220>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1027 (discriminator 1)
-    7528:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    752c:	911f0463 	add	x3, x3, #0x7c1
-    7530:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7534:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7528:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    752c:	911f1463 	add	x3, x3, #0x7c5
+    7530:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7534:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7538:	91006463 	add	x3, x3, #0x19
-    753c:	91156c21 	add	x1, x1, #0x55b
-    7540:	911d7800 	add	x0, x0, #0x75e
+    753c:	91157c21 	add	x1, x1, #0x55f
+    7540:	911d8800 	add	x0, x0, #0x762
     7544:	52808062 	mov	w2, #0x403                 	// #1027
     7548:	17ffff86 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1028
@@ -11633,13 +11633,13 @@ brel():
     7570:	f9400680 	ldr	x0, [x20, #8]
     7574:	b7f80140 	tbnz	x0, #63, 759c <brel+0x270>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1046 (discriminator 1)
-    7578:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    757c:	911f0463 	add	x3, x3, #0x7c1
-    7580:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7584:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7578:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    757c:	911f1463 	add	x3, x3, #0x7c5
+    7580:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7584:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7588:	91006463 	add	x3, x3, #0x19
-    758c:	91156c21 	add	x1, x1, #0x55b
-    7590:	911dec00 	add	x0, x0, #0x77b
+    758c:	91157c21 	add	x1, x1, #0x55f
+    7590:	911dfc00 	add	x0, x0, #0x77f
     7594:	528082c2 	mov	w2, #0x416                 	// #1046
     7598:	17ffff72 	b	7360 <brel+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1051
@@ -11683,13 +11683,13 @@ bgetr():
     75fc:	f100027f 	cmp	x19, #0x0
     7600:	5400014c 	b.gt	7628 <bgetr+0x78>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:905 (discriminator 1)
-    7604:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7608:	911f0463 	add	x3, x3, #0x7c1
-    760c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7610:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7604:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7608:	911f1463 	add	x3, x3, #0x7c5
+    760c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7610:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7614:	91007863 	add	x3, x3, #0x1e
-    7618:	91156c21 	add	x1, x1, #0x55b
-    761c:	91154400 	add	x0, x0, #0x551
+    7618:	91157c21 	add	x1, x1, #0x55f
+    761c:	91155400 	add	x0, x0, #0x555
     7620:	52807122 	mov	w2, #0x389                 	// #905
     7624:	97fffe60 	bl	6fa4 <_assert_trap>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:906
@@ -11738,13 +11738,13 @@ bpool():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1128
     7690:	54000145 	b.pl	76b8 <bpool+0x38>  // b.nfrst
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1128 (discriminator 1)
-    7694:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7698:	911f0463 	add	x3, x3, #0x7c1
-    769c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    76a0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7694:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7698:	911f1463 	add	x3, x3, #0x7c5
+    769c:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    76a0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     76a4:	91009063 	add	x3, x3, #0x24
-    76a8:	91156c21 	add	x1, x1, #0x55b
-    76ac:	911e3000 	add	x0, x0, #0x78c
+    76a8:	91157c21 	add	x1, x1, #0x55f
+    76ac:	911e4000 	add	x0, x0, #0x790
     76b0:	52808d02 	mov	w2, #0x468                 	// #1128
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1138 (discriminator 1)
     76b4:	97fffe3c 	bl	6fa4 <_assert_trap>
@@ -11757,13 +11757,13 @@ bpool():
     76c4:	eb02007f 	cmp	x3, x2
     76c8:	54000140 	b.eq	76f0 <bpool+0x70>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1138 (discriminator 1)
-    76cc:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    76d0:	911f0463 	add	x3, x3, #0x7c1
-    76d4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    76d8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    76cc:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    76d0:	911f1463 	add	x3, x3, #0x7c5
+    76d4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    76d8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     76dc:	91009063 	add	x3, x3, #0x24
-    76e0:	91156c21 	add	x1, x1, #0x55b
-    76e4:	91177400 	add	x0, x0, #0x5dd
+    76e0:	91157c21 	add	x1, x1, #0x55f
+    76e4:	91178400 	add	x0, x0, #0x5e1
     76e8:	52808e42 	mov	w2, #0x472                 	// #1138
     76ec:	17fffff2 	b	76b4 <bpool+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1139
@@ -11771,13 +11771,13 @@ bpool():
     76f4:	f9400c42 	ldr	x2, [x2, #24]
     76f8:	eb02007f 	cmp	x3, x2
     76fc:	54000140 	b.eq	7724 <bpool+0xa4>  // b.none
-    7700:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7704:	911f0463 	add	x3, x3, #0x7c1
-    7708:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    770c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7700:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7704:	911f1463 	add	x3, x3, #0x7c5
+    7708:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    770c:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7710:	91009063 	add	x3, x3, #0x24
-    7714:	91156c21 	add	x1, x1, #0x55b
-    7718:	91186000 	add	x0, x0, #0x618
+    7714:	91157c21 	add	x1, x1, #0x55f
+    7718:	91187000 	add	x0, x0, #0x61c
     771c:	52808e62 	mov	w2, #0x473                 	// #1139
     7720:	17ffffe5 	b	76b4 <bpool+0x34>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget.c:1141
@@ -12110,13 +12110,13 @@ realloc_unlocked():
 raw_malloc_add_pool():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:936
     7a44:	b5000140 	cbnz	x0, 7a6c <raw_malloc_add_pool+0x9c>
-    7a48:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7a4c:	911f0463 	add	x3, x3, #0x7c1
-    7a50:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7a54:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7a48:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7a4c:	911f1463 	add	x3, x3, #0x7c5
+    7a50:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7a54:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7a58:	9100a863 	add	x3, x3, #0x2a
-    7a5c:	9114c421 	add	x1, x1, #0x531
-    7a60:	91043000 	add	x0, x0, #0x10c
+    7a5c:	9114d421 	add	x1, x1, #0x535
+    7a60:	91044000 	add	x0, x0, #0x110
     7a64:	52807502 	mov	w2, #0x3a8                 	// #936
     7a68:	97fffd4f 	bl	6fa4 <_assert_trap>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:938
@@ -12262,13 +12262,13 @@ bpool_foreach_pool():
     7bac:	f9400800 	ldr	x0, [x0, #16]
     7bb0:	eb04001f 	cmp	x0, x4
     7bb4:	54000140 	b.eq	7bdc <raw_malloc_buffer_is_within_alloced+0xc4>  // b.none
-    7bb8:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7bbc:	911f0463 	add	x3, x3, #0x7c1
-    7bc0:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7bc4:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7bb8:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7bbc:	911f1463 	add	x3, x3, #0x7c5
+    7bc0:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7bc4:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7bc8:	9100f863 	add	x3, x3, #0x3e
-    7bcc:	9114c421 	add	x1, x1, #0x531
-    7bd0:	91165000 	add	x0, x0, #0x594
+    7bcc:	9114d421 	add	x1, x1, #0x535
+    7bd0:	91166000 	add	x0, x0, #0x598
     7bd4:	52802fe2 	mov	w2, #0x17f                 	// #383
     7bd8:	97fffcf3 	bl	6fa4 <_assert_trap>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/bget_malloc.c:384
@@ -12276,13 +12276,13 @@ bpool_foreach_pool():
     7be0:	f9400c00 	ldr	x0, [x0, #24]
     7be4:	eb04001f 	cmp	x0, x4
     7be8:	54000140 	b.eq	7c10 <raw_malloc_buffer_is_within_alloced+0xf8>  // b.none
-    7bec:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    7bf0:	911f0463 	add	x3, x3, #0x7c1
-    7bf4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    7bf8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7bec:	900000c3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    7bf0:	911f1463 	add	x3, x3, #0x7c5
+    7bf4:	900000c1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    7bf8:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     7bfc:	9100f863 	add	x3, x3, #0x3e
-    7c00:	9114c421 	add	x1, x1, #0x531
-    7c04:	9116bc00 	add	x0, x0, #0x5af
+    7c00:	9114d421 	add	x1, x1, #0x535
+    7c04:	9116cc00 	add	x0, x0, #0x5b3
     7c08:	52803002 	mov	w2, #0x180                 	// #384
     7c0c:	97fffce6 	bl	6fa4 <_assert_trap>
     7c10:	aa0303e9 	mov	x9, x3
@@ -12353,12 +12353,12 @@ __stack_chk_fail():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/stack_check.c:24
     7ca4:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/stack_check.c:25
-    7ca8:	900000c4 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    7ca8:	900000c4 	adrp	x4, 1f000 <gcd_pairs+0x12c>
     7cac:	52800023 	mov	w3, #0x1                   	// #1
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/stack_check.c:24
     7cb0:	910003fd 	mov	x29, sp
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/stack_check.c:25
-    7cb4:	91204884 	add	x4, x4, #0x812
+    7cb4:	91205884 	add	x4, x4, #0x816
     7cb8:	52800022 	mov	w2, #0x1                   	// #1
     7cbc:	52800001 	mov	w1, #0x0                   	// #0
     7cc0:	d2800000 	mov	x0, #0x0                   	// #0
@@ -12476,18 +12476,18 @@ trace_level_to_string():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:51
     7ddc:	7100127f 	cmp	w19, #0x4
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:54
-    7de0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    7de0:	900000c0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:51
     7de4:	1a9f9261 	csel	w1, w19, wzr, ls  // ls = plast
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:54
-    7de8:	91211000 	add	x0, x0, #0x844
+    7de8:	91212000 	add	x0, x0, #0x848
     7dec:	3861c803 	ldrb	w3, [x0, w1, sxtw]
 trace_vprintf():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:122
     7df0:	910223f4 	add	x20, sp, #0x88
-    7df4:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    7df4:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     7df8:	aa1403e0 	mov	x0, x20
-    7dfc:	9120a842 	add	x2, x2, #0x82a
+    7dfc:	9120b842 	add	x2, x2, #0x82e
     7e00:	d2802001 	mov	x1, #0x100                 	// #256
     7e04:	940000e4 	bl	8194 <snprintk>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:124
@@ -12499,9 +12499,9 @@ trace_vprintf():
     7e14:	93407c1a 	sxtw	x26, w0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:129
     7e18:	cb20c381 	sub	x1, x28, w0, sxtw
-    7e1c:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    7e1c:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     7e20:	8b20c280 	add	x0, x20, w0, sxtw
-    7e24:	9120b842 	add	x2, x2, #0x82e
+    7e24:	9120c842 	add	x2, x2, #0x832
     7e28:	940000db 	bl	8194 <snprintk>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:131
     7e2c:	37f80720 	tbnz	w0, #31, 7f10 <trace_vprintf+0x194>
@@ -12526,9 +12526,9 @@ print_thread_id():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:68
     7e54:	37f80700 	tbnz	w0, #31, 7f34 <trace_vprintf+0x1b8>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:69
-    7e58:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    7e58:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     7e5c:	aa1c03e1 	mov	x1, x28
-    7e60:	9120c842 	add	x2, x2, #0x832
+    7e60:	9120d842 	add	x2, x2, #0x836
     7e64:	aa1b03e0 	mov	x0, x27
     7e68:	52800043 	mov	w3, #0x2                   	// #2
     7e6c:	940000ca 	bl	8194 <snprintk>
@@ -12540,11 +12540,11 @@ trace_vprintf():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:148
     7e78:	b4000176 	cbz	x22, 7ea4 <trace_vprintf+0x128>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/trace.c:149
-    7e7c:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    7e7c:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     7e80:	d2802001 	mov	x1, #0x100                 	// #256
     7e84:	2a1903e4 	mov	w4, w25
     7e88:	aa1603e3 	mov	x3, x22
-    7e8c:	9120f442 	add	x2, x2, #0x83d
+    7e8c:	91210442 	add	x2, x2, #0x841
     7e90:	cb130021 	sub	x1, x1, x19
     7e94:	8b130280 	add	x0, x20, x19
     7e98:	940000bf 	bl	8194 <snprintk>
@@ -12606,9 +12606,9 @@ print_thread_id():
     7f38:	aa1b03e0 	mov	x0, x27
     7f3c:	f00000a4 	adrp	x4, 1e000 <__text_end+0x4920>
     7f40:	52800043 	mov	w3, #0x2                   	// #2
-    7f44:	913ca484 	add	x4, x4, #0xf29
-    7f48:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x130>
-    7f4c:	9120e042 	add	x2, x2, #0x838
+    7f44:	913cb484 	add	x4, x4, #0xf2d
+    7f48:	900000c2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
+    7f4c:	9120f042 	add	x2, x2, #0x83c
     7f50:	94000091 	bl	8194 <snprintk>
     7f54:	17ffffc7 	b	7e70 <trace_vprintf+0xf4>
 trace_vprintf():
@@ -12901,7 +12901,7 @@ kprintf():
     82bc:	d00000a0 	adrp	x0, 1e000 <__text_end+0x4920>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:275
     82c0:	d2800017 	mov	x23, #0x0                   	// #0
-    82c4:	912b3000 	add	x0, x0, #0xacc
+    82c4:	912b4000 	add	x0, x0, #0xad0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:273
     82c8:	52800019 	mov	w25, #0x0                   	// #0
     82cc:	f9004be0 	str	x0, [sp, #144]
@@ -12919,7 +12919,7 @@ kprintf():
     82ec:	9100077b 	add	x27, x27, #0x1
     82f0:	2a1403e4 	mov	w4, w20
     82f4:	aa1303e3 	mov	x3, x19
-    82f8:	912ba0c6 	add	x6, x6, #0xae8
+    82f8:	912bb0c6 	add	x6, x6, #0xaec
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:330
     82fc:	2a0503ee 	mov	w14, w5
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:294
@@ -12970,7 +12970,7 @@ kprintf():
     8384:	d61f0000 	br	x0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:480
     8388:	d00000b7 	adrp	x23, 1e000 <__text_end+0x4920>
-    838c:	912d5af7 	add	x23, x23, #0xb56
+    838c:	912d6af7 	add	x23, x23, #0xb5a
     8390:	910046f7 	add	x23, x23, #0x11
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:481
     8394:	36384515 	tbz	w21, #7, 8c34 <kprintf.constprop.0+0x9d4>
@@ -13394,8 +13394,8 @@ kprintf():
     88b0:	f9400060 	ldr	x0, [x3]
 uuid2str():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:229
-    88b4:	f00000a2 	adrp	x2, 1f000 <gcd_pairs+0x130>
-    88b8:	91214042 	add	x2, x2, #0x850
+    88b4:	f00000a2 	adrp	x2, 1f000 <gcd_pairs+0x12c>
+    88b8:	91215042 	add	x2, x2, #0x854
     88bc:	f9004fec 	str	x12, [sp, #152]
     88c0:	b900a7ea 	str	w10, [sp, #164]
     88c4:	39403c01 	ldrb	w1, [x0, #15]
@@ -13519,7 +13519,7 @@ kprintf():
     8a1c:	927df273 	and	x19, x19, #0xfffffffffffffff8
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:443
     8a20:	d00000b7 	adrp	x23, 1e000 <__text_end+0x4920>
-    8a24:	912d5af7 	add	x23, x23, #0xb56
+    8a24:	912d6af7 	add	x23, x23, #0xb5a
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:441
     8a28:	f9400062 	ldr	x2, [x3]
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:444
@@ -13552,8 +13552,8 @@ kprintf():
     8a80:	f9400063 	ldr	x3, [x3]
     8a84:	b5000063 	cbnz	x3, 8a90 <kprintf.constprop.0+0x830>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:450
-    8a88:	f00000a3 	adrp	x3, 1f000 <gcd_pairs+0x130>
-    8a8c:	91212463 	add	x3, x3, #0x849
+    8a88:	f00000a3 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+    8a8c:	91213463 	add	x3, x3, #0x84d
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:451
     8a90:	310004bf 	cmn	w5, #0x1
     8a94:	54000360 	b.eq	8b00 <kprintf.constprop.0+0x8a0>  // b.none
@@ -13678,7 +13678,7 @@ kprintf():
     8c24:	17fffff6 	b	8bfc <kprintf.constprop.0+0x99c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:477
     8c28:	d00000b7 	adrp	x23, 1e000 <__text_end+0x4920>
-    8c2c:	912d5af7 	add	x23, x23, #0xb56
+    8c2c:	912d6af7 	add	x23, x23, #0xb5a
     8c30:	17fffdd9 	b	8394 <kprintf.constprop.0+0x134>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/snprintk.c:481
     8c34:	3747bb35 	tbnz	w21, #8, 8398 <kprintf.constprop.0+0x138>
@@ -13916,9 +13916,9 @@ _assert_log():
     8ef0:	910043fd 	add	x29, sp, #0x10
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/assert.c:18
     8ef4:	d2800000 	mov	x0, #0x0                   	// #0
-    8ef8:	f00000a4 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    8ef8:	f00000a4 	adrp	x4, 1f000 <gcd_pairs+0x12c>
     8efc:	f90003e3 	str	x3, [sp]
-    8f00:	91220484 	add	x4, x4, #0x881
+    8f00:	91221484 	add	x4, x4, #0x885
     8f04:	52800023 	mov	w3, #0x1                   	// #1
     8f08:	97fffc24 	bl	7f98 <trace_printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/assert.c:20
@@ -14060,7 +14060,7 @@ puts():
     907c:	97ffffac 	bl	8f2c <trace_ext_puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/trace_ext.c:65
     9080:	b00000a0 	adrp	x0, 1e000 <__text_end+0x4920>
-    9084:	913ca000 	add	x0, x0, #0xf28
+    9084:	913cb000 	add	x0, x0, #0xf2c
     9088:	97ffffa9 	bl	8f2c <trace_ext_puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/trace_ext.c:68
     908c:	52800020 	mov	w0, #0x1                   	// #1
@@ -15576,7 +15576,7 @@ TEE_AllocateOperation():
     a2e4:	7100241f 	cmp	w0, #0x9
     a2e8:	54000a88 	b.hi	a438 <TEE_AllocateOperation+0xbc0>  // b.pmore
     a2ec:	900000a1 	adrp	x1, 1e000 <__text_end+0x4920>
-    a2f0:	912de021 	add	x1, x1, #0xb78
+    a2f0:	912df021 	add	x1, x1, #0xb7c
     a2f4:	38604820 	ldrb	w0, [x1, w0, uxtw]
     a2f8:	10000061 	adr	x1, a304 <TEE_AllocateOperation+0xa8c>
     a2fc:	8b208820 	add	x0, x1, w0, sxtb #2
@@ -16751,11 +16751,11 @@ TEE_DigestExtract():
 _assert_trap():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:19
     af94:	900000a3 	adrp	x3, 1e000 <__text_end+0x4920>
-    af98:	b00000a1 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    af9c:	912e0863 	add	x3, x3, #0xb82
-    afa0:	9122a021 	add	x1, x1, #0x8a8
-    afa4:	b00000a0 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    afa8:	91232400 	add	x0, x0, #0x8c9
+    af98:	b00000a1 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    af9c:	912e1863 	add	x3, x3, #0xb86
+    afa0:	9122b021 	add	x1, x1, #0x8ac
+    afa4:	b00000a0 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    afa8:	91233400 	add	x0, x0, #0x8cd
     afac:	52807ec2 	mov	w2, #0x3f6                 	// #1014
     afb0:	97fff7c9 	bl	8ed4 <_assert_log>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:20
@@ -20829,10 +20829,10 @@ _init_iterate_phdr_cb():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/user_ta_entry.c:65
     dca4:	b5000140 	cbnz	x0, dccc <_init_iterate_phdr_cb+0x48>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/user_ta_entry.c:66
-    dca8:	d0000084 	adrp	x4, 1f000 <gcd_pairs+0x130>
-    dcac:	d0000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    dcb0:	91238484 	add	x4, x4, #0x8e1
-    dcb4:	9124c000 	add	x0, x0, #0x930
+    dca8:	d0000084 	adrp	x4, 1f000 <gcd_pairs+0x12c>
+    dcac:	d0000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    dcb0:	91239484 	add	x4, x4, #0x8e5
+    dcb4:	9124d000 	add	x0, x0, #0x934
     dcb8:	52800023 	mov	w3, #0x1                   	// #1
     dcbc:	52800022 	mov	w2, #0x1                   	// #1
     dcc0:	52800841 	mov	w1, #0x42                  	// #66
@@ -21139,8 +21139,8 @@ init_instance():
 get_memtag_implementation():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/user_ta_entry.c:163
     dfec:	910113e2 	add	x2, sp, #0x44
-    dff0:	d0000081 	adrp	x1, 1f000 <gcd_pairs+0x130>
-    dff4:	9123e821 	add	x1, x1, #0x8fa
+    dff0:	d0000081 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+    dff4:	9123f821 	add	x1, x1, #0x8fe
     dff8:	12800040 	mov	w0, #0xfffffffd            	// #-3
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/user_ta_entry.c:161
     dffc:	b90047ff 	str	wzr, [sp, #68]
@@ -21719,8 +21719,8 @@ abort():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/abort.c:12
     e44c:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/abort.c:13
-    e450:	b0000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    e454:	91251800 	add	x0, x0, #0x946
+    e450:	b0000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    e454:	91252800 	add	x0, x0, #0x94a
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/abort.c:12
     e458:	910003fd 	mov	x29, sp
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/abort.c:13
@@ -23131,9 +23131,9 @@ TEE_Malloc():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api.c:739
     f2f4:	52800023 	mov	w3, #0x1                   	// #1
     f2f8:	2a1303e5 	mov	w5, w19
-    f2fc:	90000084 	adrp	x4, 1f000 <gcd_pairs+0x130>
+    f2fc:	90000084 	adrp	x4, 1f000 <gcd_pairs+0x12c>
     f300:	52800022 	mov	w2, #0x1                   	// #1
-    f304:	91253484 	add	x4, x4, #0x94d
+    f304:	91254484 	add	x4, x4, #0x951
     f308:	52805c61 	mov	w1, #0x2e3                 	// #739
     f30c:	f0000060 	adrp	x0, 1e000 <__text_end+0x4920>
     f310:	9126c000 	add	x0, x0, #0x9b0
@@ -23378,8 +23378,8 @@ api_panic():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:19
     f53c:	910003fd 	mov	x29, sp
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:20
-    f540:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    f544:	91257800 	add	x0, x0, #0x95e
+    f540:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    f544:	91258800 	add	x0, x0, #0x962
     f548:	97ffe685 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:21
     f54c:	528c24e0 	mov	w0, #0x6127                	// #24871
@@ -23399,8 +23399,8 @@ mpi_panic():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:29
     f56c:	910003fd 	mov	x29, sp
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:30
-    f570:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    f574:	9125f800 	add	x0, x0, #0x97e
+    f570:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    f574:	91260800 	add	x0, x0, #0x982
     f578:	97ffe679 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:31
     f57c:	528c24e0 	mov	w0, #0x6127                	// #24871
@@ -23439,9 +23439,9 @@ get_mpi():
     f5d0:	2a0003e2 	mov	w2, w0
     f5d4:	340000e0 	cbz	w0, f5f0 <get_mpi+0x64>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:112 (discriminator 1)
-    f5d8:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
+    f5d8:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
     f5dc:	52800e01 	mov	w1, #0x70                  	// #112
-    f5e0:	91289c00 	add	x0, x0, #0xa27
+    f5e0:	9128ac00 	add	x0, x0, #0xa2b
     f5e4:	97ffffde 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:110
     f5e8:	d1000694 	sub	x20, x20, #0x1
@@ -23576,8 +23576,8 @@ bigint_binary():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:423 (discriminator 1)
     f72c:	528034e1 	mov	w1, #0x1a7                 	// #423
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:425 (discriminator 1)
-    f730:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    f734:	91289c00 	add	x0, x0, #0xa27
+    f730:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    f734:	9128ac00 	add	x0, x0, #0xa2b
     f738:	91002000 	add	x0, x0, #0x8
     f73c:	97ffff88 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:412
@@ -23735,8 +23735,8 @@ mpi_egcd():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:755 (discriminator 1)
     f8d4:	52805e61 	mov	w1, #0x2f3                 	// #755
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:756 (discriminator 1)
-    f8d8:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    f8dc:	91289c00 	add	x0, x0, #0xa27
+    f8d8:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    f8dc:	9128ac00 	add	x0, x0, #0xa2b
     f8e0:	91005800 	add	x0, x0, #0x16
     f8e4:	97ffff1e 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:756 (discriminator 2)
@@ -24153,11 +24153,11 @@ _TEE_MathAPI_Init():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:48
     fdb8:	b5000100 	cbnz	x0, fdd8 <_TEE_MathAPI_Init+0x48>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:49
-    fdbc:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    fdc0:	91289c00 	add	x0, x0, #0xa27
-    fdc4:	90000082 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    fdbc:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    fdc0:	9128ac00 	add	x0, x0, #0xa2b
+    fdc4:	90000082 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     fdc8:	91007c00 	add	x0, x0, #0x1f
-    fdcc:	91268c42 	add	x2, x2, #0x9a3
+    fdcc:	91269c42 	add	x2, x2, #0x9a7
     fdd0:	52800621 	mov	w1, #0x31                  	// #49
     fdd4:	97fffdd6 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:50
@@ -24185,11 +24185,11 @@ TEE_BigIntInit():
     fe08:	f108027f 	cmp	x19, #0x200
     fe0c:	54000109 	b.ls	fe2c <TEE_BigIntInit+0x4c>  // b.plast
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:130
-    fe10:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    fe14:	91289c00 	add	x0, x0, #0xa27
-    fe18:	90000082 	adrp	x2, 1f000 <gcd_pairs+0x130>
+    fe10:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    fe14:	9128ac00 	add	x0, x0, #0xa2b
+    fe18:	90000082 	adrp	x2, 1f000 <gcd_pairs+0x12c>
     fe1c:	9100c400 	add	x0, x0, #0x31
-    fe20:	91271042 	add	x2, x2, #0x9c4
+    fe20:	91272042 	add	x2, x2, #0x9c8
     fe24:	52801041 	mov	w1, #0x82                  	// #130
     fe28:	97fffdc1 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:131
@@ -24325,8 +24325,8 @@ TEE_BigIntConvertToOctetString():
     ff80:	2a0003e2 	mov	w2, w0
     ff84:	340000e0 	cbz	w0, ffa0 <TEE_BigIntConvertToOctetString+0x88>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:183 (discriminator 1)
-    ff88:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x130>
-    ff8c:	91289c00 	add	x0, x0, #0xa27
+    ff88:	90000080 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+    ff8c:	9128ac00 	add	x0, x0, #0xa2b
     ff90:	91010000 	add	x0, x0, #0x40
     ff94:	528016e1 	mov	w1, #0xb7                  	// #183
     ff98:	97fffd71 	bl	f55c <mpi_panic>
@@ -24414,8 +24414,8 @@ TEE_BigIntConvertFromS32():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:212 (discriminator 1)
    10090:	52801a81 	mov	w1, #0xd4                  	// #212
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:214 (discriminator 1)
-   10094:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10098:	91289c00 	add	x0, x0, #0xa27
+   10094:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10098:	9128ac00 	add	x0, x0, #0xa2b
    1009c:	91017c00 	add	x0, x0, #0x5f
    100a0:	97fffd2f 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:214 (discriminator 2)
@@ -24628,11 +24628,11 @@ bigint_binary_mod():
    10308:	97ffffce 	bl	10240 <TEE_BigIntCmpS32>
    1030c:	36f80100 	tbz	w0, #31, 1032c <bigint_binary_mod+0x70>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:447
-   10310:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10314:	91289c00 	add	x0, x0, #0xa27
-   10318:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   10310:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10314:	9128ac00 	add	x0, x0, #0xa2b
+   10318:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    1031c:	9101e000 	add	x0, x0, #0x78
-   10320:	91275442 	add	x2, x2, #0x9d5
+   10320:	91276442 	add	x2, x2, #0x9d9
    10324:	528037e1 	mov	w1, #0x1bf                 	// #447
    10328:	97fffc81 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:449
@@ -24687,8 +24687,8 @@ bigint_binary_mod():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:466 (discriminator 1)
    103b0:	52803a41 	mov	w1, #0x1d2                 	// #466
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:467 (discriminator 1)
-   103b4:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   103b8:	91289c00 	add	x0, x0, #0xa27
+   103b4:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   103b8:	9128ac00 	add	x0, x0, #0xa2b
    103bc:	9101e000 	add	x0, x0, #0x78
    103c0:	97fffc67 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:453
@@ -24796,8 +24796,8 @@ TEE_BigIntShiftRight():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:284 (discriminator 1)
    104ec:	52802381 	mov	w1, #0x11c                 	// #284
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:291 (discriminator 1)
-   104f0:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   104f4:	91289c00 	add	x0, x0, #0xa27
+   104f0:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   104f4:	9128ac00 	add	x0, x0, #0xa2b
    104f8:	91022800 	add	x0, x0, #0x8a
    104fc:	97fffc18 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:288
@@ -25157,8 +25157,8 @@ TEE_BigIntNeg():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:502 (discriminator 1)
    108d4:	52803ec1 	mov	w1, #0x1f6                 	// #502
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:509 (discriminator 1)
-   108d8:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   108dc:	91289c00 	add	x0, x0, #0xa27
+   108d8:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   108dc:	9128ac00 	add	x0, x0, #0xa2b
    108e0:	91027c00 	add	x0, x0, #0x9f
    108e4:	97fffb1e 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:504 (discriminator 2)
@@ -25372,8 +25372,8 @@ TEE_BigIntDiv():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:570 (discriminator 1)
    10b38:	52804741 	mov	w1, #0x23a                 	// #570
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:573 (discriminator 1)
-   10b3c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10b40:	91289c00 	add	x0, x0, #0xa27
+   10b3c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10b40:	9128ac00 	add	x0, x0, #0xa2b
    10b44:	9102b400 	add	x0, x0, #0xad
    10b48:	97fffa85 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:555
@@ -25466,11 +25466,11 @@ TEE_BigIntMod():
    10c44:	97fffd7f 	bl	10240 <TEE_BigIntCmpS32>
    10c48:	36f80100 	tbz	w0, #31, 10c68 <TEE_BigIntMod+0x48>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:587
-   10c4c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10c50:	91289c00 	add	x0, x0, #0xa27
-   10c54:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   10c4c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10c50:	9128ac00 	add	x0, x0, #0xa2b
+   10c54:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    10c58:	9102ec00 	add	x0, x0, #0xbb
-   10c5c:	91275442 	add	x2, x2, #0x9d5
+   10c5c:	91276442 	add	x2, x2, #0x9d9
    10c60:	52804961 	mov	w1, #0x24b                 	// #587
    10c64:	97fffa32 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:589
@@ -25540,11 +25540,11 @@ TEE_BigIntInvMod():
    10cf8:	97fffd52 	bl	10240 <TEE_BigIntCmpS32>
    10cfc:	36f80100 	tbz	w0, #31, 10d1c <TEE_BigIntInvMod+0x60>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:625
-   10d00:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10d04:	91289c00 	add	x0, x0, #0xa27
-   10d08:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   10d00:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10d04:	9128ac00 	add	x0, x0, #0xa2b
+   10d08:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    10d0c:	91032400 	add	x0, x0, #0xc9
-   10d10:	9127a842 	add	x2, x2, #0x9ea
+   10d10:	9127b842 	add	x2, x2, #0x9ee
    10d14:	52804e21 	mov	w1, #0x271                 	// #625
    10d18:	97fffa05 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:624 (discriminator 1)
@@ -25585,8 +25585,8 @@ TEE_BigIntInvMod():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:635 (discriminator 1)
    10d80:	52804f61 	mov	w1, #0x27b                 	// #635
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:637 (discriminator 1)
-   10d84:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10d88:	91289c00 	add	x0, x0, #0xa27
+   10d84:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10d88:	9128ac00 	add	x0, x0, #0xa2b
    10d8c:	91032400 	add	x0, x0, #0xc9
    10d90:	97fff9f3 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:631
@@ -25678,8 +25678,8 @@ TEE_BigIntRelativePrime():
    10e84:	2a0003e2 	mov	w2, w0
    10e88:	34000100 	cbz	w0, 10ea8 <TEE_BigIntRelativePrime+0x9c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:661 (discriminator 1)
-   10e8c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10e90:	91289c00 	add	x0, x0, #0xa27
+   10e8c:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10e90:	9128ac00 	add	x0, x0, #0xa2b
    10e94:	91036800 	add	x0, x0, #0xda
    10e98:	528052a1 	mov	w1, #0x295                 	// #661
    10e9c:	97fff9b0 	bl	f55c <mpi_panic>
@@ -25797,11 +25797,11 @@ TEE_BigIntExpMod():
    10fd8:	7100001f 	cmp	w0, #0x0
    10fdc:	540001cc 	b.gt	11014 <TEE_BigIntExpMod+0x100>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:710
-   10fe0:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   10fe4:	91289c00 	add	x0, x0, #0xa27
-   10fe8:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   10fe0:	f0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   10fe4:	9128ac00 	add	x0, x0, #0xa2b
+   10fe8:	f0000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    10fec:	9103c800 	add	x0, x0, #0xf2
-   10ff0:	91285442 	add	x2, x2, #0xa15
+   10ff0:	91286442 	add	x2, x2, #0xa19
    10ff4:	528058c1 	mov	w1, #0x2c6                 	// #710
    10ff8:	97fff94d 	bl	f52c <api_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:698
@@ -25830,8 +25830,8 @@ TEE_BigIntExpMod():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:716 (discriminator 1)
    11044:	52805981 	mov	w1, #0x2cc                 	// #716
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:717 (discriminator 1)
-   11048:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   1104c:	91289c00 	add	x0, x0, #0xa27
+   11048:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   1104c:	9128ac00 	add	x0, x0, #0xa2b
    11050:	9103c800 	add	x0, x0, #0xf2
    11054:	97fff942 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:717 (discriminator 2)
@@ -25942,8 +25942,8 @@ TEE_BigIntComputeExtendedGcd():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:843 (discriminator 1)
    11188:	52806961 	mov	w1, #0x34b                 	// #843
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:859 (discriminator 1)
-   1118c:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   11190:	91289c00 	add	x0, x0, #0xa27
+   1118c:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   11190:	9128ac00 	add	x0, x0, #0xa2b
    11194:	91040c00 	add	x0, x0, #0x103
    11198:	97fff8f1 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:838
@@ -26259,8 +26259,8 @@ TEE_BigIntConvertFromFMM():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:984 (discriminator 1)
    114a4:	52807b01 	mov	w1, #0x3d8                 	// #984
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:986 (discriminator 1)
-   114a8:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   114ac:	91289c00 	add	x0, x0, #0xa27
+   114a8:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   114ac:	9128ac00 	add	x0, x0, #0xa2b
    114b0:	91048000 	add	x0, x0, #0x120
    114b4:	97fff82a 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:986 (discriminator 2)
@@ -26359,8 +26359,8 @@ TEE_BigIntComputeFMM():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:1007 (discriminator 1)
    115b0:	52807de1 	mov	w1, #0x3ef                 	// #1007
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:1008 (discriminator 1)
-   115b4:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   115b8:	91289c00 	add	x0, x0, #0xa27
+   115b4:	d0000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   115b8:	9128ac00 	add	x0, x0, #0xa2b
    115bc:	9104e400 	add	x0, x0, #0x139
    115c0:	97fff7e7 	bl	f55c <mpi_panic>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_arith_mpi.c:1008 (discriminator 2)
@@ -28989,7 +28989,7 @@ propget_get_ext_prop():
    1323c:	54000648 	b.hi	13304 <propget_get_ext_prop+0x104>  // b.pmore
    13240:	f0000040 	adrp	x0, 1e000 <__text_end+0x4920>
    13244:	b9400276 	ldr	w22, [x19]
-   13248:	912e5000 	add	x0, x0, #0xb94
+   13248:	912e6000 	add	x0, x0, #0xb98
    1324c:	38624800 	ldrb	w0, [x0, w2, uxtw]
    13250:	10000061 	adr	x1, 1325c <propget_get_ext_prop+0x5c>
    13254:	8b208820 	add	x0, x1, w0, sxtb #2
@@ -29314,18 +29314,18 @@ TEE_GetPropertyAsString():
    13614:	7100143f 	cmp	w1, #0x5
    13618:	54000868 	b.hi	13724 <TEE_GetPropertyAsString+0x22c>  // b.pmore
    1361c:	f0000040 	adrp	x0, 1e000 <__text_end+0x4920>
-   13620:	912e7000 	add	x0, x0, #0xb9c
+   13620:	912e8000 	add	x0, x0, #0xba0
    13624:	38614800 	ldrb	w0, [x0, w1, uxtw]
    13628:	10000061 	adr	x1, 13634 <TEE_GetPropertyAsString+0x13c>
    1362c:	8b208820 	add	x0, x1, w0, sxtb #2
    13630:	d61f0000 	br	x0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:244
    13634:	394002a2 	ldrb	w2, [x21]
-   13638:	90000060 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   1363c:	90000061 	adrp	x1, 1f000 <gcd_pairs+0x130>
-   13640:	912de800 	add	x0, x0, #0xb7a
+   13638:	90000060 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   1363c:	90000061 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+   13640:	912df800 	add	x0, x0, #0xb7e
    13644:	7100005f 	cmp	w2, #0x0
-   13648:	912dd421 	add	x1, x1, #0xb75
+   13648:	912de421 	add	x1, x1, #0xb79
    1364c:	f9400282 	ldr	x2, [x20]
    13650:	9a801021 	csel	x1, x1, x0, ne  // ne = any
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:264
@@ -29334,9 +29334,9 @@ TEE_GetPropertyAsString():
    1365c:	14000008 	b	1367c <TEE_GetPropertyAsString+0x184>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:249
    13660:	b94002a3 	ldr	w3, [x21]
-   13664:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   13664:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    13668:	f9400281 	ldr	x1, [x20]
-   1366c:	912e0042 	add	x2, x2, #0xb80
+   1366c:	912e1042 	add	x2, x2, #0xb84
    13670:	aa1603e0 	mov	x0, x22
    13674:	94001724 	bl	19304 <snprintf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:258
@@ -29359,8 +29359,8 @@ TEE_GetPropertyAsString():
    136a0:	f9400281 	ldr	x1, [x20]
    136a4:	aa1503e3 	mov	x3, x21
    136a8:	aa1603e0 	mov	x0, x22
-   136ac:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
-   136b0:	912e1842 	add	x2, x2, #0xb86
+   136ac:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
+   136b0:	912e2842 	add	x2, x2, #0xb8a
    136b4:	97ffd2b8 	bl	8194 <snprintk>
    136b8:	17fffff0 	b	13678 <TEE_GetPropertyAsString+0x180>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:258
@@ -29368,8 +29368,8 @@ TEE_GetPropertyAsString():
    136c0:	910012a4 	add	x4, x21, #0x4
    136c4:	f9400281 	ldr	x1, [x20]
    136c8:	aa1603e0 	mov	x0, x22
-   136cc:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x130>
-   136d0:	912e0c42 	add	x2, x2, #0xb83
+   136cc:	90000062 	adrp	x2, 1f000 <gcd_pairs+0x12c>
+   136d0:	912e1c42 	add	x2, x2, #0xb87
    136d4:	97ffd2b0 	bl	8194 <snprintk>
    136d8:	17ffffe8 	b	13678 <TEE_GetPropertyAsString+0x180>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_api_property.c:264
@@ -30309,7 +30309,7 @@ invoke_system_pta():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_system_pta.c:21
    14138:	d0000040 	adrp	x0, 1e000 <__text_end+0x4920>
    1413c:	d2800005 	mov	x5, #0x0                   	// #0
-   14140:	912ed000 	add	x0, x0, #0xbb4
+   14140:	912ee000 	add	x0, x0, #0xbb8
    14144:	d2800003 	mov	x3, #0x0                   	// #0
    14148:	52800002 	mov	w2, #0x0                   	// #0
    1414c:	12800001 	mov	w1, #0xffffffff            	// #-1
@@ -30429,11 +30429,11 @@ tee_unmap():
    1427c:	34000180 	cbz	w0, 142ac <tee_unmap+0x94>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_system_pta.c:76
    14280:	d0000040 	adrp	x0, 1e000 <__text_end+0x4920>
-   14284:	912ed000 	add	x0, x0, #0xbb4
-   14288:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
+   14284:	912ee000 	add	x0, x0, #0xbb8
+   14288:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
    1428c:	aa1503e6 	mov	x6, x21
    14290:	aa1303e5 	mov	x5, x19
-   14294:	912fe084 	add	x4, x4, #0xbf8
+   14294:	912ff084 	add	x4, x4, #0xbfc
    14298:	91004000 	add	x0, x0, #0x10
    1429c:	52800023 	mov	w3, #0x1                   	// #1
    142a0:	52800022 	mov	w2, #0x1                   	// #1
@@ -30515,10 +30515,10 @@ tee_invoke_supp_plugin():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tee_system_pta.c:105
    1437c:	2a0003e5 	mov	w5, w0
    14380:	d0000040 	adrp	x0, 1e000 <__text_end+0x4920>
-   14384:	912ed000 	add	x0, x0, #0xbb4
-   14388:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
+   14384:	912ee000 	add	x0, x0, #0xbb8
+   14388:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
    1438c:	91006800 	add	x0, x0, #0x1a
-   14390:	91308884 	add	x4, x4, #0xc22
+   14390:	91309884 	add	x4, x4, #0xc26
    14394:	52800023 	mov	w3, #0x1                   	// #1
    14398:	52800022 	mov	w2, #0x1                   	// #1
    1439c:	52800d21 	mov	w1, #0x69                  	// #105
@@ -30588,12 +30588,12 @@ __utee_tcb_init():
    14448:	54000369 	b.ls	144b4 <__utee_tcb_init+0xc4>  // b.plast
 _assert_trap():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:19
-   1444c:	f0000043 	adrp	x3, 1f000 <gcd_pairs+0x130>
-   14450:	f0000041 	adrp	x1, 1f000 <gcd_pairs+0x130>
-   14454:	91336863 	add	x3, x3, #0xcda
-   14458:	91313421 	add	x1, x1, #0xc4d
-   1445c:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   14460:	91317c00 	add	x0, x0, #0xc5f
+   1444c:	f0000043 	adrp	x3, 1f000 <gcd_pairs+0x12c>
+   14450:	f0000041 	adrp	x1, 1f000 <gcd_pairs+0x12c>
+   14454:	91337863 	add	x3, x3, #0xcde
+   14458:	91314421 	add	x1, x1, #0xc51
+   1445c:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   14460:	91318c00 	add	x0, x0, #0xc63
    14464:	52800d82 	mov	w2, #0x6c                  	// #108
    14468:	97ffd29b 	bl	8ed4 <_assert_log>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:20
@@ -30635,15 +30635,15 @@ __utee_tcb_init():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:115
    144d0:	b5000160 	cbnz	x0, 144fc <__utee_tcb_init+0x10c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:116
-   144d4:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
+   144d4:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
    144d8:	aa1403e5 	mov	x5, x20
-   144dc:	9131dc84 	add	x4, x4, #0xc77
+   144dc:	9131ec84 	add	x4, x4, #0xc7b
    144e0:	52800023 	mov	w3, #0x1                   	// #1
    144e4:	52800022 	mov	w2, #0x1                   	// #1
    144e8:	52800e81 	mov	w1, #0x74                  	// #116
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:124
-   144ec:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   144f0:	91336800 	add	x0, x0, #0xcda
+   144ec:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   144f0:	91337800 	add	x0, x0, #0xcde
    144f4:	97ffcea9 	bl	7f98 <trace_printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:125
    144f8:	97ffe7d5 	bl	e44c <abort>
@@ -30662,9 +30662,9 @@ __utee_tcb_init():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:123
    1451c:	b5000800 	cbnz	x0, 1461c <__utee_tcb_init+0x22c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:124
-   14520:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
+   14520:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
    14524:	aa1403e5 	mov	x5, x20
-   14528:	91326484 	add	x4, x4, #0xc99
+   14528:	91327484 	add	x4, x4, #0xc9d
    1452c:	52800023 	mov	w3, #0x1                   	// #1
    14530:	52800022 	mov	w2, #0x1                   	// #1
    14534:	52800f81 	mov	w1, #0x7c                  	// #124
@@ -30791,11 +30791,11 @@ dl_iterate_phdr():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:191
    14678:	b5000520 	cbnz	x0, 1471c <dl_iterate_phdr+0xd0>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/tcb.c:192
-   1467c:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   14680:	91336800 	add	x0, x0, #0xcda
+   1467c:	f0000040 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   14680:	91337800 	add	x0, x0, #0xcde
    14684:	91004000 	add	x0, x0, #0x10
-   14688:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
-   1468c:	9132ec84 	add	x4, x4, #0xcbb
+   14688:	f0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
+   1468c:	9132fc84 	add	x4, x4, #0xcbf
    14690:	52800023 	mov	w3, #0x1                   	// #1
    14694:	52800022 	mov	w2, #0x1                   	// #1
    14698:	52801801 	mov	w1, #0xc0                  	// #192
@@ -30888,7 +30888,7 @@ _base64_enc():
    14784:	54000243 	b.cc	147cc <_base64_enc+0x78>  // b.lo, b.ul, b.last
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/base64.c:41
    14788:	d0000041 	adrp	x1, 1e000 <__text_end+0x4920>
-   1478c:	912fb021 	add	x1, x1, #0xbec
+   1478c:	912fc021 	add	x1, x1, #0xbf0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/base64.c:23
    14790:	aa1503e6 	mov	x6, x21
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/base64.c:31
@@ -30984,8 +30984,8 @@ get_idx():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/base64.c:64
    14870:	d000004a 	adrp	x10, 1e000 <__text_end+0x4920>
    14874:	d000004b 	adrp	x11, 1e000 <__text_end+0x4920>
-   14878:	912fb14a 	add	x10, x10, #0xbec
-   1487c:	912fa16b 	add	x11, x11, #0xbe8
+   14878:	912fc14a 	add	x10, x10, #0xbf0
+   1487c:	912fb16b 	add	x11, x11, #0xbec
 _base64_dec():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutee/base64.c:81
    14880:	52800006 	mov	w6, #0x0                   	// #0
@@ -34556,8 +34556,8 @@ mbedtls_mpi_write_string():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:624
    16e90:	f9400680 	ldr	x0, [x20, #8]
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:633
-   16e94:	b0000044 	adrp	x4, 1f000 <gcd_pairs+0x130>
-   16e98:	9133e884 	add	x4, x4, #0xcfa
+   16e94:	b0000044 	adrp	x4, 1f000 <gcd_pairs+0x12c>
+   16e98:	9133f884 	add	x4, x4, #0xcfe
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:624
    16e9c:	d2800002 	mov	x2, #0x0                   	// #0
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:624 (discriminator 1)
@@ -34722,7 +34722,7 @@ mpi_check_small_factors():
    17060:	f0000033 	adrp	x19, 1e000 <__text_end+0x4920>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:2712
    17064:	9100d3f6 	add	x22, sp, #0x34
-   17068:	9130c273 	add	x19, x19, #0xc30
+   17068:	9130d273 	add	x19, x19, #0xc34
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:2707
    1706c:	b9400275 	ldr	w21, [x19]
    17070:	710002bf 	cmp	w21, #0x0
@@ -36693,25 +36693,25 @@ mbedtls_mpi_self_test():
    18780:	97fff27e 	bl	15178 <mbedtls_mpi_init_mempool>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3022
    18784:	aa1603e0 	mov	x0, x22
-   18788:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   18788:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    1878c:	52800201 	mov	w1, #0x10                  	// #16
-   18790:	91342c42 	add	x2, x2, #0xd0b
+   18790:	91343c42 	add	x2, x2, #0xd0f
    18794:	97fff749 	bl	164b8 <mbedtls_mpi_read_string>
    18798:	2a0003f7 	mov	w23, w0
    1879c:	350004c0 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3028 (discriminator 2)
    187a0:	aa1c03e0 	mov	x0, x28
-   187a4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   187a4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    187a8:	52800201 	mov	w1, #0x10                  	// #16
-   187ac:	91363042 	add	x2, x2, #0xd8c
+   187ac:	91364042 	add	x2, x2, #0xd90
    187b0:	97fff742 	bl	164b8 <mbedtls_mpi_read_string>
    187b4:	2a0003f7 	mov	w23, w0
    187b8:	350003e0 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3034 (discriminator 2)
    187bc:	aa1803e0 	mov	x0, x24
-   187c0:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   187c0:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    187c4:	52800201 	mov	w1, #0x10                  	// #16
-   187c8:	91383442 	add	x2, x2, #0xe0d
+   187c8:	91384442 	add	x2, x2, #0xe11
    187cc:	97fff73b 	bl	164b8 <mbedtls_mpi_read_string>
    187d0:	2a0003f7 	mov	w23, w0
    187d4:	35000300 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
@@ -36724,17 +36724,17 @@ mbedtls_mpi_self_test():
    187ec:	35000240 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3041 (discriminator 2)
    187f0:	aa1503e0 	mov	x0, x21
-   187f4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   187f4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    187f8:	52800201 	mov	w1, #0x10                  	// #16
-   187fc:	9139b842 	add	x2, x2, #0xe6e
+   187fc:	9139c842 	add	x2, x2, #0xe72
    18800:	97fff72e 	bl	164b8 <mbedtls_mpi_read_string>
    18804:	2a0003f7 	mov	w23, w0
    18808:	35000160 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3050 (discriminator 2)
    1880c:	34000093 	cbz	w19, 1881c <mbedtls_mpi_self_test+0x120>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3051
-   18810:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   18814:	913d3400 	add	x0, x0, #0xf4d
+   18810:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   18814:	913d4400 	add	x0, x0, #0xf51
    18818:	97ffc1d1 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3053
    1881c:	aa1503e1 	mov	x1, x21
@@ -36750,9 +36750,9 @@ mbedtls_mpi_self_test():
    18838:	7a401a64 	ccmp	w19, #0x0, #0x4, ne  // ne = any
    1883c:	540000a0 	b.eq	18850 <mbedtls_mpi_self_test+0x154>  // b.none
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3161
-   18840:	90000040 	adrp	x0, 20000 <__func__.4161+0x316>
+   18840:	90000040 	adrp	x0, 20000 <__func__.4161+0x312>
    18844:	2a1703e1 	mov	w1, w23
-   18848:	9104a800 	add	x0, x0, #0x12a
+   18848:	9104b800 	add	x0, x0, #0x12e
    1884c:	97ffc1c4 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3163
    18850:	aa1603e0 	mov	x0, x22
@@ -36785,15 +36785,15 @@ mbedtls_mpi_self_test():
    188ac:	540012c0 	b.eq	18b04 <mbedtls_mpi_self_test+0x408>  // b.none
    188b0:	97ffbcfd 	bl	7ca4 <__stack_chk_fail>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3056
-   188b4:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   188b8:	91334c00 	add	x0, x0, #0xcd3
+   188b4:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   188b8:	91335c00 	add	x0, x0, #0xcd7
    188bc:	97ffc1e8 	bl	905c <puts>
    188c0:	17ffffdc 	b	18830 <mbedtls_mpi_self_test+0x134>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3062
    188c4:	34000093 	cbz	w19, 188d4 <mbedtls_mpi_self_test+0x1d8>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3063
-   188c8:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   188cc:	913d9c00 	add	x0, x0, #0xf67
+   188c8:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   188cc:	913dac00 	add	x0, x0, #0xf6b
    188d0:	97ffc1e3 	bl	905c <puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3065
    188d4:	aa1803e3 	mov	x3, x24
@@ -36805,25 +36805,25 @@ mbedtls_mpi_self_test():
    188ec:	35fffa40 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3067 (discriminator 2)
    188f0:	aa1503e0 	mov	x0, x21
-   188f4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   188f4:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    188f8:	52800201 	mov	w1, #0x10                  	// #16
-   188fc:	913db842 	add	x2, x2, #0xf6e
+   188fc:	913dc842 	add	x2, x2, #0xf72
    18900:	97fff6ee 	bl	164b8 <mbedtls_mpi_read_string>
    18904:	2a0003f7 	mov	w23, w0
    18908:	35fff960 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3070 (discriminator 2)
    1890c:	aa1b03e0 	mov	x0, x27
-   18910:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x130>
+   18910:	f0000022 	adrp	x2, 1f000 <gcd_pairs+0x12c>
    18914:	52800201 	mov	w1, #0x10                  	// #16
-   18918:	913e4842 	add	x2, x2, #0xf92
+   18918:	913e5842 	add	x2, x2, #0xf96
    1891c:	97fff6e7 	bl	164b8 <mbedtls_mpi_read_string>
    18920:	2a0003f7 	mov	w23, w0
    18924:	35fff880 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3075 (discriminator 2)
    18928:	34000093 	cbz	w19, 18938 <mbedtls_mpi_self_test+0x23c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3076
-   1892c:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   18930:	913fc400 	add	x0, x0, #0xff1
+   1892c:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   18930:	913fd400 	add	x0, x0, #0xff5
    18934:	97ffc18a 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3078
    18938:	aa1503e1 	mov	x1, x21
@@ -36839,8 +36839,8 @@ mbedtls_mpi_self_test():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3088
    18958:	34000093 	cbz	w19, 18968 <mbedtls_mpi_self_test+0x26c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3089
-   1895c:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   18960:	913d9c00 	add	x0, x0, #0xf67
+   1895c:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   18960:	913dac00 	add	x0, x0, #0xf6b
    18964:	97ffc1be 	bl	905c <puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3091
    18968:	aa1803e3 	mov	x3, x24
@@ -36853,17 +36853,17 @@ mbedtls_mpi_self_test():
    18984:	35fff580 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3093 (discriminator 2)
    18988:	aa1503e0 	mov	x0, x21
-   1898c:	90000042 	adrp	x2, 20000 <__func__.4161+0x316>
+   1898c:	90000042 	adrp	x2, 20000 <__func__.4161+0x312>
    18990:	52800201 	mov	w1, #0x10                  	// #16
-   18994:	91002c42 	add	x2, x2, #0xb
+   18994:	91003c42 	add	x2, x2, #0xf
    18998:	97fff6c8 	bl	164b8 <mbedtls_mpi_read_string>
    1899c:	2a0003f7 	mov	w23, w0
    189a0:	35fff4a0 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3098 (discriminator 2)
    189a4:	34000093 	cbz	w19, 189b4 <mbedtls_mpi_self_test+0x2b8>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3099
-   189a8:	90000040 	adrp	x0, 20000 <__func__.4161+0x316>
-   189ac:	9101a800 	add	x0, x0, #0x6a
+   189a8:	90000040 	adrp	x0, 20000 <__func__.4161+0x312>
+   189ac:	9101b800 	add	x0, x0, #0x6e
    189b0:	97ffc16b 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3101
    189b4:	aa1503e1 	mov	x1, x21
@@ -36873,8 +36873,8 @@ mbedtls_mpi_self_test():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3110
    189c4:	34000093 	cbz	w19, 189d4 <mbedtls_mpi_self_test+0x2d8>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3111
-   189c8:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   189cc:	913d9c00 	add	x0, x0, #0xf67
+   189c8:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   189cc:	913dac00 	add	x0, x0, #0xf6b
    189d0:	97ffc1a3 	bl	905c <puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3113
    189d4:	aa1803e2 	mov	x2, x24
@@ -36885,17 +36885,17 @@ mbedtls_mpi_self_test():
    189e8:	35fff260 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3115 (discriminator 2)
    189ec:	aa1503e0 	mov	x0, x21
-   189f0:	90000042 	adrp	x2, 20000 <__func__.4161+0x316>
+   189f0:	90000042 	adrp	x2, 20000 <__func__.4161+0x312>
    189f4:	52800201 	mov	w1, #0x10                  	// #16
-   189f8:	91021042 	add	x2, x2, #0x84
+   189f8:	91022042 	add	x2, x2, #0x88
    189fc:	97fff6af 	bl	164b8 <mbedtls_mpi_read_string>
    18a00:	2a0003f7 	mov	w23, w0
    18a04:	35fff180 	cbnz	w0, 18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3120 (discriminator 2)
    18a08:	34000093 	cbz	w19, 18a18 <mbedtls_mpi_self_test+0x31c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3121
-   18a0c:	90000040 	adrp	x0, 20000 <__func__.4161+0x316>
-   18a10:	91039400 	add	x0, x0, #0xe5
+   18a0c:	90000040 	adrp	x0, 20000 <__func__.4161+0x312>
+   18a10:	9103a400 	add	x0, x0, #0xe9
    18a14:	97ffc152 	bl	8f5c <printf>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3123
    18a18:	aa1503e1 	mov	x1, x21
@@ -36906,15 +36906,15 @@ mbedtls_mpi_self_test():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3132
    18a2c:	340000f3 	cbz	w19, 18a48 <mbedtls_mpi_self_test+0x34c>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3133
-   18a30:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   18a34:	913d9c00 	add	x0, x0, #0xf67
+   18a30:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   18a34:	913dac00 	add	x0, x0, #0xf6b
    18a38:	97ffc189 	bl	905c <puts>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3136
-   18a3c:	90000040 	adrp	x0, 20000 <__func__.4161+0x316>
-   18a40:	9103fc00 	add	x0, x0, #0xff
+   18a3c:	90000040 	adrp	x0, 20000 <__func__.4161+0x312>
+   18a40:	91040c00 	add	x0, x0, #0x103
    18a44:	97ffc146 	bl	8f5c <printf>
    18a48:	d0000037 	adrp	x23, 1e000 <__text_end+0x4920>
-   18a4c:	9130c2f7 	add	x23, x23, #0xc30
+   18a4c:	9130d2f7 	add	x23, x23, #0xc34
    18a50:	910a82e0 	add	x0, x23, #0x2a0
    18a54:	f90037e0 	str	x0, [sp, #104]
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3140
@@ -36949,8 +36949,8 @@ mbedtls_mpi_self_test():
    18ab8:	34ffebd3 	cbz	w19, 18830 <mbedtls_mpi_self_test+0x134>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3148
    18abc:	2a1903e1 	mov	w1, w25
-   18ac0:	90000040 	adrp	x0, 20000 <__func__.4161+0x316>
-   18ac4:	91047000 	add	x0, x0, #0x11c
+   18ac0:	90000040 	adrp	x0, 20000 <__func__.4161+0x312>
+   18ac4:	91048000 	add	x0, x0, #0x120
    18ac8:	97ffc125 	bl	8f5c <printf>
    18acc:	17ffff59 	b	18830 <mbedtls_mpi_self_test+0x134>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3138 (discriminator 2)
@@ -36963,8 +36963,8 @@ mbedtls_mpi_self_test():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3155
    18ae8:	340000b3 	cbz	w19, 18afc <mbedtls_mpi_self_test+0x400>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3156
-   18aec:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x130>
-   18af0:	913d9c00 	add	x0, x0, #0xf67
+   18aec:	f0000020 	adrp	x0, 1f000 <gcd_pairs+0x12c>
+   18af0:	913dac00 	add	x0, x0, #0xf6b
    18af4:	97ffc15a 	bl	905c <puts>
    18af8:	17ffff4f 	b	18834 <mbedtls_mpi_self_test+0x138>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libmbedtls/mbedtls/library/bignum.c:3158
@@ -37980,12 +37980,12 @@ mempool_alloc_pool():
    19508:	54000140 	b.eq	19530 <mempool_alloc_pool+0x50>  // b.none
 _assert_trap():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:19
-   1950c:	f0000023 	adrp	x3, 20000 <__func__.4161+0x316>
-   19510:	f0000021 	adrp	x1, 20000 <__func__.4161+0x316>
-   19514:	f0000020 	adrp	x0, 20000 <__func__.4161+0x316>
-   19518:	91076463 	add	x3, x3, #0x1d9
-   1951c:	91054021 	add	x1, x1, #0x150
-   19520:	9105ac00 	add	x0, x0, #0x16b
+   1950c:	f0000023 	adrp	x3, 20000 <__func__.4161+0x312>
+   19510:	f0000021 	adrp	x1, 20000 <__func__.4161+0x312>
+   19514:	f0000020 	adrp	x0, 20000 <__func__.4161+0x312>
+   19518:	91077463 	add	x3, x3, #0x1dd
+   1951c:	91055021 	add	x1, x1, #0x154
+   19520:	9105bc00 	add	x0, x0, #0x16f
    19524:	52800f82 	mov	w2, #0x7c                  	// #124
    19528:	97ffbe6b 	bl	8ed4 <_assert_log>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:20
@@ -38009,13 +38009,13 @@ init_mpool():
    19554:	54000143 	b.cc	1957c <mempool_alloc_pool+0x9c>  // b.lo, b.ul, b.last
 _assert_trap():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/isoc/include/assert.h:19
-   19558:	f0000023 	adrp	x3, 20000 <__func__.4161+0x316>
-   1955c:	91076463 	add	x3, x3, #0x1d9
-   19560:	f0000021 	adrp	x1, 20000 <__func__.4161+0x316>
-   19564:	f0000020 	adrp	x0, 20000 <__func__.4161+0x316>
+   19558:	f0000023 	adrp	x3, 20000 <__func__.4161+0x312>
+   1955c:	91077463 	add	x3, x3, #0x1dd
+   19560:	f0000021 	adrp	x1, 20000 <__func__.4161+0x312>
+   19564:	f0000020 	adrp	x0, 20000 <__func__.4161+0x312>
    19568:	91004c63 	add	x3, x3, #0x13
-   1956c:	91054021 	add	x1, x1, #0x150
-   19570:	91064800 	add	x0, x0, #0x192
+   1956c:	91055021 	add	x1, x1, #0x154
+   19570:	91065800 	add	x0, x0, #0x196
    19574:	52800a82 	mov	w2, #0x54                  	// #84
    19578:	17ffffec 	b	19528 <mempool_alloc_pool+0x48>
 init_mpool():
@@ -38057,11 +38057,11 @@ mempool_alloc():
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/mempool.c:147
    195d0:	b5000160 	cbnz	x0, 195fc <mempool_alloc+0x54>
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/optee_os/lib/libutils/ext/mempool.c:161
-   195d4:	f0000020 	adrp	x0, 20000 <__func__.4161+0x316>
-   195d8:	91076400 	add	x0, x0, #0x1d9
-   195dc:	f0000024 	adrp	x4, 20000 <__func__.4161+0x316>
+   195d4:	f0000020 	adrp	x0, 20000 <__func__.4161+0x312>
+   195d8:	91077400 	add	x0, x0, #0x1dd
+   195dc:	f0000024 	adrp	x4, 20000 <__func__.4161+0x312>
    195e0:	aa1403e5 	mov	x5, x20
-   195e4:	91068484 	add	x4, x4, #0x1a1
+   195e4:	91069484 	add	x4, x4, #0x1a5
    195e8:	91007800 	add	x0, x0, #0x1e
    195ec:	52800023 	mov	w3, #0x1                   	// #1
    195f0:	52800022 	mov	w2, #0x1                   	// #1

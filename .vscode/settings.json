@@ -1,3 +1,10 @@
 {
     "cmake.sourceDirectory": "/home/avees/secure-inference/darknetz",
+    "python-envs.pythonProjects": [
+        {
+            "path": ".venv-1",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ],
 }

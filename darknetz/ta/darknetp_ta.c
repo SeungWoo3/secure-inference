@@ -490,8 +490,7 @@ static TEE_Result save_weights_TA_params(uint32_t param_types,
 }
 
 
-
-static TEE_Result forward_network_TA_params(uint32_t param_types,
+static TEE_Result forward_input_TA_params(uint32_t param_types,
                                           TEE_Param params[4])
 {
     uint32_t exp_param_types = TEE_PARAM_TYPES( TEE_PARAM_TYPE_MEMREF_INPUT,
@@ -514,6 +513,13 @@ static TEE_Result forward_network_TA_params(uint32_t param_types,
     if(debug_summary_com == 1){
         summary_array("forward_network / net.input", netta.input, params[0].memref.size / sizeof(float));
     }
+    // forward_network_TA();
+    return TEE_SUCCESS;
+}
+
+static TEE_Result forward_network_TA_params(uint32_t param_types,
+                                          TEE_Param params[4])
+{
     forward_network_TA();
 
     return TEE_SUCCESS;
@@ -911,7 +917,10 @@ TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
         return transfer_weights_TA_params(param_types, params);
 
         case SAVE_WEI_CMD:
-            return save_weights_TA_params(param_types, params);
+        return save_weights_TA_params(param_types, params);
+
+        case FORWARD_INPUT:
+        return forward_input_TA_params(param_types, params);
 
         case FORWARD_CMD:
         return forward_network_TA_params(param_types, params);

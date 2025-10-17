@@ -16,7 +16,7 @@
 #include "tcp_transfer.h"
 
 
-void getMemory(FILE *output_file) {
+void getMemory() {
     char buffer[1024];
     unsigned long vmsize=0, vmrss=0, vmdata=0, vmstk=0, vmexe=0, vmlib=0;
     FILE *file = fopen("/proc/self/status", "r");
@@ -30,32 +30,26 @@ void getMemory(FILE *output_file) {
         if (strcmp(buffer, "VmSize:") == 0) {
             fscanf(file, " %lu kB", &vmsize);
             printf("vmsize: %lu kB; ", vmsize);
-            fprintf(output_file, "vmsize: %lu kB; ", vmsize);
         }
         else if (strcmp(buffer, "VmRSS:") == 0) {
             fscanf(file, " %lu kB", &vmrss);
             printf("vmrss: %lu kB; ", vmrss);
-            fprintf(output_file, "vmrss: %lu kB; ", vmrss);
         }
         else if (strcmp(buffer, "VmData:") == 0) {
             fscanf(file, " %lu kB", &vmdata);
             printf("vmdata: %lu kB; ", vmdata);
-            fprintf(output_file, "vmdata: %lu kB; ", vmdata);
         }
         else if (strcmp(buffer, "VmStk:") == 0) {
             fscanf(file, " %lu kB", &vmstk);
             printf("vmstk: %lu kB; ", vmstk);
-            fprintf(output_file, "vmstk: %lu kB; ", vmstk);
         }
         else if (strcmp(buffer, "VmExe:") == 0) {
             fscanf(file, " %lu kB", &vmexe);
             printf("vmexe: %lu kB; ", vmexe);
-            fprintf(output_file, "vmexe: %lu kB; ", vmexe);
         }
         else if (strcmp(buffer, "VmLib:") == 0) {
             fscanf(file, " %lu kB", &vmlib);
             printf("vmlib: %lu kB\n", vmlib);
-            fprintf(output_file, "vmlib: %lu kB\n", vmlib);
         }
     }
 
@@ -707,7 +701,8 @@ void try_classifier(char *datacfg, char *cfgfile, char *weightfile, char *filena
 
 void predict_classifier(const char *datacfg, const char *cfgfile,
                         const char *weightfile, const char *filename, int top)
-{
+{       
+        getMemory();
         network *net = load_network(cfgfile, weightfile, 0);
         if (!net) { fprintf(stderr, "Failed to load network\n"); return; }
         set_batch_network(net, 1);

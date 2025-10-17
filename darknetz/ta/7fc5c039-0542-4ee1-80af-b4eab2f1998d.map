@@ -7,7 +7,7 @@ Archive member included to satisfy reference by file (symbol)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
                               ./darknetp_ta.o (memcpy)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memset.o)
-                              ./softmax_layer_TA.o (memset)
+                              ./connected_layer_TA.o (memset)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strcmp.o)
                               ./activations_TA.o (strcmp)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strncmp.o)
@@ -103,40 +103,6 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./darknetp_ta.o
  .group         0x0000000000000000        0xc ./darknetp_ta.o
  .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x112 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x174 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x7c ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x22 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x33 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x58 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x34 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x79 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0xcf1 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x35 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0xfd ./softmax_layer_TA.o
  .group         0x0000000000000000        0xc ./utils_TA.o
  .group         0x0000000000000000        0xc ./utils_TA.o
  .group         0x0000000000000000        0xc ./utils_TA.o
@@ -161,6 +127,29 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x33 ./utils_TA.o
  .debug_macro   0x0000000000000000       0x16 ./utils_TA.o
  .debug_macro   0x0000000000000000       0x2e ./utils_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .group         0x0000000000000000        0xc ./activations_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./activations_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./activations_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./activations_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./activations_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
@@ -187,7 +176,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x22 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x34 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x79 ./connected_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0xc4 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x2e ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x33 ./connected_layer_TA.o
@@ -261,29 +249,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 ./parser_TA.o
  .debug_macro   0x0000000000000000       0x8e ./parser_TA.o
  .debug_macro   0x0000000000000000       0x2e ./parser_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .group         0x0000000000000000        0xc ./activations_TA.o
- .debug_macro   0x0000000000000000      0x112 ./activations_TA.o
- .debug_macro   0x0000000000000000      0x174 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x7c ./activations_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./activations_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x22 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x2e ./activations_TA.o
- .debug_macro   0x0000000000000000       0x33 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x58 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x16 ./activations_TA.o
- .debug_macro   0x0000000000000000       0x2e ./activations_TA.o
  .group         0x0000000000000000        0xc ./blas_TA.o
  .group         0x0000000000000000        0xc ./blas_TA.o
  .group         0x0000000000000000        0xc ./blas_TA.o
@@ -383,6 +348,41 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x34 ./network_TA.o
  .debug_macro   0x0000000000000000       0x79 ./network_TA.o
  .debug_macro   0x0000000000000000       0xfd ./network_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x34 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x79 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000      0xcf1 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0x35 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000000       0xfd ./softmax_layer_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
@@ -1447,79 +1447,79 @@ Linker script and memory map
                 0x00000000000009a0                TA_OpenSessionEntryPoint
                 0x0000000000000a10                TA_CloseSessionEntryPoint
                 0x0000000000000a34                TA_InvokeCommandEntryPoint
- .text          0x00000000000010e8      0x278 ./softmax_layer_TA.o
-                0x00000000000010e8                forward_softmax_layer_TA
-                0x0000000000001208                backward_softmax_layer_TA
-                0x000000000000122c                make_softmax_layer_TA_new
- .text          0x0000000000001360      0x158 ./utils_TA.o
-                0x0000000000001360                sum_array_TA
-                0x0000000000001384                rand_uniform_TA
-                0x00000000000013c0                rand_normal_TA
- .text          0x00000000000014b8      0x6f0 ./connected_layer_TA.o
-                0x00000000000014b8                forward_connected_layer_TA_new
-                0x00000000000015b0                backward_connected_layer_TA_new
-                0x00000000000016e4                update_connected_layer_TA_new
-                0x000000000000180c                make_connected_layer_TA_new
- .text          0x0000000000001ba8      0x95c ./math_TA.o
-                0x0000000000001ba8                ta_max
-                0x0000000000001bb4                ta_pow
-                0x0000000000001c04                ta_eee
-                0x0000000000001ca4                ta_exp
-                0x0000000000001d00                ta_rand
-                0x0000000000001d98                ta_floor
-                0x0000000000001dac                ta_sqrt
-                0x0000000000001e20                F1
-                0x0000000000001e2c                F2
-                0x0000000000001e54                simpson
-                0x0000000000001ee8                asr
-                0x0000000000001fcc                asr0
-                0x000000000000201c                ta_ln
-                0x0000000000002034                ta_log
-                0x0000000000002068                ta_cos
-                0x00000000000021b8                ta_sin
-                0x000000000000230c                ta_tan
-                0x000000000000233c                reverse
-                0x0000000000002370                intToStr
-                0x0000000000002410                ftoa
-                0x00000000000024b8                bubble_sort_top
- .text          0x0000000000002504      0x510 ./parser_TA.o
-                0x0000000000002504                aes_cbc_TA
-                0x000000000000272c                transpose_matrix_TA
-                0x00000000000027d0                load_weights_TA
-                0x000000000000293c                save_weights_TA
- .text          0x0000000000002a14      0x790 ./activations_TA.o
-                0x0000000000002a14                get_activation_string_TA
-                0x0000000000002adc                get_activation_TA
-                0x0000000000002c7c                activate_TA
-                0x0000000000002f2c                activate_array_TA
-                0x0000000000002f80                gradient_TA
-                0x000000000000313c                gradient_array_TA
- .text          0x00000000000031a4      0x638 ./blas_TA.o
-                0x00000000000031a4                fill_cpu_TA
-                0x00000000000031c4                copy_cpu_TA
-                0x00000000000031ec                mean_cpu_TA
-                0x0000000000003278                variance_cpu_TA
-                0x0000000000003388                scal_cpu_TA
-                0x00000000000033b0                axpy_cpu_TA
-                0x00000000000033e0                normalize_cpu_TA
-                0x00000000000034d0                softmax_TA
-                0x00000000000035b8                softmax_cpu_TA
-                0x0000000000003674                softmax_x_ent_cpu_TA
-                0x0000000000003700                smooth_l1_cpu_TA
-                0x0000000000003764                l1_cpu_TA
-                0x00000000000037ac                l2_cpu_TA
- .text          0x00000000000037dc      0x410 ./maxpool_layer_TA.o
-                0x00000000000037dc                forward_maxpool_layer_TA_new
-                0x00000000000039bc                backward_maxpool_layer_TA_new
-                0x0000000000003a14                make_maxpool_layer_TA
-                0x0000000000003b44                resize_maxpool_layer_TA
- .text          0x0000000000003bec      0x7a4 ./network_TA.o
-                0x0000000000003bec                make_network_TA
-                0x0000000000003d78                update_network_TA
-                0x0000000000003e34                calc_network_cost_TA
-                0x0000000000003eac                forward_network_TA
-                0x00000000000040c8                calc_network_loss_TA
-                0x00000000000041cc                backward_network_TA
+ .text          0x00000000000010e8      0x158 ./utils_TA.o
+                0x00000000000010e8                sum_array_TA
+                0x000000000000110c                rand_uniform_TA
+                0x0000000000001148                rand_normal_TA
+ .text          0x0000000000001240      0x790 ./activations_TA.o
+                0x0000000000001240                get_activation_string_TA
+                0x0000000000001308                get_activation_TA
+                0x00000000000014a8                activate_TA
+                0x0000000000001758                activate_array_TA
+                0x00000000000017ac                gradient_TA
+                0x0000000000001968                gradient_array_TA
+ .text          0x00000000000019d0      0x6f0 ./connected_layer_TA.o
+                0x00000000000019d0                forward_connected_layer_TA_new
+                0x0000000000001ac8                backward_connected_layer_TA_new
+                0x0000000000001bfc                update_connected_layer_TA_new
+                0x0000000000001d24                make_connected_layer_TA_new
+ .text          0x00000000000020c0      0x95c ./math_TA.o
+                0x00000000000020c0                ta_max
+                0x00000000000020cc                ta_pow
+                0x000000000000211c                ta_eee
+                0x00000000000021bc                ta_exp
+                0x0000000000002218                ta_rand
+                0x00000000000022b0                ta_floor
+                0x00000000000022c4                ta_sqrt
+                0x0000000000002338                F1
+                0x0000000000002344                F2
+                0x000000000000236c                simpson
+                0x0000000000002400                asr
+                0x00000000000024e4                asr0
+                0x0000000000002534                ta_ln
+                0x000000000000254c                ta_log
+                0x0000000000002580                ta_cos
+                0x00000000000026d0                ta_sin
+                0x0000000000002824                ta_tan
+                0x0000000000002854                reverse
+                0x0000000000002888                intToStr
+                0x0000000000002928                ftoa
+                0x00000000000029d0                bubble_sort_top
+ .text          0x0000000000002a1c      0x510 ./parser_TA.o
+                0x0000000000002a1c                aes_cbc_TA
+                0x0000000000002c44                transpose_matrix_TA
+                0x0000000000002ce8                load_weights_TA
+                0x0000000000002e54                save_weights_TA
+ .text          0x0000000000002f2c      0x638 ./blas_TA.o
+                0x0000000000002f2c                fill_cpu_TA
+                0x0000000000002f4c                copy_cpu_TA
+                0x0000000000002f74                mean_cpu_TA
+                0x0000000000003000                variance_cpu_TA
+                0x0000000000003110                scal_cpu_TA
+                0x0000000000003138                axpy_cpu_TA
+                0x0000000000003168                normalize_cpu_TA
+                0x0000000000003258                softmax_TA
+                0x0000000000003340                softmax_cpu_TA
+                0x00000000000033fc                softmax_x_ent_cpu_TA
+                0x0000000000003488                smooth_l1_cpu_TA
+                0x00000000000034ec                l1_cpu_TA
+                0x0000000000003534                l2_cpu_TA
+ .text          0x0000000000003564      0x410 ./maxpool_layer_TA.o
+                0x0000000000003564                forward_maxpool_layer_TA_new
+                0x0000000000003744                backward_maxpool_layer_TA_new
+                0x000000000000379c                make_maxpool_layer_TA
+                0x00000000000038cc                resize_maxpool_layer_TA
+ .text          0x0000000000003974      0x7a4 ./network_TA.o
+                0x0000000000003974                make_network_TA
+                0x0000000000003b00                update_network_TA
+                0x0000000000003bbc                calc_network_cost_TA
+                0x0000000000003c34                forward_network_TA
+                0x0000000000003e50                calc_network_loss_TA
+                0x0000000000003f54                backward_network_TA
+ .text          0x0000000000004118      0x278 ./softmax_layer_TA.o
+                0x0000000000004118                forward_softmax_layer_TA
+                0x0000000000004238                backward_softmax_layer_TA
+                0x000000000000425c                make_softmax_layer_TA_new
  .text          0x0000000000004390      0x8d8 ./aes_TA.o
                 0x00000000000049b8                AES_init_ctx
                 0x00000000000049bc                AES_init_ctx_iv
@@ -2145,24 +2145,24 @@ Linker script and memory map
 .eh_frame       0x00000000000196e0     0x51f4
  *(SORT_BY_ALIGNMENT(.eh_frame))
  .eh_frame      0x00000000000196e0      0x338 ./darknetp_ta.o
- .eh_frame      0x0000000000019a18       0xa8 ./softmax_layer_TA.o
-                                         0xb8 (size before relaxing)
- .eh_frame      0x0000000000019ac0       0x88 ./utils_TA.o
+ .eh_frame      0x0000000000019a18       0x88 ./utils_TA.o
                                          0xa0 (size before relaxing)
- .eh_frame      0x0000000000019b48      0x120 ./connected_layer_TA.o
-                                        0x130 (size before relaxing)
- .eh_frame      0x0000000000019c68      0x368 ./math_TA.o
-                                        0x380 (size before relaxing)
- .eh_frame      0x0000000000019fd0       0xe0 ./parser_TA.o
-                                         0xf8 (size before relaxing)
- .eh_frame      0x000000000001a0b0      0x118 ./activations_TA.o
+ .eh_frame      0x0000000000019aa0      0x118 ./activations_TA.o
                                         0x128 (size before relaxing)
- .eh_frame      0x000000000001a1c8      0x210 ./blas_TA.o
+ .eh_frame      0x0000000000019bb8      0x120 ./connected_layer_TA.o
+                                        0x130 (size before relaxing)
+ .eh_frame      0x0000000000019cd8      0x368 ./math_TA.o
+                                        0x380 (size before relaxing)
+ .eh_frame      0x000000000001a040       0xe0 ./parser_TA.o
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x000000000001a120      0x210 ./blas_TA.o
                                         0x220 (size before relaxing)
- .eh_frame      0x000000000001a3d8       0xc0 ./maxpool_layer_TA.o
+ .eh_frame      0x000000000001a330       0xc0 ./maxpool_layer_TA.o
                                          0xd8 (size before relaxing)
- .eh_frame      0x000000000001a498      0x198 ./network_TA.o
+ .eh_frame      0x000000000001a3f0      0x198 ./network_TA.o
                                         0x1b0 (size before relaxing)
+ .eh_frame      0x000000000001a588       0xa8 ./softmax_layer_TA.o
+                                         0xb8 (size before relaxing)
  .eh_frame      0x000000000001a630      0x1b0 ./aes_TA.o
                                         0x1c0 (size before relaxing)
  .eh_frame      0x000000000001a7e0       0x58 ./im2col_TA.o
@@ -2255,9 +2255,9 @@ Linker script and memory map
 .rodata         0x000000000001e8d8     0x1931
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*))
- .rodata.cst8   0x000000000001e8d8       0x58 ./math_TA.o
- .rodata.cst8   0x000000000001e930       0x28 ./activations_TA.o
-                                         0x30 (size before relaxing)
+ .rodata.cst8   0x000000000001e8d8       0x30 ./activations_TA.o
+ .rodata.cst8   0x000000000001e908       0x50 ./math_TA.o
+                                         0x58 (size before relaxing)
  .rodata.cst8   0x000000000001e958        0x8 ./blas_TA.o
  .rodata.cst8   0x000000000001e960        0x8 ./network_TA.o
                                          0x10 (size before relaxing)
@@ -2303,21 +2303,21 @@ Linker script and memory map
                 0x000000000001ec34      0x2c4 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
  .rodata.str1.1.darknetp_ta.c
                 0x000000000001eef8      0x18e ./darknetp_ta.o
- .rodata.str1.1.softmax_layer_TA.c
-                0x000000000001f086       0x26 ./softmax_layer_TA.o
- .rodata.softmax_layer_TA.c
-                0x000000000001f0ac       0x1a ./softmax_layer_TA.o
- .rodata.str1.1.parser_TA.c
-                0x000000000001f0c6       0x23 ./parser_TA.o
- .rodata.parser_TA.c
-                0x000000000001f0e9        0xb ./parser_TA.o
  .rodata.str1.1.activations_TA.c
-                0x000000000001f0f4       0x4f ./activations_TA.o
+                0x000000000001f086       0x4f ./activations_TA.o
                                          0x53 (size before relaxing)
+ .rodata.str1.1.parser_TA.c
+                0x000000000001f0d5       0x23 ./parser_TA.o
+ .rodata.parser_TA.c
+                0x000000000001f0f8        0xb ./parser_TA.o
  .rodata.str1.1.network_TA.c
-                0x000000000001f143       0x55 ./network_TA.o
+                0x000000000001f103       0x55 ./network_TA.o
  .rodata.network_TA.c
-                0x000000000001f198       0x15 ./network_TA.o
+                0x000000000001f158       0x15 ./network_TA.o
+ .rodata.str1.1.softmax_layer_TA.c
+                0x000000000001f16d       0x26 ./softmax_layer_TA.o
+ .rodata.softmax_layer_TA.c
+                0x000000000001f193       0x1a ./softmax_layer_TA.o
  .rodata.aes_TA.c
                 0x000000000001f1ad      0x20b ./aes_TA.o
  .rodata.str1.1.cost_layer_TA.c
@@ -2551,14 +2551,14 @@ Linker script and memory map
  .data          0x0000000000021940        0x4 ./user_ta_header.o
                 0x0000000000021940                trace_level
  .data.rel.ro   0x0000000000021944        0x0 ./darknetp_ta.o
- .data          0x0000000000021944        0x0 ./softmax_layer_TA.o
  .data          0x0000000000021944        0x0 ./utils_TA.o
+ .data          0x0000000000021944        0x0 ./activations_TA.o
  .data          0x0000000000021944        0x0 ./connected_layer_TA.o
  .data          0x0000000000021944        0x0 ./math_TA.o
  .data          0x0000000000021944        0x0 ./parser_TA.o
- .data          0x0000000000021944        0x0 ./activations_TA.o
  .data          0x0000000000021944        0x0 ./blas_TA.o
  .data          0x0000000000021944        0x0 ./maxpool_layer_TA.o
+ .data          0x0000000000021944        0x0 ./softmax_layer_TA.o
  .data          0x0000000000021944        0x0 ./aes_TA.o
  .data          0x0000000000021944        0x0 ./im2col_TA.o
  .data          0x0000000000021944        0x0 ./batchnorm_layer_TA.o
@@ -2631,13 +2631,13 @@ Linker script and memory map
  .bss           0x0000000000025b34        0x8 ./network_TA.o
                 0x0000000000025b34                err_sum
                 0x0000000000025b38                roundnum
- .bss           0x0000000000025b3c        0x0 ./softmax_layer_TA.o
+ .bss           0x0000000000025b3c        0x0 ./activations_TA.o
  .bss           0x0000000000025b3c        0x0 ./connected_layer_TA.o
  .bss           0x0000000000025b3c        0x0 ./math_TA.o
  .bss           0x0000000000025b3c        0x0 ./parser_TA.o
- .bss           0x0000000000025b3c        0x0 ./activations_TA.o
  .bss           0x0000000000025b3c        0x0 ./blas_TA.o
  .bss           0x0000000000025b3c        0x0 ./maxpool_layer_TA.o
+ .bss           0x0000000000025b3c        0x0 ./softmax_layer_TA.o
  .bss           0x0000000000025b3c        0x0 ./aes_TA.o
  .bss           0x0000000000025b3c        0x0 ./im2col_TA.o
  .bss           0x0000000000025b3c        0x0 ./batchnorm_layer_TA.o
@@ -2691,15 +2691,15 @@ Linker script and memory map
 /DISCARD/
  *(SORT_BY_ALIGNMENT(.interp))
 LOAD ./darknetp_ta.o
-LOAD ./softmax_layer_TA.o
 LOAD ./utils_TA.o
+LOAD ./activations_TA.o
 LOAD ./connected_layer_TA.o
 LOAD ./math_TA.o
 LOAD ./parser_TA.o
-LOAD ./activations_TA.o
 LOAD ./blas_TA.o
 LOAD ./maxpool_layer_TA.o
 LOAD ./network_TA.o
+LOAD ./softmax_layer_TA.o
 LOAD ./aes_TA.o
 LOAD ./im2col_TA.o
 LOAD ./batchnorm_layer_TA.o
@@ -2724,15 +2724,15 @@ LOAD linker stubs
 
 .debug_info     0x0000000000000000    0x3b6a7
  .debug_info    0x0000000000000000     0x36cd ./darknetp_ta.o
- .debug_info    0x00000000000036cd     0x167e ./softmax_layer_TA.o
- .debug_info    0x0000000000004d4b      0x328 ./utils_TA.o
- .debug_info    0x0000000000005073     0x1b8e ./connected_layer_TA.o
- .debug_info    0x0000000000006c01      0xefb ./math_TA.o
- .debug_info    0x0000000000007afc     0x180d ./parser_TA.o
- .debug_info    0x0000000000009309      0xe9e ./activations_TA.o
- .debug_info    0x000000000000a1a7      0xa76 ./blas_TA.o
- .debug_info    0x000000000000ac1d     0x15f0 ./maxpool_layer_TA.o
- .debug_info    0x000000000000c20d     0x1b66 ./network_TA.o
+ .debug_info    0x00000000000036cd      0x328 ./utils_TA.o
+ .debug_info    0x00000000000039f5      0xe9e ./activations_TA.o
+ .debug_info    0x0000000000004893     0x1b8e ./connected_layer_TA.o
+ .debug_info    0x0000000000006421      0xefb ./math_TA.o
+ .debug_info    0x000000000000731c     0x180d ./parser_TA.o
+ .debug_info    0x0000000000008b29      0xa76 ./blas_TA.o
+ .debug_info    0x000000000000959f     0x15f0 ./maxpool_layer_TA.o
+ .debug_info    0x000000000000ab8f     0x1b66 ./network_TA.o
+ .debug_info    0x000000000000c6f5     0x167e ./softmax_layer_TA.o
  .debug_info    0x000000000000dd73      0xf61 ./aes_TA.o
  .debug_info    0x000000000000ecd4      0x33c ./im2col_TA.o
  .debug_info    0x000000000000f010     0x1a55 ./batchnorm_layer_TA.o
@@ -2779,15 +2779,15 @@ LOAD linker stubs
 
 .debug_abbrev   0x0000000000000000     0x79c6
  .debug_abbrev  0x0000000000000000      0x545 ./darknetp_ta.o
- .debug_abbrev  0x0000000000000545      0x302 ./softmax_layer_TA.o
- .debug_abbrev  0x0000000000000847      0x162 ./utils_TA.o
- .debug_abbrev  0x00000000000009a9      0x279 ./connected_layer_TA.o
- .debug_abbrev  0x0000000000000c22      0x306 ./math_TA.o
- .debug_abbrev  0x0000000000000f28      0x2e4 ./parser_TA.o
- .debug_abbrev  0x000000000000120c      0x1bf ./activations_TA.o
- .debug_abbrev  0x00000000000013cb      0x158 ./blas_TA.o
- .debug_abbrev  0x0000000000001523      0x278 ./maxpool_layer_TA.o
- .debug_abbrev  0x000000000000179b      0x348 ./network_TA.o
+ .debug_abbrev  0x0000000000000545      0x162 ./utils_TA.o
+ .debug_abbrev  0x00000000000006a7      0x1bf ./activations_TA.o
+ .debug_abbrev  0x0000000000000866      0x279 ./connected_layer_TA.o
+ .debug_abbrev  0x0000000000000adf      0x306 ./math_TA.o
+ .debug_abbrev  0x0000000000000de5      0x2e4 ./parser_TA.o
+ .debug_abbrev  0x00000000000010c9      0x158 ./blas_TA.o
+ .debug_abbrev  0x0000000000001221      0x278 ./maxpool_layer_TA.o
+ .debug_abbrev  0x0000000000001499      0x348 ./network_TA.o
+ .debug_abbrev  0x00000000000017e1      0x302 ./softmax_layer_TA.o
  .debug_abbrev  0x0000000000001ae3      0x332 ./aes_TA.o
  .debug_abbrev  0x0000000000001e15      0x13a ./im2col_TA.o
  .debug_abbrev  0x0000000000001f4f      0x27e ./batchnorm_layer_TA.o
@@ -2834,15 +2834,15 @@ LOAD linker stubs
 
 .debug_loc      0x0000000000000000    0x42e1b
  .debug_loc     0x0000000000000000     0x38a2 ./darknetp_ta.o
- .debug_loc     0x00000000000038a2      0x61e ./softmax_layer_TA.o
- .debug_loc     0x0000000000003ec0      0x28f ./utils_TA.o
- .debug_loc     0x000000000000414f      0x7e7 ./connected_layer_TA.o
- .debug_loc     0x0000000000004936     0x1748 ./math_TA.o
- .debug_loc     0x000000000000607e      0x9b6 ./parser_TA.o
- .debug_loc     0x0000000000006a34     0x149d ./activations_TA.o
- .debug_loc     0x0000000000007ed1     0x1781 ./blas_TA.o
- .debug_loc     0x0000000000009652      0xb0b ./maxpool_layer_TA.o
- .debug_loc     0x000000000000a15d      0xfc5 ./network_TA.o
+ .debug_loc     0x00000000000038a2      0x28f ./utils_TA.o
+ .debug_loc     0x0000000000003b31     0x149d ./activations_TA.o
+ .debug_loc     0x0000000000004fce      0x7e7 ./connected_layer_TA.o
+ .debug_loc     0x00000000000057b5     0x1748 ./math_TA.o
+ .debug_loc     0x0000000000006efd      0x9b6 ./parser_TA.o
+ .debug_loc     0x00000000000078b3     0x1781 ./blas_TA.o
+ .debug_loc     0x0000000000009034      0xb0b ./maxpool_layer_TA.o
+ .debug_loc     0x0000000000009b3f      0xfc5 ./network_TA.o
+ .debug_loc     0x000000000000ab04      0x61e ./softmax_layer_TA.o
  .debug_loc     0x000000000000b122     0x1744 ./aes_TA.o
  .debug_loc     0x000000000000c866      0x8de ./im2col_TA.o
  .debug_loc     0x000000000000d144      0xd24 ./batchnorm_layer_TA.o
@@ -2888,9 +2888,9 @@ LOAD linker stubs
  .debug_aranges
                 0x0000000000000000       0x30 ./darknetp_ta.o
  .debug_aranges
-                0x0000000000000030       0x30 ./softmax_layer_TA.o
+                0x0000000000000030       0x30 ./utils_TA.o
  .debug_aranges
-                0x0000000000000060       0x30 ./utils_TA.o
+                0x0000000000000060       0x30 ./activations_TA.o
  .debug_aranges
                 0x0000000000000090       0x30 ./connected_layer_TA.o
  .debug_aranges
@@ -2898,13 +2898,13 @@ LOAD linker stubs
  .debug_aranges
                 0x00000000000000f0       0x30 ./parser_TA.o
  .debug_aranges
-                0x0000000000000120       0x30 ./activations_TA.o
+                0x0000000000000120       0x30 ./blas_TA.o
  .debug_aranges
-                0x0000000000000150       0x30 ./blas_TA.o
+                0x0000000000000150       0x30 ./maxpool_layer_TA.o
  .debug_aranges
-                0x0000000000000180       0x30 ./maxpool_layer_TA.o
+                0x0000000000000180       0x30 ./network_TA.o
  .debug_aranges
-                0x00000000000001b0       0x30 ./network_TA.o
+                0x00000000000001b0       0x30 ./softmax_layer_TA.o
  .debug_aranges
                 0x00000000000001e0       0x30 ./aes_TA.o
  .debug_aranges
@@ -2994,13 +2994,13 @@ LOAD linker stubs
 
 .debug_ranges   0x0000000000000000     0x30a0
  .debug_ranges  0x0000000000000000      0x3a0 ./darknetp_ta.o
- .debug_ranges  0x00000000000003a0       0x30 ./softmax_layer_TA.o
- .debug_ranges  0x00000000000003d0       0xa0 ./math_TA.o
- .debug_ranges  0x0000000000000470       0xe0 ./parser_TA.o
- .debug_ranges  0x0000000000000550      0x190 ./activations_TA.o
- .debug_ranges  0x00000000000006e0      0x130 ./blas_TA.o
- .debug_ranges  0x0000000000000810       0xe0 ./maxpool_layer_TA.o
- .debug_ranges  0x00000000000008f0      0x120 ./network_TA.o
+ .debug_ranges  0x00000000000003a0      0x190 ./activations_TA.o
+ .debug_ranges  0x0000000000000530       0xa0 ./math_TA.o
+ .debug_ranges  0x00000000000005d0       0xe0 ./parser_TA.o
+ .debug_ranges  0x00000000000006b0      0x130 ./blas_TA.o
+ .debug_ranges  0x00000000000007e0       0xe0 ./maxpool_layer_TA.o
+ .debug_ranges  0x00000000000008c0      0x120 ./network_TA.o
+ .debug_ranges  0x00000000000009e0       0x30 ./softmax_layer_TA.o
  .debug_ranges  0x0000000000000a10      0x1f0 ./aes_TA.o
  .debug_ranges  0x0000000000000c00       0x20 ./im2col_TA.o
  .debug_ranges  0x0000000000000c20      0x100 ./batchnorm_layer_TA.o
@@ -3049,27 +3049,27 @@ LOAD linker stubs
  .debug_macro   0x000000000000209f       0x16 ./darknetp_ta.o
  .debug_macro   0x00000000000020b5       0x8e ./darknetp_ta.o
  .debug_macro   0x0000000000002143       0x2e ./darknetp_ta.o
- .debug_macro   0x0000000000002171      0x180 ./softmax_layer_TA.o
- .debug_macro   0x00000000000022f1      0x9ac ./softmax_layer_TA.o
- .debug_macro   0x0000000000002c9d       0x16 ./softmax_layer_TA.o
- .debug_macro   0x0000000000002cb3       0xe5 ./utils_TA.o
- .debug_macro   0x0000000000002d98      0x9ac ./utils_TA.o
- .debug_macro   0x0000000000003744       0x10 ./utils_TA.o
- .debug_macro   0x0000000000003754      0x1c2 ./connected_layer_TA.o
- .debug_macro   0x0000000000003916      0x9ac ./connected_layer_TA.o
- .debug_macro   0x00000000000042c2      0x12c ./math_TA.o
- .debug_macro   0x00000000000043ee      0x9ac ./math_TA.o
- .debug_macro   0x0000000000004d9a      0x14a ./parser_TA.o
- .debug_macro   0x0000000000004ee4      0x9ac ./parser_TA.o
- .debug_macro   0x0000000000005890       0x2e ./parser_TA.o
- .debug_macro   0x00000000000058be       0xec ./activations_TA.o
- .debug_macro   0x00000000000059aa      0x9ac ./activations_TA.o
- .debug_macro   0x0000000000006356      0x117 ./blas_TA.o
- .debug_macro   0x000000000000646d      0x9ac ./blas_TA.o
- .debug_macro   0x0000000000006e19      0x15d ./maxpool_layer_TA.o
- .debug_macro   0x0000000000006f76      0x9ac ./maxpool_layer_TA.o
- .debug_macro   0x0000000000007922      0x177 ./network_TA.o
- .debug_macro   0x0000000000007a99      0x9ac ./network_TA.o
+ .debug_macro   0x0000000000002171       0xe5 ./utils_TA.o
+ .debug_macro   0x0000000000002256      0x9ac ./utils_TA.o
+ .debug_macro   0x0000000000002c02       0x10 ./utils_TA.o
+ .debug_macro   0x0000000000002c12       0xec ./activations_TA.o
+ .debug_macro   0x0000000000002cfe      0x9ac ./activations_TA.o
+ .debug_macro   0x00000000000036aa      0x1c2 ./connected_layer_TA.o
+ .debug_macro   0x000000000000386c      0x9ac ./connected_layer_TA.o
+ .debug_macro   0x0000000000004218       0x16 ./connected_layer_TA.o
+ .debug_macro   0x000000000000422e      0x12c ./math_TA.o
+ .debug_macro   0x000000000000435a      0x9ac ./math_TA.o
+ .debug_macro   0x0000000000004d06      0x14a ./parser_TA.o
+ .debug_macro   0x0000000000004e50      0x9ac ./parser_TA.o
+ .debug_macro   0x00000000000057fc       0x2e ./parser_TA.o
+ .debug_macro   0x000000000000582a      0x117 ./blas_TA.o
+ .debug_macro   0x0000000000005941      0x9ac ./blas_TA.o
+ .debug_macro   0x00000000000062ed      0x15d ./maxpool_layer_TA.o
+ .debug_macro   0x000000000000644a      0x9ac ./maxpool_layer_TA.o
+ .debug_macro   0x0000000000006df6      0x177 ./network_TA.o
+ .debug_macro   0x0000000000006f6d      0x9ac ./network_TA.o
+ .debug_macro   0x0000000000007919      0x180 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000007a99      0x9ac ./softmax_layer_TA.o
  .debug_macro   0x0000000000008445       0x7f ./aes_TA.o
  .debug_macro   0x00000000000084c4      0x9ac ./aes_TA.o
  .debug_macro   0x0000000000008e70       0x37 ./im2col_TA.o
@@ -3191,15 +3191,15 @@ LOAD linker stubs
 
 .debug_line     0x0000000000000000    0x1abcb
  .debug_line    0x0000000000000000      0xf66 ./darknetp_ta.o
- .debug_line    0x0000000000000f66      0x431 ./softmax_layer_TA.o
- .debug_line    0x0000000000001397      0x36b ./utils_TA.o
- .debug_line    0x0000000000001702      0x6a3 ./connected_layer_TA.o
- .debug_line    0x0000000000001da5      0x9b2 ./math_TA.o
- .debug_line    0x0000000000002757      0x5d5 ./parser_TA.o
- .debug_line    0x0000000000002d2c      0x843 ./activations_TA.o
- .debug_line    0x000000000000356f      0x8ea ./blas_TA.o
- .debug_line    0x0000000000003e59      0x647 ./maxpool_layer_TA.o
- .debug_line    0x00000000000044a0      0x86e ./network_TA.o
+ .debug_line    0x0000000000000f66      0x36b ./utils_TA.o
+ .debug_line    0x00000000000012d1      0x843 ./activations_TA.o
+ .debug_line    0x0000000000001b14      0x6a3 ./connected_layer_TA.o
+ .debug_line    0x00000000000021b7      0x9b2 ./math_TA.o
+ .debug_line    0x0000000000002b69      0x5d5 ./parser_TA.o
+ .debug_line    0x000000000000313e      0x8ea ./blas_TA.o
+ .debug_line    0x0000000000003a28      0x647 ./maxpool_layer_TA.o
+ .debug_line    0x000000000000406f      0x86e ./network_TA.o
+ .debug_line    0x00000000000048dd      0x431 ./softmax_layer_TA.o
  .debug_line    0x0000000000004d0e      0xb8c ./aes_TA.o
  .debug_line    0x000000000000589a      0x23c ./im2col_TA.o
  .debug_line    0x0000000000005ad6      0x6ec ./batchnorm_layer_TA.o
@@ -3247,24 +3247,24 @@ LOAD linker stubs
 .debug_str      0x0000000000000000    0x1dc53
  .debug_str     0x0000000000000000     0xaa22 ./darknetp_ta.o
                                        0xacef (size before relaxing)
- .debug_str     0x000000000000aa22      0x1df ./softmax_layer_TA.o
-                                       0xa5cd (size before relaxing)
- .debug_str     0x000000000000ac01       0x6e ./utils_TA.o
+ .debug_str     0x000000000000aa22       0x87 ./utils_TA.o
                                        0x4788 (size before relaxing)
- .debug_str     0x000000000000ac6f      0x156 ./connected_layer_TA.o
-                                       0xa695 (size before relaxing)
- .debug_str     0x000000000000adc5       0xcf ./math_TA.o
-                                       0x9a6a (size before relaxing)
- .debug_str     0x000000000000ae94      0x121 ./parser_TA.o
-                                       0x5b1c (size before relaxing)
- .debug_str     0x000000000000afb5      0x224 ./activations_TA.o
+ .debug_str     0x000000000000aaa9      0x258 ./activations_TA.o
                                        0x4a41 (size before relaxing)
- .debug_str     0x000000000000b1d9       0xbd ./blas_TA.o
+ .debug_str     0x000000000000ad01      0x23a ./connected_layer_TA.o
+                                       0xa695 (size before relaxing)
+ .debug_str     0x000000000000af3b       0xbf ./math_TA.o
+                                       0x9a6a (size before relaxing)
+ .debug_str     0x000000000000affa      0x121 ./parser_TA.o
+                                       0x5b1c (size before relaxing)
+ .debug_str     0x000000000000b11b       0xe1 ./blas_TA.o
                                        0x4eb2 (size before relaxing)
- .debug_str     0x000000000000b296       0xbc ./maxpool_layer_TA.o
+ .debug_str     0x000000000000b1fc       0xbc ./maxpool_layer_TA.o
                                        0xa4b4 (size before relaxing)
- .debug_str     0x000000000000b352       0x70 ./network_TA.o
+ .debug_str     0x000000000000b2b8       0x70 ./network_TA.o
                                        0xa755 (size before relaxing)
+ .debug_str     0x000000000000b328       0x9a ./softmax_layer_TA.o
+                                       0xa5cd (size before relaxing)
  .debug_str     0x000000000000b3c2      0x21b ./aes_TA.o
                                        0x3b6b (size before relaxing)
  .debug_str     0x000000000000b5dd       0xc7 ./im2col_TA.o
@@ -3355,15 +3355,15 @@ LOAD linker stubs
 .comment        0x0000000000000000       0x2b
  .comment       0x0000000000000000       0x2b ./darknetp_ta.o
                                          0x2c (size before relaxing)
- .comment       0x000000000000002b       0x2c ./softmax_layer_TA.o
  .comment       0x000000000000002b       0x2c ./utils_TA.o
+ .comment       0x000000000000002b       0x2c ./activations_TA.o
  .comment       0x000000000000002b       0x2c ./connected_layer_TA.o
  .comment       0x000000000000002b       0x2c ./math_TA.o
  .comment       0x000000000000002b       0x2c ./parser_TA.o
- .comment       0x000000000000002b       0x2c ./activations_TA.o
  .comment       0x000000000000002b       0x2c ./blas_TA.o
  .comment       0x000000000000002b       0x2c ./maxpool_layer_TA.o
  .comment       0x000000000000002b       0x2c ./network_TA.o
+ .comment       0x000000000000002b       0x2c ./softmax_layer_TA.o
  .comment       0x000000000000002b       0x2c ./aes_TA.o
  .comment       0x000000000000002b       0x2c ./im2col_TA.o
  .comment       0x000000000000002b       0x2c ./batchnorm_layer_TA.o
@@ -3412,9 +3412,9 @@ LOAD linker stubs
  .note.GNU-stack
                 0x0000000000000000        0x0 ./darknetp_ta.o
  .note.GNU-stack
-                0x0000000000000000        0x0 ./softmax_layer_TA.o
- .note.GNU-stack
                 0x0000000000000000        0x0 ./utils_TA.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./activations_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./connected_layer_TA.o
  .note.GNU-stack
@@ -3422,13 +3422,13 @@ LOAD linker stubs
  .note.GNU-stack
                 0x0000000000000000        0x0 ./parser_TA.o
  .note.GNU-stack
-                0x0000000000000000        0x0 ./activations_TA.o
- .note.GNU-stack
                 0x0000000000000000        0x0 ./blas_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./maxpool_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./network_TA.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./softmax_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./aes_TA.o
  .note.GNU-stack

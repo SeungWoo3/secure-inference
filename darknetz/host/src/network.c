@@ -275,7 +275,6 @@ void forward_network(network *netp)
             record_segment(label, t_end_infer - t_start_infer);
 #endif
             i = partition_point2;
-
             if(partition_point2 < net.n - 1) {
 #ifdef TIME_PROFILE_TASK
                 double t_start_out, t_end_out;
@@ -298,7 +297,9 @@ void forward_network(network *netp)
                 t_start_out = get_time_ms();
 #endif
                 //call TA to return output
-                net_output_return_CA(net.outputs, 1);
+                if(net.layers[partition_point1].type != SOFTMAX){
+                    net_output_return_CA(net.outputs, 1);
+                }
 #ifdef TIME_PROFILE_TASK
                 t_end_out = get_time_ms();
                 char label[32];
@@ -741,8 +742,8 @@ float *network_predict(network *net, float *input)
 
          // end inside of TEE
          }else{
+            // net_output_return_CA(net->outputs, 1);
             out = net_output_back;
-
         }
      }
 

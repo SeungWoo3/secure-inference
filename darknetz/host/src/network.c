@@ -267,7 +267,7 @@ void forward_network(network *netp)
             double t_start_infer, t_end_infer;
             t_start_infer = get_time_ms();
 #endif
-            forward_network_CA(net.input, l.inputs, net.batch, net.train);
+            forward_network_CA();
 #ifdef TIME_PROFILE_TASK
             t_end_infer = get_time_ms();
             memset(label, 0, sizeof(label));  
@@ -276,20 +276,20 @@ void forward_network(network *netp)
 #endif
             i = partition_point2;
             if(partition_point2 < net.n - 1) {
+                layer l_pp2 = net.layers[partition_point2];
 #ifdef TIME_PROFILE_TASK
                 double t_start_out, t_end_out;
                 t_start_out = get_time_ms();
 #endif
-                printf("here\n");
-                layer l_pp2 = net.layers[partition_point2];
+                
                 forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
-                net.input = l_pp2.output;
 #ifdef TIME_PROFILE_TASK
                 t_end_out = get_time_ms();
                 memset(label, 0, sizeof(label));  
                 snprintf(label, sizeof(label), "OUT[%d]", partition_point2);
                 record_segment(label, t_end_out - t_start_out);
 #endif
+                net.input = l_pp2.output;
             }
             if(partition_point2 == net.n - 1) {
 #ifdef TIME_PROFILE_TASK

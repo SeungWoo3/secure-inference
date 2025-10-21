@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+extern void loop_back();
 extern void predict_classifier(char *datacfg, char *cfgfile, char *weightfile, char *filename, int top);
 extern void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh, char *outfile, int fullscreen);
 extern void run_yolo(int argc, char **argv);
@@ -445,6 +445,9 @@ void darknet_main(int argc, char **argv)
         run_char_rnn(argc, argv);
     } else if (0 == strcmp(argv[1], "coco")){
         run_coco(argc, argv);
+    } else if (0 == strcmp(argv[1], "loop_back")){
+        printf("loop_back\n");
+        loop_back(argc, argv);
     } else if (0 == strcmp(argv[1], "classify")){
         predict_classifier("cfg/imagenet1k.data", argv[2], argv[3], argv[4], 5);
     } else if (0 == strcmp(argv[1], "classifier")){

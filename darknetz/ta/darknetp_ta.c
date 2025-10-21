@@ -27,6 +27,9 @@ int debug_summary_com = 0;
 int debug_summary_pass = 0;
 int norm_output = 1;
 
+// loop_back
+static float *loop_back_buffer = NULL;
+static size_t loop_back_buffer_size = 0;
 
 void summary_array(char *print_name, float *arr, int n)
 {
@@ -735,6 +738,49 @@ static TEE_Result backward_network_back_TA_addidion_params(uint32_t param_types,
     }
     return TEE_SUCCESS;
 }
+
+static TEE_Result ree_to_tee_TA(uint32_t param_types, TEE_Param params[4]){
+    uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_INPUT,
+                                               TEE_PARAM_TYPE_VALUE_INPUT,
+                                               TEE_PARAM_TYPE_NONE,
+                                               TEE_PARAM_TYPE_NONE);
+    if (param_types != exp_param_types)
+        return TEE_ERROR_BAD_PARAMETERS;
+    float *net_input = (float *)params[0].memref.buffer;
+    size_t num_floats = params[0].memref.size / sizeof(float);
+    int net_train = params[1].value.a;
+
+    // Shallow copy (주소만 저장)
+    loop_back_buffer = net_input;
+    loop_back_buffer_size = num_floats;
+    return TEE_SUCCESS;
+}
+
+static TEE_Result tee_to_ree_TA(uint32_t param_types, TEE_Param params[4]){
+    uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT,
+                                               TEE_PARAM_TYPE_NONE,
+                                               TEE_PARAM_TYPE_NONE,
+                                               TEE_PARAM_TYPE_NONE);
+    if (param_types != exp_param_types)
+        return TEE_ERROR_BAD_PARAMETERS;
+
+    if (!loop_back_buffer)
+        return TEE_ERROR_BAD_STATE; // 아직 저장된 데이터가 없음
+
+    float *params0 = (float *)params[0].memref.buffer;
+    int buffersize = params[0].memref.size / sizeof(float);
+
+    // 실제 저장된 데이터 크기보다 출력 버퍼가 작으면 잘라냄
+    if (buffersize > (int)loop_back_buffer_size)
+        buffersize = loop_back_buffer_size;
+
+    // REE 버퍼로 데이터 복사
+    for (int z = 0; z < buffersize; z++) {
+        params0[z] = loop_back_buffer[z];
+    }
+
+    return TEE_SUCCESS;
+}
 //
 // static TEE_Result backward_network_back_TA_params(uint32_t param_types,
 //                                            TEE_Param params[4])
@@ -952,6 +998,11 @@ TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
         case BACKWARD_BACK_ADD_CMD:
         return backward_network_back_TA_addidion_params(param_types, params);
 
+        case REE2TEE:
+        return ree_to_tee_TA(param_types, params);
+
+        case TEE2REE:
+        return tee_to_ree_TA(param_types, params);
 
         default:
         return TEE_ERROR_BAD_PARAMETERS;

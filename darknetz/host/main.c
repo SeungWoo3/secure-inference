@@ -537,7 +537,6 @@ void save_weights_CA(float *vec, int length, int layer_i, char type)
 
 void forward_input_CA(float *net_input, int l_inputs, int net_batch, int net_train)
 {
-    //invoke op and transfer paramters
     TEEC_Operation op;
     uint32_t origin;
     TEEC_Result res;
@@ -556,10 +555,6 @@ void forward_input_CA(float *net_input, int l_inputs, int net_batch, int net_tra
     op.params[0].tmpref.size = sizeof(float) * l_inputs*net_batch;
     op.params[1].value.a = params1;
 
-    /////////  debug_plot  /////////
-    if(debug_plot_bool == 1){
-        debug_plot("forward_net_input_", sysCount, params0, l_inputs*net_batch);
-    }
     res = TEEC_InvokeCommand(&sess, FORWARD_INPUT,
                              &op, &origin);
 
@@ -616,7 +611,7 @@ void forward_network_back_CA(float *l_output, int net_inputs, int net_batch)
 
 
   memset(&op, 0, sizeof(op));
-  op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_OUTPUT, TEEC_NONE,
+  op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_OUTPUT, TEEC_VALUE_OUTPUT,
                                    TEEC_NONE, TEEC_NONE);
 
 
@@ -630,13 +625,11 @@ void forward_network_back_CA(float *l_output, int net_inputs, int net_batch)
    for(int z=0; z<net_inputs * net_batch; z++){
        l_output[z] = net_input_back[z];
    }
-
+   float elapsed_ms;
+memcpy(&elapsed_ms, &op.params[1].value.a, sizeof(uint32_t));
+printf("TEE elapsed time: %.3f ms\n", elapsed_ms);
    free(net_input_back);
 
-   /////////  debug_plot  /////////
-   if(debug_plot_bool == 1){
-       debug_plot("forward_net_back_input_", sysCount, net_input_back, net_inputs*net_batch);
-   }
    if (res != TEEC_SUCCESS)
    errx(1, "TEEC_InvokeCommand(forward_add) failed 0x%x origin 0x%x",
         res, origin);

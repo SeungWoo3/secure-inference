@@ -10,21 +10,28 @@ CMD="sudo -S host/optee_example_darknetp classifier predict \
 #nmcli radio wifi off
 #sleep 60s
 #nmcli radio wifi off
-sleep 20s
+# sleep 20s
 
-echo "nvidia" | $CMD -num_exp 100
+echo "nvidia" | $CMD -num_exp 1
 
-# echo "nvidia" | $CMD -pp_start 2 -pp_end 10 -num_exp 1
+echo "nvidia" | $CMD -pp_start 2 -pp_end 7 -num_exp 1
 
-for start in {0..10}; do
- for end in $(seq "$start" 10); do
-   echo "nvidia" | $CMD -pp_start "$start" -pp_end "$end" -num_exp 100
-   # echo "$start $end"
- done
-done
+# for start in {0..10}; do
+#  for end in $(seq "$start" 10); do
+#    echo "nvidia" | $CMD -pp_start "$start" -pp_end "$end" -num_exp 100
+#    # echo "$start $end"
+#  done
+# done
 
-poweroff
+# poweroff
 
 
 # nmcli radio wifi on
 # sleep 10s
+
+# densenet 실행 command
+# sudo host/optee_example_darknetp classifier predict \
+# ../tz_datasets/cfg/imagenet1k.data\
+#  ../tz_datasets/cfg/densenet201.cfg \
+#  ../tz_datasets/models/weights/densenet201.weights \
+#  ../tz_datasets/data/dog.jpg

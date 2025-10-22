@@ -500,12 +500,7 @@ static TEE_Result forward_input_TA_params(uint32_t param_types,
                                                TEE_PARAM_TYPE_VALUE_INPUT,
                                                TEE_PARAM_TYPE_NONE,
                                                TEE_PARAM_TYPE_NONE);
-    //TEE_PARAM_TYPE_VALUE_INPUT
-
-    //DMSG("has been called");
-
-    if (param_types != exp_param_types)
-    return TEE_ERROR_BAD_PARAMETERS;
+    if (param_types != exp_param_types) return TEE_ERROR_BAD_PARAMETERS;
 
     float *net_input = params[0].memref.buffer;
     size_t input_size = params[0].memref.size;
@@ -515,9 +510,6 @@ static TEE_Result forward_input_TA_params(uint32_t param_types,
     TEE_MemMove(netta.input, net_input, input_size);
     netta.train = net_train;
 
-    if(debug_summary_com == 1){
-        summary_array("forward_network / net.input", netta.input, params[0].memref.size / sizeof(float));
-    }
     // forward_network_TA();
     return TEE_SUCCESS;
 }
@@ -559,24 +551,27 @@ static TEE_Result forward_network_TA_params()
 static TEE_Result forward_network_back_TA_params(uint32_t param_types,
                                            TEE_Param params[4])
 {
-    uint32_t exp_param_types = TEE_PARAM_TYPES( TEE_PARAM_TYPE_MEMREF_OUTPUT,
-                                               TEE_PARAM_TYPE_NONE,
+    uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT,
+                                               TEE_PARAM_TYPE_VALUE_OUTPUT,
                                                TEE_PARAM_TYPE_NONE,
                                                TEE_PARAM_TYPE_NONE);
-    if (param_types != exp_param_types)
-        return TEE_ERROR_BAD_PARAMETERS;
+    if (param_types != exp_param_types) return TEE_ERROR_BAD_PARAMETERS;
+    TEE_Time start, end;
+    TEE_GetSystemTime(&start);
 
     float *params0 = params[0].memref.buffer;
     int buffersize = params[0].memref.size / sizeof(float);
     for(int z=0; z<buffersize; z++){
         params0[z] = netta.layers[netta.n-1].output[z];
     }
+        TEE_Wait(1000);
+    TEE_GetSystemTime(&end);
+    float elapsed_ms = (float)((end.seconds - start.seconds) * 1000 +
+                           (end.millis - start.millis));
+uint32_t elapsed_bits;
+memcpy(&elapsed_bits, &elapsed_ms, sizeof(uint32_t));
+params[1].value.a = elapsed_bits;
 
-    // ?????
-    //free(ta_net_input);
-    if(debug_summary_com == 1){
-        summary_array("forward_network_back / l_pp2.output", netta.layers[netta.n-1].output, buffersize);
-    }
     return TEE_SUCCESS;
 }
 

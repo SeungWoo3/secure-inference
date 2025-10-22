@@ -577,9 +577,9 @@ void forward_network_CA()
     uint32_t origin;
     TEEC_Result res;
 
-    // memset(&op, 0, sizeof(op));
-    // op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_INPUT, TEEC_VALUE_INPUT,
-    //                                  TEEC_NONE, TEEC_NONE);
+    memset(&op, 0, sizeof(op));
+    op.paramTypes = TEEC_PARAM_TYPES(TEEC_NONE, TEEC_NONE,
+                                     TEEC_NONE, TEEC_NONE);
 
     // float *params0 = malloc(sizeof(float)*l_inputs*net_batch);
     // for(int z=0; z<l_inputs*net_batch; z++){

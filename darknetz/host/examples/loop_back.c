@@ -98,24 +98,96 @@ double get_time_us(void) {
     clock_gettime(CLOCK_MONOTONIC, &ts);
     return (double)ts.tv_sec * 1.0e6 + (double)ts.tv_nsec / 1.0e3;
 }
+
 void loop_back(int argc, char **argv)
 {
     int size = atoi(argv[2]);
     printf("size: %d\n", size);
 
+    for (int i=0; i<1; i++){
     float* rand_array = make_random_float_array(size);
     float* output = make_random_float_array(size);
+    // warm-up
+    ree_to_tee(rand_array, size);
+    ree_to_tee(rand_array, size);
     // print_float_array(rand_array, size);
 
-        double t_start_in = get_time_us();
-ree_to_tee(rand_array, size);
-double t_end_in = get_time_us();
-printf("Input: %.3f us\n", t_end_in - t_start_in);
+                    double t_start_in = get_time_us();
+    ree_to_tee(rand_array, size);
+                    double t_end_in = get_time_us();
+                    printf("Input: %.9f us\n", t_end_in - t_start_in);
 
-double t_start_out = get_time_us();
-tee_to_ree(output, size);
-double t_end_out = get_time_us();
-printf("Output: %.3f us\n", t_end_out - t_start_out);
-
+                    double t_start_out = get_time_us();
+    tee_to_ree(output, size);
+                    double t_end_out = get_time_us();
+                    printf("Output: %.9f us\n", t_end_out - t_start_out);
+    }
     // print_float_array(output, size);
 }
+
+// #define NUM_THREADS 200   // 스레드 개수 (TEE의 CFG_NUM_THREADS 이하)
+
+// typedef struct {
+//     float *rand_array;
+//     float *output;
+//     int size;
+// } ThreadArgs;
+
+// // ───────────────────────────────
+// // thread_func: 오직 ree_to_tee(), tee_to_ree()만 수행
+// // ───────────────────────────────
+// void* thread_func(void* arg)
+// {
+//     ThreadArgs *args = (ThreadArgs *)arg;
+
+//     ree_to_tee(args->rand_array, args->size);
+//     tee_to_ree(args->output, args->size);
+
+//     return NULL;
+// }
+
+// // ───────────────────────────────
+// // loop_back: 병렬 vs 순차 실행 비교
+// // ───────────────────────────────
+// void loop_back(int argc, char **argv)
+// {
+//     int size = atoi(argv[2]);
+//     printf("size: %d\n", size);
+
+//     pthread_t threads[NUM_THREADS];
+//     ThreadArgs targs[NUM_THREADS];
+
+//     // 각 스레드용 랜덤 배열 생성
+//     for (int i = 0; i < NUM_THREADS; i++) {
+//         targs[i].rand_array = make_random_float_array(size);
+//         targs[i].output     = make_random_float_array(size);
+//         targs[i].size       = size;
+//     }
+
+//     // 1️⃣ 병렬 실행
+//     double start = get_time_us();
+//     for (int i = 0; i < NUM_THREADS; i++)
+//         pthread_create(&threads[i], NULL, thread_func, &targs[i]);
+
+//     for (int i = 0; i < NUM_THREADS; i++)
+//         pthread_join(threads[i], NULL);
+//     double end = get_time_us();
+//     printf("[Parallel] elapsed time: %.3f us\n", end - start);
+
+//     // 2️⃣ 순차 실행
+//     start = get_time_us();
+//     for (int i = 0; i < NUM_THREADS; i++) {
+//         pthread_create(&threads[i], NULL, thread_func, &targs[i]);
+//         pthread_join(threads[i], NULL);
+//     }
+//     end = get_time_us();
+//     printf("[Sequential] elapsed time: %.3f us\n", end - start);
+
+//     printf("All threads finished.\n");
+
+//     // 메모리 해제
+//     for (int i = 0; i < NUM_THREADS; i++) {
+//         free(targs[i].rand_array);
+//         free(targs[i].output);
+//     }
+// }

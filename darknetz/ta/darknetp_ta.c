@@ -508,9 +508,11 @@ static TEE_Result forward_input_TA_params(uint32_t param_types,
     return TEE_ERROR_BAD_PARAMETERS;
 
     float *net_input = params[0].memref.buffer;
+    size_t input_size = params[0].memref.size;
     int net_train = params[1].value.a;
-
-    netta.input = net_input;
+    netta.input = TEE_Malloc(input_size, TEE_MALLOC_FILL_ZERO);
+    
+    TEE_MemMove(netta.input, net_input, input_size);
     netta.train = net_train;
 
     if(debug_summary_com == 1){
@@ -520,8 +522,7 @@ static TEE_Result forward_input_TA_params(uint32_t param_types,
     return TEE_SUCCESS;
 }
 
-static TEE_Result forward_network_TA_params(uint32_t param_types,
-                                          TEE_Param params[4])
+static TEE_Result forward_network_TA_params()
 {
     forward_network_TA();
 
@@ -751,7 +752,7 @@ static TEE_Result ree_to_tee_TA(uint32_t param_types, TEE_Param params[4]){
     int net_train = params[1].value.a;
 
     // Shallow copy (주소만 저장)
-    loop_back_buffer = net_input;
+    loop_back_buffer = TEE_Malloc(sizeof(float) * num_floats, TEE_MALLOC_FILL_ZERO);
     loop_back_buffer_size = num_floats;
     return TEE_SUCCESS;
 }
@@ -969,7 +970,7 @@ TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
         return forward_input_TA_params(param_types, params);
 
         case FORWARD_CMD:
-        return forward_network_TA_params(param_types, params);
+        return forward_network_TA_params();
 
         case BACKWARD_CMD:
         return backward_network_TA_params(param_types, params);

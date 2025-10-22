@@ -1,19 +1,19 @@
 Archive member included to satisfy reference by file (symbol)
 
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
-                              ./darknetp_ta.o (malloc)
+                              ./dropout_layer_TA.o (malloc)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(stack_check.o)
-                              ./darknetp_ta.o (__stack_chk_fail)
+                              ./dropout_layer_TA.o (__stack_chk_fail)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
-                              ./darknetp_ta.o (memcpy)
+                              ./connected_layer_TA.o (memcpy)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memset.o)
-                              ./connected_layer_TA.o (memset)
+                              ./softmax_layer_TA.o (memset)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strcmp.o)
                               ./activations_TA.o (strcmp)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strncmp.o)
                               ./parser_TA.o (strncmp)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
-                              ./darknetp_ta.o (trace_printf)
+                              ./cost_layer_TA.o (trace_printf)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
                               /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o) (vsnprintk)
 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memchr.o)
@@ -85,48 +85,24 @@ mbedtls_mpi_mempool
 
 Discarded input sections
 
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./darknetp_ta.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .group         0x0000000000000000        0xc ./utils_TA.o
- .debug_macro   0x0000000000000000      0x174 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x58 ./utils_TA.o
- .debug_macro   0x0000000000000000      0x112 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x7c ./utils_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./utils_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x22 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x2e ./utils_TA.o
- .debug_macro   0x0000000000000000       0x33 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x16 ./utils_TA.o
- .debug_macro   0x0000000000000000       0x2e ./utils_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./softmax_layer_TA.o
  .group         0x0000000000000000        0xc ./activations_TA.o
  .group         0x0000000000000000        0xc ./activations_TA.o
  .group         0x0000000000000000        0xc ./activations_TA.o
@@ -150,6 +126,62 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x58 ./activations_TA.o
  .debug_macro   0x0000000000000000       0x16 ./activations_TA.o
  .debug_macro   0x0000000000000000       0x2e ./activations_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000      0xcf1 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x35 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x34 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0x79 ./cost_layer_TA.o
+ .debug_macro   0x0000000000000000       0xfd ./cost_layer_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./gemm_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./gemm_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./gemm_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./gemm_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./gemm_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
  .group         0x0000000000000000        0xc ./connected_layer_TA.o
@@ -176,6 +208,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x22 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x34 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x79 ./connected_layer_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0xc4 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x2e ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x33 ./connected_layer_TA.o
@@ -184,6 +217,39 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0xcf1 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0x35 ./connected_layer_TA.o
  .debug_macro   0x0000000000000000       0xfd ./connected_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .group         0x0000000000000000        0xc ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000      0xcf1 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x35 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x34 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0x79 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000000000       0xfd ./dropout_layer_TA.o
  .group         0x0000000000000000        0xc ./math_TA.o
  .group         0x0000000000000000        0xc ./math_TA.o
  .group         0x0000000000000000        0xc ./math_TA.o
@@ -246,8 +312,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x2e ./parser_TA.o
  .debug_macro   0x0000000000000000       0x33 ./parser_TA.o
  .debug_macro   0x0000000000000000       0x16 ./parser_TA.o
- .debug_macro   0x0000000000000000       0x10 ./parser_TA.o
- .debug_macro   0x0000000000000000       0x9a ./parser_TA.o
  .debug_macro   0x0000000000000000       0x2e ./parser_TA.o
  .group         0x0000000000000000        0xc ./blas_TA.o
  .group         0x0000000000000000        0xc ./blas_TA.o
@@ -348,41 +412,31 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x34 ./network_TA.o
  .debug_macro   0x0000000000000000       0x79 ./network_TA.o
  .debug_macro   0x0000000000000000       0xfd ./network_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .group         0x0000000000000000        0xc ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x112 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x174 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x7c ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x22 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x33 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x58 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x34 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x79 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000      0xcf1 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0x35 ./softmax_layer_TA.o
- .debug_macro   0x0000000000000000       0xfd ./softmax_layer_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .group         0x0000000000000000        0xc ./utils_TA.o
+ .debug_macro   0x0000000000000000      0x174 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x58 ./utils_TA.o
+ .debug_macro   0x0000000000000000      0x112 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x7c ./utils_TA.o
+ .debug_macro   0x0000000000000000      0x1a0 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0xc4 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x22 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x33 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x16 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x10 ./utils_TA.o
+ .debug_macro   0x0000000000000000       0x2e ./utils_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
  .group         0x0000000000000000        0xc ./aes_TA.o
@@ -422,39 +476,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x58 ./batchnorm_layer_TA.o
  .debug_macro   0x0000000000000000       0x16 ./batchnorm_layer_TA.o
  .debug_macro   0x0000000000000000       0x2e ./batchnorm_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .group         0x0000000000000000        0xc ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000      0x112 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000      0x174 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x7c ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x22 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x33 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x58 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000      0xcf1 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x35 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x34 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0x79 ./dropout_layer_TA.o
- .debug_macro   0x0000000000000000       0xfd ./dropout_layer_TA.o
  .group         0x0000000000000000        0xc ./convolutional_layer_TA.o
  .group         0x0000000000000000        0xc ./convolutional_layer_TA.o
  .group         0x0000000000000000        0xc ./convolutional_layer_TA.o
@@ -488,39 +509,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x34 ./convolutional_layer_TA.o
  .debug_macro   0x0000000000000000       0x79 ./convolutional_layer_TA.o
  .debug_macro   0x0000000000000000       0xfd ./convolutional_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .group         0x0000000000000000        0xc ./cost_layer_TA.o
- .debug_macro   0x0000000000000000      0x112 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000      0x174 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x7c ./cost_layer_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x22 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x33 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x58 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x16 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x2e ./cost_layer_TA.o
- .debug_macro   0x0000000000000000      0xcf1 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x35 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x34 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0x79 ./cost_layer_TA.o
- .debug_macro   0x0000000000000000       0xfd ./cost_layer_TA.o
  .group         0x0000000000000000        0xc ./avgpool_layer_TA.o
  .group         0x0000000000000000        0xc ./avgpool_layer_TA.o
  .group         0x0000000000000000        0xc ./avgpool_layer_TA.o
@@ -561,29 +549,41 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x174 ./col2im_TA.o
  .debug_macro   0x0000000000000000       0x58 ./col2im_TA.o
  .debug_macro   0x0000000000000000       0x2e ./col2im_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .group         0x0000000000000000        0xc ./gemm_TA.o
- .debug_macro   0x0000000000000000      0x174 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x58 ./gemm_TA.o
- .debug_macro   0x0000000000000000      0x112 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x7c ./gemm_TA.o
- .debug_macro   0x0000000000000000      0x1a0 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0xc4 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x22 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x2e ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x33 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x16 ./gemm_TA.o
- .debug_macro   0x0000000000000000       0x2e ./gemm_TA.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .group         0x0000000000000000        0xc ./darknetp_ta.o
+ .debug_macro   0x0000000000000000      0x112 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000      0x174 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000      0xcf1 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x7c ./darknetp_ta.o
+ .debug_macro   0x0000000000000000      0x1a0 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0xc4 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x22 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x35 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x58 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x34 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x79 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0xfd ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x2e ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x33 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x16 ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x9a ./darknetp_ta.o
+ .debug_macro   0x0000000000000000       0x2e ./darknetp_ta.o
  .group         0x0000000000000000        0xc ./diffprivate_TA.o
  .group         0x0000000000000000        0xc ./diffprivate_TA.o
  .group         0x0000000000000000        0xc ./diffprivate_TA.o
@@ -1440,144 +1440,144 @@ Linker script and memory map
  *(SORT_BY_ALIGNMENT(.text) SORT_BY_ALIGNMENT(.text.*))
  .text          0x0000000000000020       0xec /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
                 0x0000000000000020                memcpy
- .text          0x000000000000010c     0x1080 ./darknetp_ta.o
-                0x00000000000007f4                summary_array
-                0x0000000000000944                TA_CreateEntryPoint
-                0x000000000000097c                TA_DestroyEntryPoint
-                0x00000000000009a0                TA_OpenSessionEntryPoint
-                0x0000000000000a10                TA_CloseSessionEntryPoint
-                0x0000000000000a34                TA_InvokeCommandEntryPoint
- .text          0x000000000000118c      0x158 ./utils_TA.o
-                0x000000000000118c                sum_array_TA
-                0x00000000000011b0                rand_uniform_TA
-                0x00000000000011ec                rand_normal_TA
- .text          0x00000000000012e4      0x790 ./activations_TA.o
-                0x00000000000012e4                get_activation_string_TA
-                0x00000000000013ac                get_activation_TA
-                0x000000000000154c                activate_TA
-                0x00000000000017fc                activate_array_TA
-                0x0000000000001850                gradient_TA
-                0x0000000000001a0c                gradient_array_TA
- .text          0x0000000000001a74      0x6f0 ./connected_layer_TA.o
-                0x0000000000001a74                forward_connected_layer_TA_new
-                0x0000000000001b6c                backward_connected_layer_TA_new
-                0x0000000000001ca0                update_connected_layer_TA_new
-                0x0000000000001dc8                make_connected_layer_TA_new
- .text          0x0000000000002164      0x95c ./math_TA.o
-                0x0000000000002164                ta_max
-                0x0000000000002170                ta_pow
-                0x00000000000021c0                ta_eee
-                0x0000000000002260                ta_exp
-                0x00000000000022bc                ta_rand
-                0x0000000000002354                ta_floor
-                0x0000000000002368                ta_sqrt
-                0x00000000000023dc                F1
-                0x00000000000023e8                F2
-                0x0000000000002410                simpson
-                0x00000000000024a4                asr
-                0x0000000000002588                asr0
-                0x00000000000025d8                ta_ln
-                0x00000000000025f0                ta_log
-                0x0000000000002624                ta_cos
-                0x0000000000002774                ta_sin
-                0x00000000000028c8                ta_tan
-                0x00000000000028f8                reverse
-                0x000000000000292c                intToStr
-                0x00000000000029cc                ftoa
-                0x0000000000002a74                bubble_sort_top
- .text          0x0000000000002ac0      0x510 ./parser_TA.o
-                0x0000000000002ac0                aes_cbc_TA
-                0x0000000000002ce8                transpose_matrix_TA
-                0x0000000000002d8c                load_weights_TA
-                0x0000000000002ef8                save_weights_TA
- .text          0x0000000000002fd0      0x638 ./blas_TA.o
-                0x0000000000002fd0                fill_cpu_TA
-                0x0000000000002ff0                copy_cpu_TA
-                0x0000000000003018                mean_cpu_TA
-                0x00000000000030a4                variance_cpu_TA
-                0x00000000000031b4                scal_cpu_TA
-                0x00000000000031dc                axpy_cpu_TA
-                0x000000000000320c                normalize_cpu_TA
-                0x00000000000032fc                softmax_TA
-                0x00000000000033e4                softmax_cpu_TA
-                0x00000000000034a0                softmax_x_ent_cpu_TA
-                0x000000000000352c                smooth_l1_cpu_TA
-                0x0000000000003590                l1_cpu_TA
-                0x00000000000035d8                l2_cpu_TA
- .text          0x0000000000003608      0x410 ./maxpool_layer_TA.o
-                0x0000000000003608                forward_maxpool_layer_TA_new
-                0x00000000000037e8                backward_maxpool_layer_TA_new
-                0x0000000000003840                make_maxpool_layer_TA
-                0x0000000000003970                resize_maxpool_layer_TA
- .text          0x0000000000003a18      0x7a4 ./network_TA.o
-                0x0000000000003a18                make_network_TA
-                0x0000000000003ba4                update_network_TA
-                0x0000000000003c60                calc_network_cost_TA
-                0x0000000000003cd8                forward_network_TA
-                0x0000000000003ef4                calc_network_loss_TA
-                0x0000000000003ff8                backward_network_TA
- .text          0x00000000000041bc      0x278 ./softmax_layer_TA.o
-                0x00000000000041bc                forward_softmax_layer_TA
-                0x00000000000042dc                backward_softmax_layer_TA
-                0x0000000000004300                make_softmax_layer_TA_new
- .text          0x0000000000004434      0x8d8 ./aes_TA.o
-                0x0000000000004a5c                AES_init_ctx
-                0x0000000000004a60                AES_init_ctx_iv
-                0x0000000000004a88                AES_ctx_set_iv
-                0x0000000000004a94                AES_ECB_encrypt
-                0x0000000000004aa4                AES_ECB_decrypt
-                0x0000000000004ab4                AES_CBC_encrypt_buffer
-                0x0000000000004b40                AES_CBC_decrypt_buffer
-                0x0000000000004c18                AES_CTR_xcrypt_buffer
- .text          0x0000000000004d0c      0x17c ./im2col_TA.o
-                0x0000000000004d0c                im2col_get_pixel_TA
-                0x0000000000004d40                im2col_cpu_TA
- .text          0x0000000000004e88      0x724 ./batchnorm_layer_TA.o
-                0x0000000000004e88                forward_batchnorm_layer_TA
-                0x0000000000005064                backward_scale_cpu_TA
-                0x00000000000050dc                mean_delta_cpu_TA
-                0x00000000000051d0                variance_delta_cpu_TA
-                0x00000000000052e8                normalize_delta_cpu_TA
-                0x000000000000542c                backward_batchnorm_layer_TA
- .text          0x00000000000055ac      0x20c ./dropout_layer_TA.o
-                0x00000000000055ac                forward_dropout_layer_TA_new
-                0x00000000000055e0                backward_dropout_layer_TA_new
-                0x0000000000005644                make_dropout_layer_TA_new
-                0x0000000000005780                resize_dropout_layer_TA
- .text          0x00000000000057b8      0xe4c ./convolutional_layer_TA.o
-                0x00000000000057b8                update_convolutional_layer_TA_new
-                0x00000000000058d8                swap_binary_TA
-                0x00000000000058ec                add_bias_TA
-                0x0000000000005954                scale_bias_TA
-                0x00000000000059bc                backward_bias_TA
-                0x0000000000005a5c                backward_convolutional_layer_TA_new
-                0x0000000000005d44                convolutional_out_height_TA
-                0x0000000000005d68                convolutional_out_width_TA
-                0x0000000000005d8c                binarize_weights_TA
-                0x0000000000005e14                binarize_cpu_TA
-                0x0000000000005e44                forward_convolutional_layer_TA_new
-                0x0000000000006094                make_convolutional_layer_TA_new
- .text          0x0000000000006604      0x31c ./cost_layer_TA.o
-                0x0000000000006604                forward_cost_layer_TA
-                0x00000000000066d4                backward_cost_layer_TA
-                0x00000000000066f8                get_cost_type_TA
-                0x00000000000067d8                get_cost_string_TA
-                0x0000000000006844                make_cost_layer_TA_new
- .text          0x0000000000006920      0x20c ./avgpool_layer_TA.o
-                0x0000000000006920                forward_avgpool_layer_TA_new
-                0x00000000000069c0                backward_avgpool_layer_TA_new
-                0x0000000000006a54                make_avgpool_layer_TA
-                0x0000000000006b14                resize_avgpool_layer_TA
- .text          0x0000000000006b2c      0x17c ./col2im_TA.o
-                0x0000000000006b2c                col2im_add_pixel_TA
-                0x0000000000006b64                col2im_cpu_TA
- .text          0x0000000000006ca8      0x2c0 ./gemm_TA.o
-                0x0000000000006ca8                gemm_nn_TA
-                0x0000000000006d2c                gemm_nt_TA
-                0x0000000000006db4                gemm_tn_TA
-                0x0000000000006e34                gemm_tt_TA
-                0x0000000000006ebc                gemm_cpu_TA
-                0x0000000000006f64                gemm_TA
+ .text          0x000000000000010c      0x278 ./softmax_layer_TA.o
+                0x000000000000010c                forward_softmax_layer_TA
+                0x000000000000022c                backward_softmax_layer_TA
+                0x0000000000000250                make_softmax_layer_TA_new
+ .text          0x0000000000000384      0x790 ./activations_TA.o
+                0x0000000000000384                get_activation_string_TA
+                0x000000000000044c                get_activation_TA
+                0x00000000000005ec                activate_TA
+                0x000000000000089c                activate_array_TA
+                0x00000000000008f0                gradient_TA
+                0x0000000000000aac                gradient_array_TA
+ .text          0x0000000000000b14      0x31c ./cost_layer_TA.o
+                0x0000000000000b14                forward_cost_layer_TA
+                0x0000000000000be4                backward_cost_layer_TA
+                0x0000000000000c08                get_cost_type_TA
+                0x0000000000000ce8                get_cost_string_TA
+                0x0000000000000d54                make_cost_layer_TA_new
+ .text          0x0000000000000e30      0x2c0 ./gemm_TA.o
+                0x0000000000000e30                gemm_nn_TA
+                0x0000000000000eb4                gemm_nt_TA
+                0x0000000000000f3c                gemm_tn_TA
+                0x0000000000000fbc                gemm_tt_TA
+                0x0000000000001044                gemm_cpu_TA
+                0x00000000000010ec                gemm_TA
+ .text          0x00000000000010f0      0x6f0 ./connected_layer_TA.o
+                0x00000000000010f0                forward_connected_layer_TA_new
+                0x00000000000011e8                backward_connected_layer_TA_new
+                0x000000000000131c                update_connected_layer_TA_new
+                0x0000000000001444                make_connected_layer_TA_new
+ .text          0x00000000000017e0      0x20c ./dropout_layer_TA.o
+                0x00000000000017e0                forward_dropout_layer_TA_new
+                0x0000000000001814                backward_dropout_layer_TA_new
+                0x0000000000001878                make_dropout_layer_TA_new
+                0x00000000000019b4                resize_dropout_layer_TA
+ .text          0x00000000000019ec      0x95c ./math_TA.o
+                0x00000000000019ec                ta_max
+                0x00000000000019f8                ta_pow
+                0x0000000000001a48                ta_eee
+                0x0000000000001ae8                ta_exp
+                0x0000000000001b44                ta_rand
+                0x0000000000001bdc                ta_floor
+                0x0000000000001bf0                ta_sqrt
+                0x0000000000001c64                F1
+                0x0000000000001c70                F2
+                0x0000000000001c98                simpson
+                0x0000000000001d2c                asr
+                0x0000000000001e10                asr0
+                0x0000000000001e60                ta_ln
+                0x0000000000001e78                ta_log
+                0x0000000000001eac                ta_cos
+                0x0000000000001ffc                ta_sin
+                0x0000000000002150                ta_tan
+                0x0000000000002180                reverse
+                0x00000000000021b4                intToStr
+                0x0000000000002254                ftoa
+                0x00000000000022fc                bubble_sort_top
+ .text          0x0000000000002348      0x510 ./parser_TA.o
+                0x0000000000002348                aes_cbc_TA
+                0x0000000000002570                transpose_matrix_TA
+                0x0000000000002614                load_weights_TA
+                0x0000000000002780                save_weights_TA
+ .text          0x0000000000002858      0x638 ./blas_TA.o
+                0x0000000000002858                fill_cpu_TA
+                0x0000000000002878                copy_cpu_TA
+                0x00000000000028a0                mean_cpu_TA
+                0x000000000000292c                variance_cpu_TA
+                0x0000000000002a3c                scal_cpu_TA
+                0x0000000000002a64                axpy_cpu_TA
+                0x0000000000002a94                normalize_cpu_TA
+                0x0000000000002b84                softmax_TA
+                0x0000000000002c6c                softmax_cpu_TA
+                0x0000000000002d28                softmax_x_ent_cpu_TA
+                0x0000000000002db4                smooth_l1_cpu_TA
+                0x0000000000002e18                l1_cpu_TA
+                0x0000000000002e60                l2_cpu_TA
+ .text          0x0000000000002e90      0x410 ./maxpool_layer_TA.o
+                0x0000000000002e90                forward_maxpool_layer_TA_new
+                0x0000000000003070                backward_maxpool_layer_TA_new
+                0x00000000000030c8                make_maxpool_layer_TA
+                0x00000000000031f8                resize_maxpool_layer_TA
+ .text          0x00000000000032a0      0x7a4 ./network_TA.o
+                0x00000000000032a0                make_network_TA
+                0x000000000000342c                update_network_TA
+                0x00000000000034e8                calc_network_cost_TA
+                0x0000000000003560                forward_network_TA
+                0x000000000000377c                calc_network_loss_TA
+                0x0000000000003880                backward_network_TA
+ .text          0x0000000000003a44      0x158 ./utils_TA.o
+                0x0000000000003a44                sum_array_TA
+                0x0000000000003a68                rand_uniform_TA
+                0x0000000000003aa4                rand_normal_TA
+ .text          0x0000000000003b9c      0x8d8 ./aes_TA.o
+                0x00000000000041c4                AES_init_ctx
+                0x00000000000041c8                AES_init_ctx_iv
+                0x00000000000041f0                AES_ctx_set_iv
+                0x00000000000041fc                AES_ECB_encrypt
+                0x000000000000420c                AES_ECB_decrypt
+                0x000000000000421c                AES_CBC_encrypt_buffer
+                0x00000000000042a8                AES_CBC_decrypt_buffer
+                0x0000000000004380                AES_CTR_xcrypt_buffer
+ .text          0x0000000000004474      0x17c ./im2col_TA.o
+                0x0000000000004474                im2col_get_pixel_TA
+                0x00000000000044a8                im2col_cpu_TA
+ .text          0x00000000000045f0      0x724 ./batchnorm_layer_TA.o
+                0x00000000000045f0                forward_batchnorm_layer_TA
+                0x00000000000047cc                backward_scale_cpu_TA
+                0x0000000000004844                mean_delta_cpu_TA
+                0x0000000000004938                variance_delta_cpu_TA
+                0x0000000000004a50                normalize_delta_cpu_TA
+                0x0000000000004b94                backward_batchnorm_layer_TA
+ .text          0x0000000000004d14      0xe4c ./convolutional_layer_TA.o
+                0x0000000000004d14                update_convolutional_layer_TA_new
+                0x0000000000004e34                swap_binary_TA
+                0x0000000000004e48                add_bias_TA
+                0x0000000000004eb0                scale_bias_TA
+                0x0000000000004f18                backward_bias_TA
+                0x0000000000004fb8                backward_convolutional_layer_TA_new
+                0x00000000000052a0                convolutional_out_height_TA
+                0x00000000000052c4                convolutional_out_width_TA
+                0x00000000000052e8                binarize_weights_TA
+                0x0000000000005370                binarize_cpu_TA
+                0x00000000000053a0                forward_convolutional_layer_TA_new
+                0x00000000000055f0                make_convolutional_layer_TA_new
+ .text          0x0000000000005b60      0x20c ./avgpool_layer_TA.o
+                0x0000000000005b60                forward_avgpool_layer_TA_new
+                0x0000000000005c00                backward_avgpool_layer_TA_new
+                0x0000000000005c94                make_avgpool_layer_TA
+                0x0000000000005d54                resize_avgpool_layer_TA
+ .text          0x0000000000005d6c      0x17c ./col2im_TA.o
+                0x0000000000005d6c                col2im_add_pixel_TA
+                0x0000000000005da4                col2im_cpu_TA
+ .text          0x0000000000005ee8     0x1080 ./darknetp_ta.o
+                0x00000000000065d0                summary_array
+                0x0000000000006720                TA_CreateEntryPoint
+                0x0000000000006758                TA_DestroyEntryPoint
+                0x000000000000677c                TA_OpenSessionEntryPoint
+                0x00000000000067ec                TA_CloseSessionEntryPoint
+                0x0000000000006810                TA_InvokeCommandEntryPoint
  .text          0x0000000000006f68       0xc4 ./diffprivate_TA.o
                 0x0000000000006f68                diff_private_SGD
  .text          0x000000000000702c       0x1c ./user_ta_header.o
@@ -2136,257 +2136,257 @@ Linker script and memory map
 
 .plt            0x0000000000019784        0x0
  *(SORT_BY_ALIGNMENT(.plt))
- .plt           0x0000000000019784        0x0 ./darknetp_ta.o
+ .plt           0x0000000000019784        0x0 ./softmax_layer_TA.o
 
 .eh_frame_hdr
  *(SORT_BY_ALIGNMENT(.eh_frame_hdr))
  *(SORT_BY_ALIGNMENT(.eh_frame_entry) SORT_BY_ALIGNMENT(.eh_frame_entry.*))
 
-.eh_frame       0x0000000000019788     0x5204
+.eh_frame       0x0000000000019788     0x51fc
  *(SORT_BY_ALIGNMENT(.eh_frame))
- .eh_frame      0x0000000000019788      0x348 ./darknetp_ta.o
- .eh_frame      0x0000000000019ad0       0x88 ./utils_TA.o
-                                         0xa0 (size before relaxing)
- .eh_frame      0x0000000000019b58      0x118 ./activations_TA.o
+ .eh_frame      0x0000000000019788       0xb8 ./softmax_layer_TA.o
+ .eh_frame      0x0000000000019840      0x118 ./activations_TA.o
                                         0x128 (size before relaxing)
- .eh_frame      0x0000000000019c70      0x120 ./connected_layer_TA.o
-                                        0x130 (size before relaxing)
- .eh_frame      0x0000000000019d90      0x368 ./math_TA.o
-                                        0x380 (size before relaxing)
- .eh_frame      0x000000000001a0f8       0xe0 ./parser_TA.o
-                                         0xf8 (size before relaxing)
- .eh_frame      0x000000000001a1d8      0x210 ./blas_TA.o
-                                        0x220 (size before relaxing)
- .eh_frame      0x000000000001a3e8       0xc0 ./maxpool_layer_TA.o
-                                         0xd8 (size before relaxing)
- .eh_frame      0x000000000001a4a8      0x198 ./network_TA.o
-                                        0x1b0 (size before relaxing)
- .eh_frame      0x000000000001a640       0xa8 ./softmax_layer_TA.o
-                                         0xb8 (size before relaxing)
- .eh_frame      0x000000000001a6e8      0x1b0 ./aes_TA.o
-                                        0x1c0 (size before relaxing)
- .eh_frame      0x000000000001a898       0x58 ./im2col_TA.o
-                                         0x70 (size before relaxing)
- .eh_frame      0x000000000001a8f0      0x198 ./batchnorm_layer_TA.o
-                                        0x1b0 (size before relaxing)
- .eh_frame      0x000000000001aa88       0x98 ./dropout_layer_TA.o
-                                         0xa8 (size before relaxing)
- .eh_frame      0x000000000001ab20      0x218 ./convolutional_layer_TA.o
-                                        0x228 (size before relaxing)
- .eh_frame      0x000000000001ad38       0xc8 ./cost_layer_TA.o
+ .eh_frame      0x0000000000019958       0xc8 ./cost_layer_TA.o
                                          0xe0 (size before relaxing)
- .eh_frame      0x000000000001ae00       0x78 ./avgpool_layer_TA.o
-                                         0x88 (size before relaxing)
- .eh_frame      0x000000000001ae78       0x58 ./col2im_TA.o
-                                         0x70 (size before relaxing)
- .eh_frame      0x000000000001aed0       0x78 ./gemm_TA.o
+ .eh_frame      0x0000000000019a20       0x78 ./gemm_TA.o
                                          0x90 (size before relaxing)
- .eh_frame      0x000000000001af48       0x40 ./diffprivate_TA.o
-                                         0x50 (size before relaxing)
- .eh_frame      0x000000000001af88       0x30 ./user_ta_header.o
-                                         0x40 (size before relaxing)
- .eh_frame      0x000000000001afb8      0x2d8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
-                                        0x2e8 (size before relaxing)
- .eh_frame      0x000000000001b290       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(stack_check.o)
-                                         0x30 (size before relaxing)
- .eh_frame      0x000000000001b2a8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b2c0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memset.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b2d8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strcmp.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b2f0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strncmp.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b308       0xb8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
-                                         0xc8 (size before relaxing)
- .eh_frame      0x000000000001b3c0       0xf0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
-                                        0x100 (size before relaxing)
- .eh_frame      0x000000000001b4b0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memchr.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b4c8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strlen.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001b4e0       0x38 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(assert.o)
-                                         0x50 (size before relaxing)
- .eh_frame      0x000000000001b518       0xa8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(trace_ext.o)
-                                         0xc0 (size before relaxing)
- .eh_frame      0x000000000001b5c0      0x588 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
-                                        0x5a0 (size before relaxing)
- .eh_frame      0x000000000001bb48      0xaf0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
-                                        0xb08 (size before relaxing)
- .eh_frame      0x000000000001c638      0x180 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
-                                        0x198 (size before relaxing)
- .eh_frame      0x000000000001c7b8       0xc0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
-                                         0xd0 (size before relaxing)
- .eh_frame      0x000000000001c878      0x150 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
-                                        0x168 (size before relaxing)
- .eh_frame      0x000000000001c9c8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(abort.o)
-                                         0x30 (size before relaxing)
- .eh_frame      0x000000000001c9e0      0x7d0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
-                                        0x7e0 (size before relaxing)
- .eh_frame      0x000000000001d1b0      0x750 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
-                                        0x768 (size before relaxing)
- .eh_frame      0x000000000001d900      0x2f8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
-                                        0x308 (size before relaxing)
- .eh_frame      0x000000000001dbf8       0x90 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
+ .eh_frame      0x0000000000019a98      0x120 ./connected_layer_TA.o
+                                        0x130 (size before relaxing)
+ .eh_frame      0x0000000000019bb8       0x98 ./dropout_layer_TA.o
                                          0xa8 (size before relaxing)
- .eh_frame      0x000000000001dc88       0x58 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(base64.o)
-                                         0x70 (size before relaxing)
- .eh_frame      0x000000000001dce0      0x988 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
-                                        0x9a0 (size before relaxing)
- .eh_frame      0x000000000001e668      0x1e0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
-                                        0x1f8 (size before relaxing)
- .eh_frame      0x000000000001e848       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001e860       0x58 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintf.o)
-                                         0x68 (size before relaxing)
- .eh_frame      0x000000000001e8b8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memmove.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001e8d0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strlcpy.o)
-                                         0x28 (size before relaxing)
- .eh_frame      0x000000000001e8e8       0x88 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
+ .eh_frame      0x0000000000019c50      0x368 ./math_TA.o
+                                        0x380 (size before relaxing)
+ .eh_frame      0x0000000000019fb8       0xe0 ./parser_TA.o
+                                         0xf8 (size before relaxing)
+ .eh_frame      0x000000000001a098      0x210 ./blas_TA.o
+                                        0x220 (size before relaxing)
+ .eh_frame      0x000000000001a2a8       0xc0 ./maxpool_layer_TA.o
+                                         0xd8 (size before relaxing)
+ .eh_frame      0x000000000001a368      0x198 ./network_TA.o
+                                        0x1b0 (size before relaxing)
+ .eh_frame      0x000000000001a500       0x88 ./utils_TA.o
                                          0xa0 (size before relaxing)
- .eh_frame      0x000000000001e970       0x1c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+ .eh_frame      0x000000000001a588      0x1b0 ./aes_TA.o
+                                        0x1c0 (size before relaxing)
+ .eh_frame      0x000000000001a738       0x58 ./im2col_TA.o
+                                         0x70 (size before relaxing)
+ .eh_frame      0x000000000001a790      0x198 ./batchnorm_layer_TA.o
+                                        0x1b0 (size before relaxing)
+ .eh_frame      0x000000000001a928      0x218 ./convolutional_layer_TA.o
+                                        0x228 (size before relaxing)
+ .eh_frame      0x000000000001ab40       0x78 ./avgpool_layer_TA.o
+                                         0x88 (size before relaxing)
+ .eh_frame      0x000000000001abb8       0x58 ./col2im_TA.o
+                                         0x70 (size before relaxing)
+ .eh_frame      0x000000000001ac10      0x330 ./darknetp_ta.o
+                                        0x348 (size before relaxing)
+ .eh_frame      0x000000000001af40       0x40 ./diffprivate_TA.o
+                                         0x50 (size before relaxing)
+ .eh_frame      0x000000000001af80       0x30 ./user_ta_header.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x000000000001afb0      0x2d8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                                        0x2e8 (size before relaxing)
+ .eh_frame      0x000000000001b288       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(stack_check.o)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000001b2a0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b2b8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memset.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b2d0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strcmp.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b2e8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strncmp.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b300       0xb8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
+                                         0xc8 (size before relaxing)
+ .eh_frame      0x000000000001b3b8       0xf0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
+                                        0x100 (size before relaxing)
+ .eh_frame      0x000000000001b4a8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memchr.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b4c0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strlen.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001b4d8       0x38 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(assert.o)
+                                         0x50 (size before relaxing)
+ .eh_frame      0x000000000001b510       0xa8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                                         0xc0 (size before relaxing)
+ .eh_frame      0x000000000001b5b8      0x588 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
+                                        0x5a0 (size before relaxing)
+ .eh_frame      0x000000000001bb40      0xaf0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                                        0xb08 (size before relaxing)
+ .eh_frame      0x000000000001c630      0x180 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+                                        0x198 (size before relaxing)
+ .eh_frame      0x000000000001c7b0       0xc0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+                                         0xd0 (size before relaxing)
+ .eh_frame      0x000000000001c870      0x150 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                                        0x168 (size before relaxing)
+ .eh_frame      0x000000000001c9c0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(abort.o)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x000000000001c9d8      0x7d0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                                        0x7e0 (size before relaxing)
+ .eh_frame      0x000000000001d1a8      0x750 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+                                        0x768 (size before relaxing)
+ .eh_frame      0x000000000001d8f8      0x2f8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                                        0x308 (size before relaxing)
+ .eh_frame      0x000000000001dbf0       0x90 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
+                                         0xa8 (size before relaxing)
+ .eh_frame      0x000000000001dc80       0x58 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(base64.o)
+                                         0x70 (size before relaxing)
+ .eh_frame      0x000000000001dcd8      0x988 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                                        0x9a0 (size before relaxing)
+ .eh_frame      0x000000000001e660      0x1e0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+                                        0x1f8 (size before relaxing)
+ .eh_frame      0x000000000001e840       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001e858       0x58 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintf.o)
+                                         0x68 (size before relaxing)
+ .eh_frame      0x000000000001e8b0       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memmove.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001e8c8       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(strlcpy.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x000000000001e8e0       0x88 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
+                                         0xa0 (size before relaxing)
+ .eh_frame      0x000000000001e968       0x1c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
                                          0x30 (size before relaxing)
  *(SORT_BY_ALIGNMENT(.eh_frame.*))
 
 .gcc_except_table
  *(SORT_BY_ALIGNMENT(.gcc_except_table) SORT_BY_ALIGNMENT(.gcc_except_table.*))
 
-.rodata         0x000000000001e990     0x1935
+.rodata         0x000000000001e988     0x1935
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*))
- .rodata.cst8   0x000000000001e990       0x30 ./activations_TA.o
- .rodata.cst8   0x000000000001e9c0       0x50 ./math_TA.o
+ .rodata.cst8   0x000000000001e988       0x30 ./activations_TA.o
+ .rodata.cst8   0x000000000001e9b8       0x50 ./math_TA.o
                                          0x58 (size before relaxing)
- .rodata.cst8   0x000000000001ea10        0x8 ./blas_TA.o
- .rodata.cst8   0x000000000001ea18        0x8 ./network_TA.o
+ .rodata.cst8   0x000000000001ea08        0x8 ./blas_TA.o
+ .rodata.cst8   0x000000000001ea10        0x8 ./network_TA.o
                                          0x10 (size before relaxing)
- .rodata.cst8   0x000000000001ea20        0x8 ./diffprivate_TA.o
+ .rodata.cst8   0x000000000001ea18        0x8 ./diffprivate_TA.o
  .rodata.user_ta_header.c
-                0x000000000001ea28       0x33 ./user_ta_header.o
-                0x000000000001ea28                ta_num_props
-                0x000000000001ea48                __ta_no_share_heap_size
-                0x000000000001ea50                ta_heap_size
-                0x000000000001ea58                trace_ext_prefix
- *fill*         0x000000000001ea5b        0x5 
+                0x000000000001ea20       0x33 ./user_ta_header.o
+                0x000000000001ea20                ta_num_props
+                0x000000000001ea40                __ta_no_share_heap_size
+                0x000000000001ea48                ta_heap_size
+                0x000000000001ea50                trace_ext_prefix
+ *fill*         0x000000000001ea53        0x5 
  .rodata.lib/libutee/tee_api.c
-                0x000000000001ea60       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
- .rodata.darknetp_ta.c
-                0x000000000001ea80       0x9a ./darknetp_ta.o
- *fill*         0x000000000001eb1a        0x2 
- .rodata.cst4   0x000000000001eb1c        0x4 ./darknetp_ta.o
+                0x000000000001ea58       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
  .rodata.activations_TA.c
-                0x000000000001eb20       0x3a ./activations_TA.o
- *fill*         0x000000000001eb5a        0x2 
- .rodata.cst4   0x000000000001eb5c        0xc ./activations_TA.o
- .rodata.cst4   0x000000000001eb68        0x4 ./blas_TA.o
- .rodata.cst4   0x000000000001eb6c        0x4 ./maxpool_layer_TA.o
- .rodata.cst4   0x000000000001eb6c        0x4 ./batchnorm_layer_TA.o
-                                          0xc (size before relaxing)
+                0x000000000001ea78       0x3a ./activations_TA.o
+ *fill*         0x000000000001eab2        0x2 
+ .rodata.cst4   0x000000000001eab4        0xc ./activations_TA.o
  .rodata.cost_layer_TA.c
-                0x000000000001eb70       0x16 ./cost_layer_TA.o
- *fill*         0x000000000001eb86        0x2 
- .rodata.cst4   0x000000000001eb88        0x4 ./cost_layer_TA.o
+                0x000000000001eac0       0x16 ./cost_layer_TA.o
+ *fill*         0x000000000001ead6        0x2 
+ .rodata.cst4   0x000000000001ead8        0x4 ./cost_layer_TA.o
+ .rodata.cst4   0x000000000001eadc        0x4 ./blas_TA.o
+ .rodata.cst4   0x000000000001eae0        0x4 ./maxpool_layer_TA.o
+ .rodata.cst4   0x000000000001eae0        0x8 ./batchnorm_layer_TA.o
+                                          0xc (size before relaxing)
+ .rodata.darknetp_ta.c
+                0x000000000001eae8       0x9a ./darknetp_ta.o
+ .rodata.cst4   0x000000000001eb82        0x4 ./darknetp_ta.o
+ *fill*         0x000000000001eb82        0x2 
  .rodata.lib/libutils/ext/snprintk.c
-                0x000000000001eb8c       0xac /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
+                0x000000000001eb84       0xac /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
  .rodata.lib/libutee/tee_api_operations.c
-                0x000000000001ec38       0x1c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                0x000000000001ec30       0x1c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
  .rodata.lib/libutee/tee_system_pta.c
-                0x000000000001ec54       0x31 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
- *fill*         0x000000000001ec85        0x3 
+                0x000000000001ec4c       0x31 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ *fill*         0x000000000001ec7d        0x3 
  .rodata.lib/libutee/tee_api_property.c
-                0x000000000001ec88       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                0x000000000001ec80       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
  .rodata.lib/libutee/base64.c
-                0x000000000001eca8       0x45 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(base64.o)
- *fill*         0x000000000001eced        0x3 
+                0x000000000001eca0       0x45 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(base64.o)
+ *fill*         0x000000000001ece5        0x3 
  .rodata.lib/libmbedtls/mbedtls/library/bignum.c
-                0x000000000001ecf0      0x2c4 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
- .rodata.str1.1.darknetp_ta.c
-                0x000000000001efb4      0x18e ./darknetp_ta.o
- .rodata.str1.1.activations_TA.c
-                0x000000000001f142       0x4f ./activations_TA.o
-                                         0x53 (size before relaxing)
- .rodata.str1.1.parser_TA.c
-                0x000000000001f191       0x23 ./parser_TA.o
- .rodata.parser_TA.c
-                0x000000000001f1b4        0xb ./parser_TA.o
- .rodata.str1.1.network_TA.c
-                0x000000000001f1bf       0x55 ./network_TA.o
- .rodata.network_TA.c
-                0x000000000001f214       0x15 ./network_TA.o
+                0x000000000001ece8      0x2c4 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
  .rodata.str1.1.softmax_layer_TA.c
-                0x000000000001f229       0x26 ./softmax_layer_TA.o
+                0x000000000001efac       0x26 ./softmax_layer_TA.o
  .rodata.softmax_layer_TA.c
-                0x000000000001f24f       0x1a ./softmax_layer_TA.o
- .rodata.aes_TA.c
-                0x000000000001f269      0x20b ./aes_TA.o
+                0x000000000001efd2       0x1a ./softmax_layer_TA.o
+ .rodata.str1.1.activations_TA.c
+                0x000000000001efec       0x4f ./activations_TA.o
+                                         0x53 (size before relaxing)
  .rodata.str1.1.cost_layer_TA.c
-                0x000000000001f474       0x4a ./cost_layer_TA.o
+                0x000000000001f03b       0x4a ./cost_layer_TA.o
+ .rodata.str1.1.parser_TA.c
+                0x000000000001f085       0x23 ./parser_TA.o
+ .rodata.parser_TA.c
+                0x000000000001f0a8        0xb ./parser_TA.o
+ .rodata.str1.1.network_TA.c
+                0x000000000001f0b3       0x55 ./network_TA.o
+ .rodata.network_TA.c
+                0x000000000001f108       0x15 ./network_TA.o
+ .rodata.aes_TA.c
+                0x000000000001f11d      0x20b ./aes_TA.o
+ .rodata.str1.1.darknetp_ta.c
+                0x000000000001f328      0x18e ./darknetp_ta.o
  .rodata.str1.1.user_ta_header.c
-                0x000000000001f4be      0x133 ./user_ta_header.o
+                0x000000000001f4b6      0x133 ./user_ta_header.o
  .rodata.str1.1.lib/libutils/isoc/bget_malloc.c
-                0x000000000001f5f1      0x290 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                0x000000000001f5e9      0x290 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
                                         0x29b (size before relaxing)
  .rodata.lib/libutils/isoc/bget_malloc.c
-                0x000000000001f881       0x51 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                0x000000000001f879       0x51 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
  .rodata.str1.1.lib/libutils/isoc/stack_check.c
-                0x000000000001f8d2       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(stack_check.o)
+                0x000000000001f8ca       0x18 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(stack_check.o)
  .rodata.str1.1.lib/libutils/ext/trace.c
-                0x000000000001f8ea       0x1a /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
+                0x000000000001f8e2       0x1a /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
                                          0x1b (size before relaxing)
  .rodata.lib/libutils/ext/trace.c
-                0x000000000001f904        0x5 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
+                0x000000000001f8fc        0x5 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(trace.o)
  .rodata.str1.1.lib/libutils/ext/snprintk.c
-                0x000000000001f909       0x38 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
+                0x000000000001f901       0x38 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(snprintk.o)
  .rodata.str1.1.lib/libutee/assert.c
-                0x000000000001f941       0x27 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(assert.o)
+                0x000000000001f939       0x27 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(assert.o)
  .rodata.str1.1.lib/libutee/trace_ext.c
-                0x000000000001f968       0x27 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                0x000000000001f960       0x27 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(trace_ext.o)
                                           0x2 (size before relaxing)
  .rodata.str1.1.lib/libutee/tee_api.c
-                0x000000000001f968       0x11 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
+                0x000000000001f960       0x11 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
  .rodata.str1.1.lib/libutee/tee_api_operations.c
-                0x000000000001f979       0x39 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                0x000000000001f971       0x39 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
  .rodata.str1.1.lib/libutee/tee_system_pta.c
-                0x000000000001f9b2       0x55 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+                0x000000000001f9aa       0x55 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
  .rodata.str1.1.lib/libutee/user_ta_entry.c
-                0x000000000001fa07       0x4f /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                0x000000000001f9ff       0x4f /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
  .rodata.lib/libutee/user_ta_entry.c
-                0x000000000001fa56       0x16 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                0x000000000001fa4e       0x16 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
  .rodata.str1.1.lib/libutee/abort.c
-                0x000000000001fa6c        0x7 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(abort.o)
+                0x000000000001fa64        0x7 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(abort.o)
  .rodata.str1.1.lib/libutee/tee_api_arith_mpi.c
-                0x000000000001fa73       0xc9 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                0x000000000001fa6b       0xc9 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
  .rodata.lib/libutee/tee_api_arith_mpi.c
-                0x000000000001fb3c      0x14e /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                0x000000000001fb34      0x14e /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
  .rodata.str1.1.lib/libutee/tee_api_property.c
-                0x000000000001fc8a       0x83 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                0x000000000001fc82       0x83 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
                                          0x88 (size before relaxing)
  .rodata.str1.1.lib/libutee/tcb.c
-                0x000000000001fd0d       0x8d /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
+                0x000000000001fd05       0x8d /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
  .rodata.lib/libutee/tcb.c
-                0x000000000001fd9a       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
+                0x000000000001fd92       0x20 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
  .rodata.str1.1.lib/libmbedtls/mbedtls/library/bignum.c
-                0x000000000001fdba      0x456 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                0x000000000001fdb2      0x456 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
                                         0x45d (size before relaxing)
  .rodata.str1.1.lib/libutils/ext/mempool.c
-                0x0000000000020210       0x89 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
+                0x0000000000020208       0x89 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
  .rodata.lib/libutils/ext/mempool.c
-                0x0000000000020299       0x2c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
+                0x0000000000020291       0x2c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
 
-.gnu.version_d  0x00000000000202c8        0x0
+.gnu.version_d  0x00000000000202c0        0x0
  .gnu.version_d
-                0x00000000000202c8        0x0 ./darknetp_ta.o
+                0x00000000000202c0        0x0 ./softmax_layer_TA.o
 
-.gnu.version    0x00000000000202c6        0x0
- .gnu.version   0x00000000000202c6        0x0 ./darknetp_ta.o
+.gnu.version    0x00000000000202be        0x0
+ .gnu.version   0x00000000000202be        0x0 ./softmax_layer_TA.o
 
-.gnu.version_r  0x00000000000202c8        0x0
+.gnu.version_r  0x00000000000202c0        0x0
  .gnu.version_r
-                0x00000000000202c8        0x0 ./darknetp_ta.o
+                0x00000000000202c0        0x0 ./softmax_layer_TA.o
 
-.gnu.hash       0x00000000000202c8       0x30
- .gnu.hash      0x00000000000202c8       0x30 ./darknetp_ta.o
+.gnu.hash       0x00000000000202c0       0x30
+ .gnu.hash      0x00000000000202c0       0x30 ./softmax_layer_TA.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
@@ -2402,33 +2402,33 @@ Linker script and memory map
 .dtors
  *(SORT_BY_ALIGNMENT(.dtors))
 
-.dynsym         0x00000000000202f8       0x90
+.dynsym         0x00000000000202f0       0x90
  *(SORT_BY_ALIGNMENT(.dynsym))
- .dynsym        0x00000000000202f8       0x90 ./darknetp_ta.o
+ .dynsym        0x00000000000202f0       0x90 ./softmax_layer_TA.o
 
-.dynstr         0x0000000000020388       0x2e
+.dynstr         0x0000000000020380       0x2e
  *(SORT_BY_ALIGNMENT(.dynstr))
- .dynstr        0x0000000000020388       0x2e ./darknetp_ta.o
+ .dynstr        0x0000000000020380       0x2e ./softmax_layer_TA.o
 
-.hash           0x00000000000203b8       0x2c
+.hash           0x00000000000203b0       0x2c
  *(SORT_BY_ALIGNMENT(.hash))
- .hash          0x00000000000203b8       0x2c ./darknetp_ta.o
+ .hash          0x00000000000203b0       0x2c ./softmax_layer_TA.o
 
-.rela.dyn       0x00000000000203e8      0x348
+.rela.dyn       0x00000000000203e0      0x348
  .rela.data.rel.ro
-                0x00000000000203e8        0x0 ./darknetp_ta.o
- .rela.ifunc    0x00000000000203e8        0x0 ./darknetp_ta.o
+                0x00000000000203e0        0x0 ./softmax_layer_TA.o
+ .rela.ifunc    0x00000000000203e0        0x0 ./softmax_layer_TA.o
  .rela.data.rel.ro.local
-                0x00000000000203e8      0x2d0 ./darknetp_ta.o
+                0x00000000000203e0      0x2d0 ./softmax_layer_TA.o
  .rela.data.rel.local
-                0x00000000000206b8       0x60 ./darknetp_ta.o
+                0x00000000000206b0       0x60 ./softmax_layer_TA.o
  .rela.data.rel
-                0x0000000000020718       0x18 ./darknetp_ta.o
+                0x0000000000020710       0x18 ./softmax_layer_TA.o
                 0x0000000000021000                . = ALIGN (0x1000)
 
 .dynamic        0x0000000000021000      0x110
  *(SORT_BY_ALIGNMENT(.dynamic))
- .dynamic       0x0000000000021000      0x110 ./darknetp_ta.o
+ .dynamic       0x0000000000021000      0x110 ./softmax_layer_TA.o
                 0x0000000000021000                _DYNAMIC
 
 .tdata
@@ -2440,9 +2440,9 @@ Linker script and memory map
 
 .got            0x0000000000021110      0x1b0
  *(SORT_BY_ALIGNMENT(.got.plt))
- .got.plt       0x0000000000021110       0x18 ./darknetp_ta.o
+ .got.plt       0x0000000000021110       0x18 ./softmax_layer_TA.o
  *(SORT_BY_ALIGNMENT(.got))
- .got           0x0000000000021128      0x198 ./darknetp_ta.o
+ .got           0x0000000000021128      0x198 ./softmax_layer_TA.o
                 0x0000000000021128                _GLOBAL_OFFSET_TABLE_
 
 .rel.text
@@ -2489,7 +2489,7 @@ Linker script and memory map
 
 .rela.got       0x00000000000212c0      0x4b0
  *(SORT_BY_ALIGNMENT(.rela.got))
- .rela.got      0x00000000000212c0      0x4b0 ./darknetp_ta.o
+ .rela.got      0x00000000000212c0      0x4b0 ./softmax_layer_TA.o
 
 .rel.ctors
  *(SORT_BY_ALIGNMENT(.rel.ctors))
@@ -2520,14 +2520,14 @@ Linker script and memory map
 
 .rela.bss       0x0000000000021770        0x0
  *(SORT_BY_ALIGNMENT(.rela.bss))
- .rela.bss      0x0000000000021770        0x0 ./darknetp_ta.o
+ .rela.bss      0x0000000000021770        0x0 ./softmax_layer_TA.o
 
 .rel.plt
  *(SORT_BY_ALIGNMENT(.rel.plt))
 
 .rela.plt       0x0000000000021770        0x0
  *(SORT_BY_ALIGNMENT(.rela.plt))
- .rela.plt      0x0000000000021770        0x0 ./darknetp_ta.o
+ .rela.plt      0x0000000000021770        0x0 ./softmax_layer_TA.o
 
 .data           0x0000000000021770      0x1d4
  *(SORT_BY_ALIGNMENT(.data) SORT_BY_ALIGNMENT(.data.*) SORT_BY_ALIGNMENT(.gnu.linkonce.d.*))
@@ -2544,30 +2544,30 @@ Linker script and memory map
                 0x00000000000218d0       0x60 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api_property.o)
                 0x00000000000218d0                tee_props
  .data.rel      0x0000000000021930        0x8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
- .data          0x0000000000021938        0x4 ./darknetp_ta.o
-                0x0000000000021938                norm_output
- .data          0x000000000002193c        0x4 ./network_TA.o
-                0x000000000002193c                avg_loss
+ .data          0x0000000000021938        0x4 ./network_TA.o
+                0x0000000000021938                avg_loss
+ .data          0x000000000002193c        0x4 ./darknetp_ta.o
+                0x000000000002193c                norm_output
  .data          0x0000000000021940        0x4 ./user_ta_header.o
                 0x0000000000021940                trace_level
- .data.rel.ro   0x0000000000021944        0x0 ./darknetp_ta.o
- .data          0x0000000000021944        0x0 ./utils_TA.o
+ .data          0x0000000000021944        0x0 ./softmax_layer_TA.o
+ .data.rel.ro   0x0000000000021944        0x0 ./softmax_layer_TA.o
  .data          0x0000000000021944        0x0 ./activations_TA.o
+ .data          0x0000000000021944        0x0 ./cost_layer_TA.o
+ .data          0x0000000000021944        0x0 ./gemm_TA.o
  .data          0x0000000000021944        0x0 ./connected_layer_TA.o
+ .data          0x0000000000021944        0x0 ./dropout_layer_TA.o
  .data          0x0000000000021944        0x0 ./math_TA.o
  .data          0x0000000000021944        0x0 ./parser_TA.o
  .data          0x0000000000021944        0x0 ./blas_TA.o
  .data          0x0000000000021944        0x0 ./maxpool_layer_TA.o
- .data          0x0000000000021944        0x0 ./softmax_layer_TA.o
+ .data          0x0000000000021944        0x0 ./utils_TA.o
  .data          0x0000000000021944        0x0 ./aes_TA.o
  .data          0x0000000000021944        0x0 ./im2col_TA.o
  .data          0x0000000000021944        0x0 ./batchnorm_layer_TA.o
- .data          0x0000000000021944        0x0 ./dropout_layer_TA.o
  .data          0x0000000000021944        0x0 ./convolutional_layer_TA.o
- .data          0x0000000000021944        0x0 ./cost_layer_TA.o
  .data          0x0000000000021944        0x0 ./avgpool_layer_TA.o
  .data          0x0000000000021944        0x0 ./col2im_TA.o
- .data          0x0000000000021944        0x0 ./gemm_TA.o
  .data          0x0000000000021944        0x0 ./diffprivate_TA.o
  .data          0x0000000000021944        0x0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
  .data          0x0000000000021944        0x0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(memcpy.o)
@@ -2603,18 +2603,18 @@ Linker script and memory map
 
 .bss            0x0000000000021948   0xa04208
  *(SORT_BY_ALIGNMENT(.bss) SORT_BY_ALIGNMENT(.bss.*) SORT_BY_ALIGNMENT(.gnu.linkonce.b.*) SORT_BY_ALIGNMENT(COMMON))
- .bss           0x0000000000021948       0x1c ./darknetp_ta.o
-                0x0000000000021958                debug_summary_pass
-                0x000000000002195c                debug_summary_com
-                0x0000000000021960                netnum
- *fill*         0x0000000000021964        0x4 
- COMMON         0x0000000000021968        0x8 ./darknetp_ta.o
-                0x0000000000021968                netta_truth
- COMMON         0x0000000000021970      0x130 ./network_TA.o
-                0x0000000000021970                ta_net_delta
-                0x0000000000021978                ta_net_input
-                0x0000000000021980                netta
-                0x0000000000021a98                ta_net_output
+ COMMON         0x0000000000021948      0x130 ./network_TA.o
+                0x0000000000021948                ta_net_delta
+                0x0000000000021950                ta_net_input
+                0x0000000000021958                netta
+                0x0000000000021a70                ta_net_output
+ .bss           0x0000000000021a78       0x1c ./darknetp_ta.o
+                0x0000000000021a88                debug_summary_pass
+                0x0000000000021a8c                debug_summary_com
+                0x0000000000021a90                netnum
+ *fill*         0x0000000000021a94        0x4 
+ COMMON         0x0000000000021a98        0x8 ./darknetp_ta.o
+                0x0000000000021a98                netta_truth
  .bss           0x0000000000021aa0       0x10 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_api.o)
  .bss           0x0000000000021ab0        0x8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
  .bss           0x0000000000021ab8        0x9 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
@@ -2628,26 +2628,26 @@ Linker script and memory map
  .bss           0x0000000000025b28       0x10 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutee.a(tcb.o)
  COMMON         0x0000000000025b38        0x8 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libmbedtls.a(bignum.o)
                 0x0000000000025b38                mbedtls_mpi_mempool
- .bss           0x0000000000025b40        0x8 ./utils_TA.o
- .bss           0x0000000000025b48        0x8 ./network_TA.o
-                0x0000000000025b48                err_sum
-                0x0000000000025b4c                roundnum
+ .bss           0x0000000000025b40        0x8 ./network_TA.o
+                0x0000000000025b40                err_sum
+                0x0000000000025b44                roundnum
+ .bss           0x0000000000025b48        0x8 ./utils_TA.o
+ .bss           0x0000000000025b50        0x0 ./softmax_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./activations_TA.o
+ .bss           0x0000000000025b50        0x0 ./cost_layer_TA.o
+ .bss           0x0000000000025b50        0x0 ./gemm_TA.o
  .bss           0x0000000000025b50        0x0 ./connected_layer_TA.o
+ .bss           0x0000000000025b50        0x0 ./dropout_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./math_TA.o
  .bss           0x0000000000025b50        0x0 ./parser_TA.o
  .bss           0x0000000000025b50        0x0 ./blas_TA.o
  .bss           0x0000000000025b50        0x0 ./maxpool_layer_TA.o
- .bss           0x0000000000025b50        0x0 ./softmax_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./aes_TA.o
  .bss           0x0000000000025b50        0x0 ./im2col_TA.o
  .bss           0x0000000000025b50        0x0 ./batchnorm_layer_TA.o
- .bss           0x0000000000025b50        0x0 ./dropout_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./convolutional_layer_TA.o
- .bss           0x0000000000025b50        0x0 ./cost_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./avgpool_layer_TA.o
  .bss           0x0000000000025b50        0x0 ./col2im_TA.o
- .bss           0x0000000000025b50        0x0 ./gemm_TA.o
  .bss           0x0000000000025b50        0x0 ./diffprivate_TA.o
  .bss           0x0000000000025b50        0x0 ./user_ta_header.o
  COMMON         0x0000000000025b50   0xa00000 ./user_ta_header.o
@@ -2686,29 +2686,29 @@ Linker script and memory map
                 0x0000000000a25b50                __ftrace_buf_end = .
 
 .dynbss         0x0000000000a25b50        0x0
- .dynbss        0x0000000000a25b50        0x0 ./darknetp_ta.o
+ .dynbss        0x0000000000a25b50        0x0 ./softmax_layer_TA.o
 
 /DISCARD/
  *(SORT_BY_ALIGNMENT(.interp))
-LOAD ./darknetp_ta.o
-LOAD ./utils_TA.o
+LOAD ./softmax_layer_TA.o
 LOAD ./activations_TA.o
+LOAD ./cost_layer_TA.o
+LOAD ./gemm_TA.o
 LOAD ./connected_layer_TA.o
+LOAD ./dropout_layer_TA.o
 LOAD ./math_TA.o
 LOAD ./parser_TA.o
 LOAD ./blas_TA.o
 LOAD ./maxpool_layer_TA.o
 LOAD ./network_TA.o
-LOAD ./softmax_layer_TA.o
+LOAD ./utils_TA.o
 LOAD ./aes_TA.o
 LOAD ./im2col_TA.o
 LOAD ./batchnorm_layer_TA.o
-LOAD ./dropout_layer_TA.o
 LOAD ./convolutional_layer_TA.o
-LOAD ./cost_layer_TA.o
 LOAD ./avgpool_layer_TA.o
 LOAD ./col2im_TA.o
-LOAD ./gemm_TA.o
+LOAD ./darknetp_ta.o
 LOAD ./diffprivate_TA.o
 LOAD ./user_ta_header.o
 START GROUP
@@ -2723,25 +2723,25 @@ OUTPUT(7fc5c039-0542-4ee1-80af-b4eab2f1998d.elf elf64-littleaarch64)
 LOAD linker stubs
 
 .debug_info     0x0000000000000000    0x3b8d9
- .debug_info    0x0000000000000000     0x38ff ./darknetp_ta.o
- .debug_info    0x00000000000038ff      0x328 ./utils_TA.o
- .debug_info    0x0000000000003c27      0xe9e ./activations_TA.o
- .debug_info    0x0000000000004ac5     0x1b8e ./connected_layer_TA.o
- .debug_info    0x0000000000006653      0xefb ./math_TA.o
- .debug_info    0x000000000000754e     0x180d ./parser_TA.o
- .debug_info    0x0000000000008d5b      0xa76 ./blas_TA.o
- .debug_info    0x00000000000097d1     0x15f0 ./maxpool_layer_TA.o
- .debug_info    0x000000000000adc1     0x1b66 ./network_TA.o
- .debug_info    0x000000000000c927     0x167e ./softmax_layer_TA.o
- .debug_info    0x000000000000dfa5      0xf61 ./aes_TA.o
- .debug_info    0x000000000000ef06      0x33c ./im2col_TA.o
- .debug_info    0x000000000000f242     0x1a55 ./batchnorm_layer_TA.o
- .debug_info    0x0000000000010c97     0x1481 ./dropout_layer_TA.o
- .debug_info    0x0000000000012118     0x231d ./convolutional_layer_TA.o
- .debug_info    0x0000000000014435     0x15f8 ./cost_layer_TA.o
- .debug_info    0x0000000000015a2d     0x1429 ./avgpool_layer_TA.o
- .debug_info    0x0000000000016e56      0x34f ./col2im_TA.o
- .debug_info    0x00000000000171a5     0x181e ./gemm_TA.o
+ .debug_info    0x0000000000000000     0x167e ./softmax_layer_TA.o
+ .debug_info    0x000000000000167e      0xe9e ./activations_TA.o
+ .debug_info    0x000000000000251c     0x15f8 ./cost_layer_TA.o
+ .debug_info    0x0000000000003b14     0x181e ./gemm_TA.o
+ .debug_info    0x0000000000005332     0x1b8e ./connected_layer_TA.o
+ .debug_info    0x0000000000006ec0     0x1481 ./dropout_layer_TA.o
+ .debug_info    0x0000000000008341      0xefb ./math_TA.o
+ .debug_info    0x000000000000923c     0x180d ./parser_TA.o
+ .debug_info    0x000000000000aa49      0xa76 ./blas_TA.o
+ .debug_info    0x000000000000b4bf     0x15f0 ./maxpool_layer_TA.o
+ .debug_info    0x000000000000caaf     0x1b66 ./network_TA.o
+ .debug_info    0x000000000000e615      0x328 ./utils_TA.o
+ .debug_info    0x000000000000e93d      0xf61 ./aes_TA.o
+ .debug_info    0x000000000000f89e      0x33c ./im2col_TA.o
+ .debug_info    0x000000000000fbda     0x1a55 ./batchnorm_layer_TA.o
+ .debug_info    0x000000000001162f     0x231d ./convolutional_layer_TA.o
+ .debug_info    0x000000000001394c     0x1429 ./avgpool_layer_TA.o
+ .debug_info    0x0000000000014d75      0x34f ./col2im_TA.o
+ .debug_info    0x00000000000150c4     0x38ff ./darknetp_ta.o
  .debug_info    0x00000000000189c3      0x254 ./diffprivate_TA.o
  .debug_info    0x0000000000018c17     0x16bc ./user_ta_header.o
  .debug_info    0x000000000001a2d3     0x274f /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -2778,25 +2778,25 @@ LOAD linker stubs
  .debug_info    0x000000000003b79e      0x13b /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_abbrev   0x0000000000000000     0x79d7
- .debug_abbrev  0x0000000000000000      0x556 ./darknetp_ta.o
- .debug_abbrev  0x0000000000000556      0x162 ./utils_TA.o
- .debug_abbrev  0x00000000000006b8      0x1bf ./activations_TA.o
- .debug_abbrev  0x0000000000000877      0x279 ./connected_layer_TA.o
- .debug_abbrev  0x0000000000000af0      0x306 ./math_TA.o
- .debug_abbrev  0x0000000000000df6      0x2e4 ./parser_TA.o
- .debug_abbrev  0x00000000000010da      0x158 ./blas_TA.o
- .debug_abbrev  0x0000000000001232      0x278 ./maxpool_layer_TA.o
- .debug_abbrev  0x00000000000014aa      0x348 ./network_TA.o
- .debug_abbrev  0x00000000000017f2      0x302 ./softmax_layer_TA.o
- .debug_abbrev  0x0000000000001af4      0x332 ./aes_TA.o
- .debug_abbrev  0x0000000000001e26      0x13a ./im2col_TA.o
- .debug_abbrev  0x0000000000001f60      0x27e ./batchnorm_layer_TA.o
- .debug_abbrev  0x00000000000021de      0x2c2 ./dropout_layer_TA.o
- .debug_abbrev  0x00000000000024a0      0x343 ./convolutional_layer_TA.o
- .debug_abbrev  0x00000000000027e3      0x28a ./cost_layer_TA.o
- .debug_abbrev  0x0000000000002a6d      0x278 ./avgpool_layer_TA.o
- .debug_abbrev  0x0000000000002ce5      0x147 ./col2im_TA.o
- .debug_abbrev  0x0000000000002e2c      0x23f ./gemm_TA.o
+ .debug_abbrev  0x0000000000000000      0x302 ./softmax_layer_TA.o
+ .debug_abbrev  0x0000000000000302      0x1bf ./activations_TA.o
+ .debug_abbrev  0x00000000000004c1      0x28a ./cost_layer_TA.o
+ .debug_abbrev  0x000000000000074b      0x23f ./gemm_TA.o
+ .debug_abbrev  0x000000000000098a      0x279 ./connected_layer_TA.o
+ .debug_abbrev  0x0000000000000c03      0x2c2 ./dropout_layer_TA.o
+ .debug_abbrev  0x0000000000000ec5      0x306 ./math_TA.o
+ .debug_abbrev  0x00000000000011cb      0x2e4 ./parser_TA.o
+ .debug_abbrev  0x00000000000014af      0x158 ./blas_TA.o
+ .debug_abbrev  0x0000000000001607      0x278 ./maxpool_layer_TA.o
+ .debug_abbrev  0x000000000000187f      0x348 ./network_TA.o
+ .debug_abbrev  0x0000000000001bc7      0x162 ./utils_TA.o
+ .debug_abbrev  0x0000000000001d29      0x332 ./aes_TA.o
+ .debug_abbrev  0x000000000000205b      0x13a ./im2col_TA.o
+ .debug_abbrev  0x0000000000002195      0x27e ./batchnorm_layer_TA.o
+ .debug_abbrev  0x0000000000002413      0x343 ./convolutional_layer_TA.o
+ .debug_abbrev  0x0000000000002756      0x278 ./avgpool_layer_TA.o
+ .debug_abbrev  0x00000000000029ce      0x147 ./col2im_TA.o
+ .debug_abbrev  0x0000000000002b15      0x556 ./darknetp_ta.o
  .debug_abbrev  0x000000000000306b      0x11e ./diffprivate_TA.o
  .debug_abbrev  0x0000000000003189      0x2c5 ./user_ta_header.o
  .debug_abbrev  0x000000000000344e      0x4c1 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -2833,25 +2833,25 @@ LOAD linker stubs
  .debug_abbrev  0x0000000000007917       0xc0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_loc      0x0000000000000000    0x430ae
- .debug_loc     0x0000000000000000     0x3b35 ./darknetp_ta.o
- .debug_loc     0x0000000000003b35      0x28f ./utils_TA.o
- .debug_loc     0x0000000000003dc4     0x149d ./activations_TA.o
- .debug_loc     0x0000000000005261      0x7e7 ./connected_layer_TA.o
- .debug_loc     0x0000000000005a48     0x1748 ./math_TA.o
- .debug_loc     0x0000000000007190      0x9b6 ./parser_TA.o
- .debug_loc     0x0000000000007b46     0x1781 ./blas_TA.o
- .debug_loc     0x00000000000092c7      0xb0b ./maxpool_layer_TA.o
- .debug_loc     0x0000000000009dd2      0xfc5 ./network_TA.o
- .debug_loc     0x000000000000ad97      0x61e ./softmax_layer_TA.o
- .debug_loc     0x000000000000b3b5     0x1744 ./aes_TA.o
- .debug_loc     0x000000000000caf9      0x8de ./im2col_TA.o
- .debug_loc     0x000000000000d3d7      0xd24 ./batchnorm_layer_TA.o
- .debug_loc     0x000000000000e0fb      0x435 ./dropout_layer_TA.o
- .debug_loc     0x000000000000e530     0x1398 ./convolutional_layer_TA.o
- .debug_loc     0x000000000000f8c8      0x42c ./cost_layer_TA.o
- .debug_loc     0x000000000000fcf4      0x543 ./avgpool_layer_TA.o
- .debug_loc     0x0000000000010237      0x8a7 ./col2im_TA.o
- .debug_loc     0x0000000000010ade     0x112c ./gemm_TA.o
+ .debug_loc     0x0000000000000000      0x61e ./softmax_layer_TA.o
+ .debug_loc     0x000000000000061e     0x149d ./activations_TA.o
+ .debug_loc     0x0000000000001abb      0x42c ./cost_layer_TA.o
+ .debug_loc     0x0000000000001ee7     0x112c ./gemm_TA.o
+ .debug_loc     0x0000000000003013      0x7e7 ./connected_layer_TA.o
+ .debug_loc     0x00000000000037fa      0x435 ./dropout_layer_TA.o
+ .debug_loc     0x0000000000003c2f     0x1748 ./math_TA.o
+ .debug_loc     0x0000000000005377      0x9b6 ./parser_TA.o
+ .debug_loc     0x0000000000005d2d     0x1781 ./blas_TA.o
+ .debug_loc     0x00000000000074ae      0xb0b ./maxpool_layer_TA.o
+ .debug_loc     0x0000000000007fb9      0xfc5 ./network_TA.o
+ .debug_loc     0x0000000000008f7e      0x28f ./utils_TA.o
+ .debug_loc     0x000000000000920d     0x1744 ./aes_TA.o
+ .debug_loc     0x000000000000a951      0x8de ./im2col_TA.o
+ .debug_loc     0x000000000000b22f      0xd24 ./batchnorm_layer_TA.o
+ .debug_loc     0x000000000000bf53     0x1398 ./convolutional_layer_TA.o
+ .debug_loc     0x000000000000d2eb      0x543 ./avgpool_layer_TA.o
+ .debug_loc     0x000000000000d82e      0x8a7 ./col2im_TA.o
+ .debug_loc     0x000000000000e0d5     0x3b35 ./darknetp_ta.o
  .debug_loc     0x0000000000011c0a      0x252 ./diffprivate_TA.o
  .debug_loc     0x0000000000011e5c      0x132 ./user_ta_header.o
  .debug_loc     0x0000000000011f8e     0x477f /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -2886,43 +2886,43 @@ LOAD linker stubs
 
 .debug_aranges  0x0000000000000000      0xd70
  .debug_aranges
-                0x0000000000000000       0x30 ./darknetp_ta.o
+                0x0000000000000000       0x30 ./softmax_layer_TA.o
  .debug_aranges
-                0x0000000000000030       0x30 ./utils_TA.o
+                0x0000000000000030       0x30 ./activations_TA.o
  .debug_aranges
-                0x0000000000000060       0x30 ./activations_TA.o
+                0x0000000000000060       0x30 ./cost_layer_TA.o
  .debug_aranges
-                0x0000000000000090       0x30 ./connected_layer_TA.o
+                0x0000000000000090       0x30 ./gemm_TA.o
  .debug_aranges
-                0x00000000000000c0       0x30 ./math_TA.o
+                0x00000000000000c0       0x30 ./connected_layer_TA.o
  .debug_aranges
-                0x00000000000000f0       0x30 ./parser_TA.o
+                0x00000000000000f0       0x30 ./dropout_layer_TA.o
  .debug_aranges
-                0x0000000000000120       0x30 ./blas_TA.o
+                0x0000000000000120       0x30 ./math_TA.o
  .debug_aranges
-                0x0000000000000150       0x30 ./maxpool_layer_TA.o
+                0x0000000000000150       0x30 ./parser_TA.o
  .debug_aranges
-                0x0000000000000180       0x30 ./network_TA.o
+                0x0000000000000180       0x30 ./blas_TA.o
  .debug_aranges
-                0x00000000000001b0       0x30 ./softmax_layer_TA.o
+                0x00000000000001b0       0x30 ./maxpool_layer_TA.o
  .debug_aranges
-                0x00000000000001e0       0x30 ./aes_TA.o
+                0x00000000000001e0       0x30 ./network_TA.o
  .debug_aranges
-                0x0000000000000210       0x30 ./im2col_TA.o
+                0x0000000000000210       0x30 ./utils_TA.o
  .debug_aranges
-                0x0000000000000240       0x30 ./batchnorm_layer_TA.o
+                0x0000000000000240       0x30 ./aes_TA.o
  .debug_aranges
-                0x0000000000000270       0x30 ./dropout_layer_TA.o
+                0x0000000000000270       0x30 ./im2col_TA.o
  .debug_aranges
-                0x00000000000002a0       0x30 ./convolutional_layer_TA.o
+                0x00000000000002a0       0x30 ./batchnorm_layer_TA.o
  .debug_aranges
-                0x00000000000002d0       0x30 ./cost_layer_TA.o
+                0x00000000000002d0       0x30 ./convolutional_layer_TA.o
  .debug_aranges
                 0x0000000000000300       0x30 ./avgpool_layer_TA.o
  .debug_aranges
                 0x0000000000000330       0x30 ./col2im_TA.o
  .debug_aranges
-                0x0000000000000360       0x30 ./gemm_TA.o
+                0x0000000000000360       0x30 ./darknetp_ta.o
  .debug_aranges
                 0x0000000000000390       0x30 ./diffprivate_TA.o
  .debug_aranges
@@ -2993,23 +2993,23 @@ LOAD linker stubs
                 0x0000000000000d40       0x30 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_ranges   0x0000000000000000     0x30e0
- .debug_ranges  0x0000000000000000      0x3e0 ./darknetp_ta.o
- .debug_ranges  0x00000000000003e0      0x190 ./activations_TA.o
- .debug_ranges  0x0000000000000570       0xa0 ./math_TA.o
- .debug_ranges  0x0000000000000610       0xe0 ./parser_TA.o
- .debug_ranges  0x00000000000006f0      0x130 ./blas_TA.o
- .debug_ranges  0x0000000000000820       0xe0 ./maxpool_layer_TA.o
- .debug_ranges  0x0000000000000900      0x120 ./network_TA.o
- .debug_ranges  0x0000000000000a20       0x30 ./softmax_layer_TA.o
- .debug_ranges  0x0000000000000a50      0x1f0 ./aes_TA.o
- .debug_ranges  0x0000000000000c40       0x20 ./im2col_TA.o
- .debug_ranges  0x0000000000000c60      0x100 ./batchnorm_layer_TA.o
- .debug_ranges  0x0000000000000d60       0x50 ./dropout_layer_TA.o
- .debug_ranges  0x0000000000000db0       0xe0 ./convolutional_layer_TA.o
- .debug_ranges  0x0000000000000e90       0x30 ./cost_layer_TA.o
- .debug_ranges  0x0000000000000ec0      0x120 ./avgpool_layer_TA.o
- .debug_ranges  0x0000000000000fe0       0x20 ./col2im_TA.o
- .debug_ranges  0x0000000000001000       0xe0 ./gemm_TA.o
+ .debug_ranges  0x0000000000000000       0x30 ./softmax_layer_TA.o
+ .debug_ranges  0x0000000000000030      0x190 ./activations_TA.o
+ .debug_ranges  0x00000000000001c0       0x30 ./cost_layer_TA.o
+ .debug_ranges  0x00000000000001f0       0xe0 ./gemm_TA.o
+ .debug_ranges  0x00000000000002d0       0x50 ./dropout_layer_TA.o
+ .debug_ranges  0x0000000000000320       0xa0 ./math_TA.o
+ .debug_ranges  0x00000000000003c0       0xe0 ./parser_TA.o
+ .debug_ranges  0x00000000000004a0      0x130 ./blas_TA.o
+ .debug_ranges  0x00000000000005d0       0xe0 ./maxpool_layer_TA.o
+ .debug_ranges  0x00000000000006b0      0x120 ./network_TA.o
+ .debug_ranges  0x00000000000007d0      0x1f0 ./aes_TA.o
+ .debug_ranges  0x00000000000009c0       0x20 ./im2col_TA.o
+ .debug_ranges  0x00000000000009e0      0x100 ./batchnorm_layer_TA.o
+ .debug_ranges  0x0000000000000ae0       0xe0 ./convolutional_layer_TA.o
+ .debug_ranges  0x0000000000000bc0      0x120 ./avgpool_layer_TA.o
+ .debug_ranges  0x0000000000000ce0       0x20 ./col2im_TA.o
+ .debug_ranges  0x0000000000000d00      0x3e0 ./darknetp_ta.o
  .debug_ranges  0x00000000000010e0       0x90 ./diffprivate_TA.o
  .debug_ranges  0x0000000000001170       0x20 ./user_ta_header.o
  .debug_ranges  0x0000000000001190      0x5e0 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -3030,64 +3030,64 @@ LOAD linker stubs
  .debug_ranges  0x0000000000003050       0x90 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(mempool.o)
 
 .debug_macro    0x0000000000000000    0x26b79
- .debug_macro   0x0000000000000000      0x1e2 ./darknetp_ta.o
- .debug_macro   0x00000000000001e2      0x9ac ./darknetp_ta.o
- .debug_macro   0x0000000000000b8e      0x112 ./darknetp_ta.o
- .debug_macro   0x0000000000000ca0      0x174 ./darknetp_ta.o
- .debug_macro   0x0000000000000e14      0xcf1 ./darknetp_ta.o
- .debug_macro   0x0000000000001b05       0x7c ./darknetp_ta.o
- .debug_macro   0x0000000000001b81      0x1a0 ./darknetp_ta.o
- .debug_macro   0x0000000000001d21       0xc4 ./darknetp_ta.o
- .debug_macro   0x0000000000001de5       0x22 ./darknetp_ta.o
- .debug_macro   0x0000000000001e07       0x35 ./darknetp_ta.o
- .debug_macro   0x0000000000001e3c       0x58 ./darknetp_ta.o
- .debug_macro   0x0000000000001e94       0x34 ./darknetp_ta.o
- .debug_macro   0x0000000000001ec8       0x79 ./darknetp_ta.o
- .debug_macro   0x0000000000001f41       0xfd ./darknetp_ta.o
- .debug_macro   0x000000000000203e       0x2e ./darknetp_ta.o
- .debug_macro   0x000000000000206c       0x33 ./darknetp_ta.o
- .debug_macro   0x000000000000209f       0x16 ./darknetp_ta.o
- .debug_macro   0x00000000000020b5       0x9a ./darknetp_ta.o
- .debug_macro   0x000000000000214f       0x2e ./darknetp_ta.o
- .debug_macro   0x000000000000217d       0xe5 ./utils_TA.o
- .debug_macro   0x0000000000002262      0x9ac ./utils_TA.o
- .debug_macro   0x0000000000002c0e       0x10 ./utils_TA.o
- .debug_macro   0x0000000000002c1e       0xec ./activations_TA.o
- .debug_macro   0x0000000000002d0a      0x9ac ./activations_TA.o
- .debug_macro   0x00000000000036b6      0x1c2 ./connected_layer_TA.o
- .debug_macro   0x0000000000003878      0x9ac ./connected_layer_TA.o
- .debug_macro   0x0000000000004224       0x16 ./connected_layer_TA.o
- .debug_macro   0x000000000000423a      0x12c ./math_TA.o
- .debug_macro   0x0000000000004366      0x9ac ./math_TA.o
- .debug_macro   0x0000000000004d12      0x14a ./parser_TA.o
- .debug_macro   0x0000000000004e5c      0x9ac ./parser_TA.o
- .debug_macro   0x0000000000005808       0x2e ./parser_TA.o
- .debug_macro   0x0000000000005836      0x117 ./blas_TA.o
- .debug_macro   0x000000000000594d      0x9ac ./blas_TA.o
- .debug_macro   0x00000000000062f9      0x15d ./maxpool_layer_TA.o
- .debug_macro   0x0000000000006456      0x9ac ./maxpool_layer_TA.o
- .debug_macro   0x0000000000006e02      0x177 ./network_TA.o
- .debug_macro   0x0000000000006f79      0x9ac ./network_TA.o
- .debug_macro   0x0000000000007925      0x180 ./softmax_layer_TA.o
- .debug_macro   0x0000000000007aa5      0x9ac ./softmax_layer_TA.o
- .debug_macro   0x0000000000008451       0x7f ./aes_TA.o
- .debug_macro   0x00000000000084d0      0x9ac ./aes_TA.o
- .debug_macro   0x0000000000008e7c       0x37 ./im2col_TA.o
- .debug_macro   0x0000000000008eb3      0x9ac ./im2col_TA.o
- .debug_macro   0x000000000000985f      0x104 ./batchnorm_layer_TA.o
- .debug_macro   0x0000000000009963      0x9ac ./batchnorm_layer_TA.o
- .debug_macro   0x000000000000a30f      0x167 ./dropout_layer_TA.o
- .debug_macro   0x000000000000a476      0x9ac ./dropout_layer_TA.o
- .debug_macro   0x000000000000ae22      0x1bd ./convolutional_layer_TA.o
- .debug_macro   0x000000000000afdf      0x9ac ./convolutional_layer_TA.o
- .debug_macro   0x000000000000b98b      0x171 ./cost_layer_TA.o
- .debug_macro   0x000000000000bafc      0x9ac ./cost_layer_TA.o
- .debug_macro   0x000000000000c4a8      0x15d ./avgpool_layer_TA.o
- .debug_macro   0x000000000000c605      0x9ac ./avgpool_layer_TA.o
- .debug_macro   0x000000000000cfb1       0x36 ./col2im_TA.o
- .debug_macro   0x000000000000cfe7      0x9ac ./col2im_TA.o
- .debug_macro   0x000000000000d993      0x104 ./gemm_TA.o
- .debug_macro   0x000000000000da97      0x9ac ./gemm_TA.o
+ .debug_macro   0x0000000000000000      0x180 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000180      0x9ac ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000b2c      0x112 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000c3e      0x174 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000db2       0x7c ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000e2e      0x1a0 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000000fce       0xc4 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001092       0x22 ./softmax_layer_TA.o
+ .debug_macro   0x00000000000010b4       0x2e ./softmax_layer_TA.o
+ .debug_macro   0x00000000000010e2       0x33 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001115       0x58 ./softmax_layer_TA.o
+ .debug_macro   0x000000000000116d       0x16 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001183       0x2e ./softmax_layer_TA.o
+ .debug_macro   0x00000000000011b1       0x34 ./softmax_layer_TA.o
+ .debug_macro   0x00000000000011e5       0x79 ./softmax_layer_TA.o
+ .debug_macro   0x000000000000125e       0x16 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001274      0xcf1 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001f65       0x35 ./softmax_layer_TA.o
+ .debug_macro   0x0000000000001f9a       0xfd ./softmax_layer_TA.o
+ .debug_macro   0x0000000000002097       0xec ./activations_TA.o
+ .debug_macro   0x0000000000002183      0x9ac ./activations_TA.o
+ .debug_macro   0x0000000000002b2f      0x171 ./cost_layer_TA.o
+ .debug_macro   0x0000000000002ca0      0x9ac ./cost_layer_TA.o
+ .debug_macro   0x000000000000364c      0x104 ./gemm_TA.o
+ .debug_macro   0x0000000000003750      0x9ac ./gemm_TA.o
+ .debug_macro   0x00000000000040fc      0x1c2 ./connected_layer_TA.o
+ .debug_macro   0x00000000000042be      0x9ac ./connected_layer_TA.o
+ .debug_macro   0x0000000000004c6a      0x167 ./dropout_layer_TA.o
+ .debug_macro   0x0000000000004dd1      0x9ac ./dropout_layer_TA.o
+ .debug_macro   0x000000000000577d      0x12c ./math_TA.o
+ .debug_macro   0x00000000000058a9      0x9ac ./math_TA.o
+ .debug_macro   0x0000000000006255      0x14a ./parser_TA.o
+ .debug_macro   0x000000000000639f      0x9ac ./parser_TA.o
+ .debug_macro   0x0000000000006d4b       0x10 ./parser_TA.o
+ .debug_macro   0x0000000000006d5b       0x9a ./parser_TA.o
+ .debug_macro   0x0000000000006df5       0x2e ./parser_TA.o
+ .debug_macro   0x0000000000006e23      0x117 ./blas_TA.o
+ .debug_macro   0x0000000000006f3a      0x9ac ./blas_TA.o
+ .debug_macro   0x00000000000078e6      0x15d ./maxpool_layer_TA.o
+ .debug_macro   0x0000000000007a43      0x9ac ./maxpool_layer_TA.o
+ .debug_macro   0x00000000000083ef      0x177 ./network_TA.o
+ .debug_macro   0x0000000000008566      0x9ac ./network_TA.o
+ .debug_macro   0x0000000000008f12       0xe5 ./utils_TA.o
+ .debug_macro   0x0000000000008ff7      0x9ac ./utils_TA.o
+ .debug_macro   0x00000000000099a3       0x7f ./aes_TA.o
+ .debug_macro   0x0000000000009a22      0x9ac ./aes_TA.o
+ .debug_macro   0x000000000000a3ce       0x37 ./im2col_TA.o
+ .debug_macro   0x000000000000a405      0x9ac ./im2col_TA.o
+ .debug_macro   0x000000000000adb1      0x104 ./batchnorm_layer_TA.o
+ .debug_macro   0x000000000000aeb5      0x9ac ./batchnorm_layer_TA.o
+ .debug_macro   0x000000000000b861      0x1bd ./convolutional_layer_TA.o
+ .debug_macro   0x000000000000ba1e      0x9ac ./convolutional_layer_TA.o
+ .debug_macro   0x000000000000c3ca      0x15d ./avgpool_layer_TA.o
+ .debug_macro   0x000000000000c527      0x9ac ./avgpool_layer_TA.o
+ .debug_macro   0x000000000000ced3       0x36 ./col2im_TA.o
+ .debug_macro   0x000000000000cf09      0x9ac ./col2im_TA.o
+ .debug_macro   0x000000000000d8b5      0x1e2 ./darknetp_ta.o
+ .debug_macro   0x000000000000da97      0x9ac ./darknetp_ta.o
  .debug_macro   0x000000000000e443       0xf6 ./diffprivate_TA.o
  .debug_macro   0x000000000000e539      0x9ac ./diffprivate_TA.o
  .debug_macro   0x000000000000eee5      0x1d7 ./user_ta_header.o
@@ -3190,25 +3190,25 @@ LOAD linker stubs
  .debug_macro   0x0000000000026203      0x976 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_line     0x0000000000000000    0x1ac7f
- .debug_line    0x0000000000000000     0x101a ./darknetp_ta.o
- .debug_line    0x000000000000101a      0x36b ./utils_TA.o
- .debug_line    0x0000000000001385      0x843 ./activations_TA.o
- .debug_line    0x0000000000001bc8      0x6a3 ./connected_layer_TA.o
- .debug_line    0x000000000000226b      0x9b2 ./math_TA.o
- .debug_line    0x0000000000002c1d      0x5d5 ./parser_TA.o
- .debug_line    0x00000000000031f2      0x8ea ./blas_TA.o
- .debug_line    0x0000000000003adc      0x647 ./maxpool_layer_TA.o
- .debug_line    0x0000000000004123      0x86e ./network_TA.o
- .debug_line    0x0000000000004991      0x431 ./softmax_layer_TA.o
- .debug_line    0x0000000000004dc2      0xb8c ./aes_TA.o
- .debug_line    0x000000000000594e      0x23c ./im2col_TA.o
- .debug_line    0x0000000000005b8a      0x6ec ./batchnorm_layer_TA.o
- .debug_line    0x0000000000006276      0x48d ./dropout_layer_TA.o
- .debug_line    0x0000000000006703      0xc13 ./convolutional_layer_TA.o
- .debug_line    0x0000000000007316      0x49b ./cost_layer_TA.o
- .debug_line    0x00000000000077b1      0x4fa ./avgpool_layer_TA.o
- .debug_line    0x0000000000007cab      0x208 ./col2im_TA.o
- .debug_line    0x0000000000007eb3      0x5ac ./gemm_TA.o
+ .debug_line    0x0000000000000000      0x431 ./softmax_layer_TA.o
+ .debug_line    0x0000000000000431      0x843 ./activations_TA.o
+ .debug_line    0x0000000000000c74      0x49b ./cost_layer_TA.o
+ .debug_line    0x000000000000110f      0x5ac ./gemm_TA.o
+ .debug_line    0x00000000000016bb      0x6a3 ./connected_layer_TA.o
+ .debug_line    0x0000000000001d5e      0x48d ./dropout_layer_TA.o
+ .debug_line    0x00000000000021eb      0x9b2 ./math_TA.o
+ .debug_line    0x0000000000002b9d      0x5d5 ./parser_TA.o
+ .debug_line    0x0000000000003172      0x8ea ./blas_TA.o
+ .debug_line    0x0000000000003a5c      0x647 ./maxpool_layer_TA.o
+ .debug_line    0x00000000000040a3      0x86e ./network_TA.o
+ .debug_line    0x0000000000004911      0x36b ./utils_TA.o
+ .debug_line    0x0000000000004c7c      0xb8c ./aes_TA.o
+ .debug_line    0x0000000000005808      0x23c ./im2col_TA.o
+ .debug_line    0x0000000000005a44      0x6ec ./batchnorm_layer_TA.o
+ .debug_line    0x0000000000006130      0xc13 ./convolutional_layer_TA.o
+ .debug_line    0x0000000000006d43      0x4fa ./avgpool_layer_TA.o
+ .debug_line    0x000000000000723d      0x208 ./col2im_TA.o
+ .debug_line    0x0000000000007445     0x101a ./darknetp_ta.o
  .debug_line    0x000000000000845f      0x331 ./diffprivate_TA.o
  .debug_line    0x0000000000008790      0x3e8 ./user_ta_header.o
  .debug_line    0x0000000000008b78      0xe6d /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -3245,44 +3245,44 @@ LOAD linker stubs
  .debug_line    0x000000000001aa5a      0x225 /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_str      0x0000000000000000    0x1dcb6
- .debug_str     0x0000000000000000     0xaa91 ./darknetp_ta.o
-                                       0xad75 (size before relaxing)
- .debug_str     0x000000000000aa91       0x87 ./utils_TA.o
-                                       0x4788 (size before relaxing)
- .debug_str     0x000000000000ab18      0x258 ./activations_TA.o
-                                       0x4a41 (size before relaxing)
- .debug_str     0x000000000000ad70      0x23a ./connected_layer_TA.o
-                                       0xa695 (size before relaxing)
- .debug_str     0x000000000000afaa       0xbf ./math_TA.o
-                                       0x9a6a (size before relaxing)
- .debug_str     0x000000000000b069      0x121 ./parser_TA.o
-                                       0x5b32 (size before relaxing)
- .debug_str     0x000000000000b18a       0xe1 ./blas_TA.o
-                                       0x4eb2 (size before relaxing)
- .debug_str     0x000000000000b26b       0xbc ./maxpool_layer_TA.o
-                                       0xa4b4 (size before relaxing)
- .debug_str     0x000000000000b327       0x70 ./network_TA.o
-                                       0xa76b (size before relaxing)
- .debug_str     0x000000000000b397       0x9a ./softmax_layer_TA.o
+ .debug_str     0x0000000000000000     0xa320 ./softmax_layer_TA.o
                                        0xa5cd (size before relaxing)
- .debug_str     0x000000000000b431      0x21b ./aes_TA.o
-                                       0x3b6b (size before relaxing)
- .debug_str     0x000000000000b64c       0xc7 ./im2col_TA.o
-                                       0x32b0 (size before relaxing)
- .debug_str     0x000000000000b713       0x99 ./batchnorm_layer_TA.o
-                                       0x523b (size before relaxing)
- .debug_str     0x000000000000b7ac       0x8f ./dropout_layer_TA.o
-                                       0xa4a6 (size before relaxing)
- .debug_str     0x000000000000b83b      0x156 ./convolutional_layer_TA.o
-                                       0xa6a8 (size before relaxing)
- .debug_str     0x000000000000b991       0x6c ./cost_layer_TA.o
+ .debug_str     0x000000000000a320      0x27c ./activations_TA.o
+                                       0x4a41 (size before relaxing)
+ .debug_str     0x000000000000a59c       0xcd ./cost_layer_TA.o
                                        0xa4cc (size before relaxing)
- .debug_str     0x000000000000b9fd       0x8e ./avgpool_layer_TA.o
-                                       0xa483 (size before relaxing)
- .debug_str     0x000000000000ba8b       0x38 ./col2im_TA.o
-                                       0x3361 (size before relaxing)
- .debug_str     0x000000000000bac3       0x64 ./gemm_TA.o
+ .debug_str     0x000000000000a669       0xb9 ./gemm_TA.o
                                        0x5170 (size before relaxing)
+ .debug_str     0x000000000000a722      0x194 ./connected_layer_TA.o
+                                       0xa695 (size before relaxing)
+ .debug_str     0x000000000000a8b6       0xd3 ./dropout_layer_TA.o
+                                       0xa4a6 (size before relaxing)
+ .debug_str     0x000000000000a989       0xd4 ./math_TA.o
+                                       0x9a6a (size before relaxing)
+ .debug_str     0x000000000000aa5d      0x3b2 ./parser_TA.o
+                                       0x5b32 (size before relaxing)
+ .debug_str     0x000000000000ae0f       0x9c ./blas_TA.o
+                                       0x4eb2 (size before relaxing)
+ .debug_str     0x000000000000aeab       0xe3 ./maxpool_layer_TA.o
+                                       0xa4b4 (size before relaxing)
+ .debug_str     0x000000000000af8e       0xdc ./network_TA.o
+                                       0xa76b (size before relaxing)
+ .debug_str     0x000000000000b06a       0x41 ./utils_TA.o
+                                       0x4788 (size before relaxing)
+ .debug_str     0x000000000000b0ab      0x224 ./aes_TA.o
+                                       0x3b6b (size before relaxing)
+ .debug_str     0x000000000000b2cf       0xc7 ./im2col_TA.o
+                                       0x32b0 (size before relaxing)
+ .debug_str     0x000000000000b396       0x99 ./batchnorm_layer_TA.o
+                                       0x523b (size before relaxing)
+ .debug_str     0x000000000000b42f      0x176 ./convolutional_layer_TA.o
+                                       0xa6a8 (size before relaxing)
+ .debug_str     0x000000000000b5a5       0xb5 ./avgpool_layer_TA.o
+                                       0xa483 (size before relaxing)
+ .debug_str     0x000000000000b65a       0x38 ./col2im_TA.o
+                                       0x3361 (size before relaxing)
+ .debug_str     0x000000000000b692      0x495 ./darknetp_ta.o
+                                       0xad75 (size before relaxing)
  .debug_str     0x000000000000bb27       0x56 ./diffprivate_TA.o
                                        0x479f (size before relaxing)
  .debug_str     0x000000000000bb7d     0x12ee ./user_ta_header.o
@@ -3353,26 +3353,26 @@ LOAD linker stubs
                                        0x47c1 (size before relaxing)
 
 .comment        0x0000000000000000       0x2b
- .comment       0x0000000000000000       0x2b ./darknetp_ta.o
+ .comment       0x0000000000000000       0x2b ./softmax_layer_TA.o
                                          0x2c (size before relaxing)
- .comment       0x000000000000002b       0x2c ./utils_TA.o
  .comment       0x000000000000002b       0x2c ./activations_TA.o
+ .comment       0x000000000000002b       0x2c ./cost_layer_TA.o
+ .comment       0x000000000000002b       0x2c ./gemm_TA.o
  .comment       0x000000000000002b       0x2c ./connected_layer_TA.o
+ .comment       0x000000000000002b       0x2c ./dropout_layer_TA.o
  .comment       0x000000000000002b       0x2c ./math_TA.o
  .comment       0x000000000000002b       0x2c ./parser_TA.o
  .comment       0x000000000000002b       0x2c ./blas_TA.o
  .comment       0x000000000000002b       0x2c ./maxpool_layer_TA.o
  .comment       0x000000000000002b       0x2c ./network_TA.o
- .comment       0x000000000000002b       0x2c ./softmax_layer_TA.o
+ .comment       0x000000000000002b       0x2c ./utils_TA.o
  .comment       0x000000000000002b       0x2c ./aes_TA.o
  .comment       0x000000000000002b       0x2c ./im2col_TA.o
  .comment       0x000000000000002b       0x2c ./batchnorm_layer_TA.o
- .comment       0x000000000000002b       0x2c ./dropout_layer_TA.o
  .comment       0x000000000000002b       0x2c ./convolutional_layer_TA.o
- .comment       0x000000000000002b       0x2c ./cost_layer_TA.o
  .comment       0x000000000000002b       0x2c ./avgpool_layer_TA.o
  .comment       0x000000000000002b       0x2c ./col2im_TA.o
- .comment       0x000000000000002b       0x2c ./gemm_TA.o
+ .comment       0x000000000000002b       0x2c ./darknetp_ta.o
  .comment       0x000000000000002b       0x2c ./diffprivate_TA.o
  .comment       0x000000000000002b       0x2c ./user_ta_header.o
  .comment       0x000000000000002b       0x2c /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/lib/libutils.a(bget_malloc.o)
@@ -3410,13 +3410,17 @@ LOAD linker stubs
 .note.GNU-stack
                 0x0000000000000000        0x0
  .note.GNU-stack
-                0x0000000000000000        0x0 ./darknetp_ta.o
- .note.GNU-stack
-                0x0000000000000000        0x0 ./utils_TA.o
+                0x0000000000000000        0x0 ./softmax_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./activations_TA.o
  .note.GNU-stack
+                0x0000000000000000        0x0 ./cost_layer_TA.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./gemm_TA.o
+ .note.GNU-stack
                 0x0000000000000000        0x0 ./connected_layer_TA.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ./dropout_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./math_TA.o
  .note.GNU-stack
@@ -3428,7 +3432,7 @@ LOAD linker stubs
  .note.GNU-stack
                 0x0000000000000000        0x0 ./network_TA.o
  .note.GNU-stack
-                0x0000000000000000        0x0 ./softmax_layer_TA.o
+                0x0000000000000000        0x0 ./utils_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./aes_TA.o
  .note.GNU-stack
@@ -3436,17 +3440,13 @@ LOAD linker stubs
  .note.GNU-stack
                 0x0000000000000000        0x0 ./batchnorm_layer_TA.o
  .note.GNU-stack
-                0x0000000000000000        0x0 ./dropout_layer_TA.o
- .note.GNU-stack
                 0x0000000000000000        0x0 ./convolutional_layer_TA.o
- .note.GNU-stack
-                0x0000000000000000        0x0 ./cost_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./avgpool_layer_TA.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./col2im_TA.o
  .note.GNU-stack
-                0x0000000000000000        0x0 ./gemm_TA.o
+                0x0000000000000000        0x0 ./darknetp_ta.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ./diffprivate_TA.o
  .note.GNU-stack

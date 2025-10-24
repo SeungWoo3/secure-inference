@@ -493,10 +493,8 @@ static TEE_Result save_weights_TA_params(uint32_t param_types,
 }
 
 
-static TEE_Result forward_input_TA_params(uint32_t param_types,
-                                          TEE_Param params[4])
-{
-    uint32_t exp_param_types = TEE_PARAM_TYPES( TEE_PARAM_TYPE_MEMREF_INPUT,
+static TEE_Result forward_input_TA_params(uint32_t param_types, TEE_Param params[4]) {
+    uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_INPUT,
                                                TEE_PARAM_TYPE_VALUE_INPUT,
                                                TEE_PARAM_TYPE_NONE,
                                                TEE_PARAM_TYPE_NONE);
@@ -510,7 +508,6 @@ static TEE_Result forward_input_TA_params(uint32_t param_types,
     TEE_MemMove(netta.input, net_input, input_size);
     netta.train = net_train;
 
-    // forward_network_TA();
     return TEE_SUCCESS;
 }
 
@@ -548,33 +545,18 @@ static TEE_Result forward_network_TA_params()
 // }
 
 
-static TEE_Result forward_network_back_TA_params(uint32_t param_types,
-                                           TEE_Param params[4])
-{
+static TEE_Result forward_network_back_TA_params(uint32_t param_types, TEE_Param params[4]) {
     uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT,
                                                TEE_PARAM_TYPE_VALUE_OUTPUT,
                                                TEE_PARAM_TYPE_NONE,
                                                TEE_PARAM_TYPE_NONE);
     if (param_types != exp_param_types) return TEE_ERROR_BAD_PARAMETERS;
-    // TEE_Time start, end;
-    // TEE_GetSystemTime(&start);
-
     float *params0 = params[0].memref.buffer;
     int buffersize = params[0].memref.size / sizeof(float);
 
     TEE_MemMove(params[0].memref.buffer,
             netta.layers[netta.n-1].output,
             params[0].memref.size);
-    // for(int z=0; z<buffersize; z++){
-    //     params0[z] = netta.layers[netta.n-1].output[z];
-    // }
-        // TEE_Wait(1000);
-    // TEE_GetSystemTime(&end);
-//     float elapsed_ms = (float)((end.seconds - start.seconds) * 1000 +
-//                            (end.millis - start.millis));
-// uint32_t elapsed_bits;
-// memcpy(&elapsed_bits, &elapsed_ms, sizeof(uint32_t));
-// params[1].value.a = elapsed_bits;
     return TEE_SUCCESS;
 }
 
@@ -733,7 +715,6 @@ static TEE_Result backward_network_back_TA_addidion_params(uint32_t param_types,
 
     if(debug_summary_com == 1){
         summary_array("backward_network_back_addidion / l_pp2.output", netta.layers[netta.n - 1].output, buffersize);
-        //summary_array("backward_network_back_addidion / l_pp2.delta", netta.layers[netta.n - 1].delta, buffersize);
     }
     return TEE_SUCCESS;
 }
@@ -741,52 +722,31 @@ static TEE_Result backward_network_back_TA_addidion_params(uint32_t param_types,
 #define MAX_LOOPBACK_SIZE 100000  // 필요 시 늘리세요
 
 typedef struct {
-    float data[MAX_LOOPBACK_SIZE];  // 실제 데이터 버퍼
+    float *data;  // 실제 데이터 버퍼
     size_t size;                    // float 개수
-    int train_flag;                 // 추가 값 (value.a)
+    int train;                 // 추가 값 (value.a)
 } loop_back_t;
 
-// ✅ 전역 정적 구조체 (malloc 없음, 초기화 한 번만)
 static loop_back_t loop_back_obj = { {0}, 0, 0 };
 
-/*
- * REE → TEE
- * 데이터를 구조체 내부의 정적 배열에 저장
- */
 static TEE_Result ree_to_tee_TA(uint32_t param_types, TEE_Param params[4]) {
-    DMSG("ree_to_tee_TA called");
+    uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_INPUT,
+                                                TEE_PARAM_TYPE_VALUE_INPUT,
+                                                TEE_PARAM_TYPE_NONE,
+                                                TEE_PARAM_TYPE_NONE);
+    if (param_types != exp_param_types) return TEE_ERROR_BAD_PARAMETERS;
 
-    uint32_t exp_param_types = TEE_PARAM_TYPES(
-        TEE_PARAM_TYPE_MEMREF_INPUT,
-        TEE_PARAM_TYPE_VALUE_INPUT,
-        TEE_PARAM_TYPE_NONE,
-        TEE_PARAM_TYPE_NONE
-    );
-
-    if (param_types != exp_param_types)
-        return TEE_ERROR_BAD_PARAMETERS;
-
-    float *net_input = (float *)params[0].memref.buffer;
-    size_t num_floats = params[0].memref.size / sizeof(float);
+    float *net_input = params[0].memref.buffer;
+    size_t input_size = params[0].memref.size / sizeof(float);
     int net_train = params[1].value.a;
+    loop_back_obj.data = TEE_Malloc(input_size, TEE_MALLOC_FILL_ZERO);
 
-    if (num_floats > MAX_LOOPBACK_SIZE)
-        num_floats = MAX_LOOPBACK_SIZE;
-
-    // ✅ 원래와 동일한 단순 루프 복사 (malloc 없음)
-    for (size_t i = 0; i < num_floats; i++)
-        loop_back_obj.data[i] = net_input[i];
-
-    loop_back_obj.size = num_floats;
-    loop_back_obj.train_flag = net_train;
+    TEE_MemMove(loop_back_obj.data, net_input, input_size);
+    loop_back_obj.train = net_train;
 
     return TEE_SUCCESS;
 }
 
-/*
- * TEE → REE
- * 구조체 내부 데이터를 REE로 복사
- */
 static TEE_Result tee_to_ree_TA(uint32_t param_types, TEE_Param params[4]) {
     uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_MEMREF_OUTPUT,
                                                 TEE_PARAM_TYPE_NONE,
@@ -794,20 +754,12 @@ static TEE_Result tee_to_ree_TA(uint32_t param_types, TEE_Param params[4]) {
                                                 TEE_PARAM_TYPE_NONE);
     if (param_types != exp_param_types) return TEE_ERROR_BAD_PARAMETERS;
 
-    if (loop_back_obj.size == 0)
-        return TEE_ERROR_BAD_STATE;
-
     float *params0 = params[0].memref.buffer;
     size_t buffersize = params[0].memref.size / sizeof(float);
-
-    if (buffersize > loop_back_obj.size)
-        buffersize = loop_back_obj.size;
 
     TEE_MemMove(params[0].memref.buffer,
             loop_back_obj.data,
             params[0].memref.size);
-    // for (size_t i = 0; i < buffersize; i++)
-    //     params0[i] = loop_back_obj.data[i];
     return TEE_SUCCESS;
 }
 

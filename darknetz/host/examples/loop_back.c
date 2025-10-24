@@ -40,14 +40,8 @@ void ree_to_tee(float* arr, int size){
     memset(&op, 0, sizeof(op));
     op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_INPUT, TEEC_VALUE_INPUT,
                                      TEEC_NONE, TEEC_NONE);
-
-    // float *params0 = malloc(sizeof(float)*size);
-    // for(int z=0; z<size; z++){
-    //     params0[z] = arr[z];
-    // }
     int params1 = 0;
 
-    // op.params[0].tmpref.buffer = params0;
     op.params[0].tmpref.buffer = arr;
     op.params[0].tmpref.size = sizeof(float) * size;
     op.params[1].value.a = params1;
@@ -67,25 +61,14 @@ void tee_to_ree(float* arr, int size)
     op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_OUTPUT,
                                      TEEC_NONE, TEEC_NONE, TEEC_NONE);
 
-    // REE 쪽에서 데이터를 받을 버퍼
-    // float *params0 = malloc(sizeof(float) * size);
-    // if (!params0)
-    //     errx(1, "malloc failed in tee_to_ree()");
-
     op.params[0].tmpref.buffer = malloc(sizeof(float) * size);
     op.params[0].tmpref.size = sizeof(float) * size;
 
-    // TEE 내부의 전역 배열(loop_back_buffer)을 REE로 복사해오는 명령 호출
     res = TEEC_InvokeCommand(&sess, TEE2REE, &op, &origin);
     if (res != TEEC_SUCCESS)
         errx(1, "TEEC_InvokeCommand(TEE2REE) failed 0x%x origin 0x%x", res, origin);
 
-    // 받은 결과를 arr에 복사
     memcpy(arr, op.params[0].tmpref.buffer, sizeof(float)*size);
-    // for (int z = 0; z < size; z++) {
-    //     arr[z] = params0[z];
-    // }
-    // free(params0);
 }
 
 

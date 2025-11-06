@@ -553,7 +553,7 @@ void forward_input_CA(float *net_input, int l_inputs, int net_batch, int net_tra
 
     res = TEEC_InvokeCommand(&sess, FORWARD_INPUT, &op, &origin);
     if (res != TEEC_SUCCESS)
-    errx(1, "TEEC_InvokeCommand(forward) failed 0x%x origin 0x%x", res, origin);
+    errx(1, "TEEC_InvokeCommand(forward input) failed 0x%x origin 0x%x", res, origin);
 }
 
 void forward_network_CA()
@@ -602,12 +602,13 @@ void forward_network_back_CA(float *l_output, int net_inputs, int net_batch)
     op.paramTypes = TEEC_PARAM_TYPES(TEEC_MEMREF_TEMP_OUTPUT, TEEC_VALUE_OUTPUT,
                                    TEEC_NONE, TEEC_NONE);
 
-    op.params[0].tmpref.buffer = malloc(sizeof(float) * net_inputs*net_batch);
+    // op.params[0].tmpref.buffer = malloc(sizeof(float) * net_inputs*net_batch);
+    op.params[0].tmpref.buffer = l_output;
     op.params[0].tmpref.size = sizeof(float) * net_inputs*net_batch;
 
     res = TEEC_InvokeCommand(&sess, FORWARD_BACK_CMD, &op, &origin);
-    memcpy(l_output, op.params[0].tmpref.buffer, sizeof(float) * net_inputs * net_batch);
-    free(op.params[0].tmpref.buffer);
+    // memcpy(l_output, op.params[0].tmpref.buffer, sizeof(float) * net_inputs * net_batch);
+    // free(op.params[0].tmpref.buffer);
     if (res != TEEC_SUCCESS)
     errx(1, "TEEC_InvokeCommand(forward_add) failed 0x%x origin 0x%x", res, origin);
 }

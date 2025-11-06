@@ -12,7 +12,7 @@ Segment segments[MAX_SEGMENTS];
 int csv_header_written = 0;
 int partition_point1;
 int partition_point2;
-
+int arr_size_glob;
 // 시간 측정
 double get_time_ms(void) {
     struct timespec ts;
@@ -76,5 +76,15 @@ void init_csv_filename(void) {
     snprintf(csv_output_path, sizeof(csv_output_path),
              "/home/avees/tee/output/output_pp%d-%d_%02d%02d_%02d%02d.csv",
              partition_point1 + 1, partition_point2,
+             t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min);
+}
+
+void init_csv_filename_transfer(void) {
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    snprintf(csv_output_path, sizeof(csv_output_path),
+             "/home/avees/tee/output/output_arr_size_%d_%02d%02d_%02d%02d.csv",
+             arr_size_glob,
              t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min);
 }

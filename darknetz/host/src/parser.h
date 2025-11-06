@@ -3,6 +3,7 @@
 #include "darknet.h"
 #include "network.h"
 
+extern int arr_size_glob;
 extern int partition_point1;
 extern int partition_point2;
 extern int frozen_bool;

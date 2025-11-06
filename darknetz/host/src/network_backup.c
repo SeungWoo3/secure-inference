@@ -1,7 +1,9 @@
-
 #include <stdio.h>
 #include <time.h>
 #include <assert.h>
+#include <sys/stat.h>
+
+#include "experiment.h"
 #include "network.h"
 #include "image.h"
 #include "data.h"
@@ -37,8 +39,9 @@
 #include "parser.h"
 #include "data.h"
 
-int debug_summary_com = 1;
-int debug_summary_pass = 1;
+
+int debug_summary_com = 0;
+int debug_summary_pass = 0;
 
 load_args get_base_args(network *net)
 {
@@ -239,68 +242,98 @@ void forward_network(network *netp)
     }
 #endif
     network net = *netp;
-
-    // have Conv across or not
-    // if(wssize == -1)  {
-        // wssize = workspaceBOO(net);
-        // if(wssize) update_net_agrv_CA_allocateSM(wssize, net.workspace);
-    // }
-    //if(wssize)  update_net_agrv_CA(0, wssize, net.workspace);
-
     int i;
     for(i = 0; i < net.n; ++i){
+        char label[32];
+#ifdef TIME_PROFILE_LAYER
+        double t_start_layer, t_end_layer;
+        t_start_layer = get_time_ms();
+#endif
         net.index = i;
         layer l = net.layers[i];
-
-        if(i > partition_point1 && i <= partition_point2)
-        {
-            // forward all the others in TEE
-            if(debug_summary_com == 1){
-                summary_array("forward_network / net.input", net.input, l.inputs*net.batch);
-            }
-
-            forward_network_CA(net.input, l.inputs, net.batch, net.train);
-            //if(wssize)  workspace_CA(wssize, net.workspace);
-
-            //i = partition_point2 + 1; // jump to further forward in CA
+        if (i > partition_point1 && i <= partition_point2) {
+#ifdef TIME_PROFILE_TASK
+            double t_start_in, t_end_in;
+            t_start_in = get_time_ms();
+#endif
+            forward_input_CA(net.input, l.inputs, net.batch, net.train);
+#ifdef TIME_PROFILE_TASK
+            t_end_in = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "IN[%d]", partition_point1+1);
+            record_segment(label, t_end_in - t_start_in);
+#endif
+#ifdef TIME_PROFILE_TASK
+            double t_start_infer, t_end_infer;
+            t_start_infer = get_time_ms();
+#endif
+            forward_network_CA();
+#ifdef TIME_PROFILE_TASK
+            t_end_infer = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "INFER[%d-%d]", partition_point1+1, partition_point2);
+            record_segment(label, t_end_infer - t_start_infer);
+#endif
             i = partition_point2;
-
-            // receive parames (layer partition_point2's outputs) from TA
-            if(partition_point2 < net.n - 1)
-            {
+            if(partition_point2 < net.n - 1) {
                 layer l_pp2 = net.layers[partition_point2];
-
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                t_start_out = get_time_ms();
+#endif
+                
                 forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
-
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                memset(label, 0, sizeof(label));  
+                snprintf(label, sizeof(label), "OUT[%d]", partition_point2);
+                record_segment(label, t_end_out - t_start_out);
+#endif
                 net.input = l_pp2.output;
-
-                if(debug_summary_com == 1){
-                    summary_array("forward_network_back / l_pp2.output", l_pp2.output, l_pp2.outputs * net.batch);
-                }
             }
-
-        }else // forward in REE
-        {
-
+            if(partition_point2 == net.n - 1) {
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                t_start_out = get_time_ms();
+#endif
+                //call TA to return output
+                if(net.layers[partition_point1].type != SOFTMAX){
+                    net_output_return_CA(net.outputs, 1);
+                }
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                char label[32];
+                snprintf(label, sizeof(label), "OUT[%d]", net.n-1);
+                record_segment(label, t_end_out - t_start_out);
+#endif
+            }
+#ifdef TIME_PROFILE_LAYER
+            t_end_layer = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "TEE[%d-%d]", partition_point1+1, partition_point2);
+            record_segment(label, t_end_layer - t_start_layer);
+#endif
+        } else {
             if(l.delta){
                 fill_cpu(l.outputs * l.batch, 0, l.delta, 1);
             }
-
             l.forward(l, net);
-
-            if(debug_summary_pass == 1){
-                summary_array("forward_network / l.output", l.output, l.outputs*net.batch);
-            }
-
             net.input = l.output;
             if(l.truth) {
                 net.truth = l.output;
             }
+#ifdef TIME_PROFILE_LAYER
+            t_end_layer = get_time_ms();
+            char label[32];
+            snprintf(label, sizeof(label), "Layer[%d]", i);
+            record_segment(label, t_end_layer - t_start_layer);
+#endif
         }
-    }
 
+    }
     calc_network_cost(netp);
 }
+
 
 
 
@@ -709,10 +742,9 @@ float *network_predict(network *net, float *input)
 
          // end inside of TEE
          }else{
-             //call TA to return output
-             net_output_return_CA(net->outputs, 1);
-             out = net_output_back;
-         }
+            // net_output_return_CA(net->outputs, 1);
+            out = net_output_back;
+        }
      }
 
      *net = orig;

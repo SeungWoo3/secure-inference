@@ -233,6 +233,23 @@ int workspaceBOO(network net)
 
 int wssize = -1;
 
+float* make_random_float_array_(int size) {
+    float *arr = (float*)malloc(sizeof(float) * size);
+    if (!arr) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(1);
+    }
+
+    srand((unsigned int)time(NULL));
+    for (int i = 0; i < size; i++) {
+        float val;
+        val = rand_normal();
+        arr[i] = val;
+    }
+
+    return arr;
+}
+
 void forward_network(network *netp)
 {
 #ifdef GPU
@@ -244,6 +261,8 @@ void forward_network(network *netp)
     network net = *netp;
     int i;
     for(i = 0; i < net.n; ++i){
+        float *arr = make_random_float_array_(1);
+
         char label[32];
 #ifdef TIME_PROFILE_LAYER
         double t_start_layer, t_end_layer;
@@ -256,6 +275,7 @@ void forward_network(network *netp)
             double t_start_in, t_end_in;
             t_start_in = get_time_ms();
 #endif
+            // forward_input_CA(arr, arr_size, net.batch, net.train);
             forward_input_CA(net.input, l.inputs, net.batch, net.train);
 #ifdef TIME_PROFILE_TASK
             t_end_in = get_time_ms();
@@ -281,7 +301,7 @@ void forward_network(network *netp)
                 double t_start_out, t_end_out;
                 t_start_out = get_time_ms();
 #endif
-                
+                // forward_network_back_CA(arr, arr_size, net.batch);
                 forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
 #ifdef TIME_PROFILE_TASK
                 t_end_out = get_time_ms();
@@ -334,6 +354,122 @@ void forward_network(network *netp)
     calc_network_cost(netp);
 }
 
+void forward_network_transfer(network *netp)
+{
+#ifdef GPU
+    if(netp->gpu_index >= 0){
+        forward_network_gpu(netp);
+        return;
+    }
+#endif
+    network net = *netp;
+    int i;
+    for(i = 0; i < net.n; ++i){
+        float *arr = make_random_float_array_(arr_size_glob);
+
+        char label[32];
+#ifdef TIME_PROFILE_LAYER
+        double t_start_layer, t_end_layer;
+        t_start_layer = get_time_ms();
+#endif
+        net.index = i;
+        layer l = net.layers[i];
+        if (i > partition_point1 && i <= partition_point2) {
+#ifdef TIME_PROFILE_TASK
+            double t_start_in, t_end_in;
+            t_start_in = get_time_ms();
+#endif
+#ifdef TIME_PROFILE_TRANSFER
+            double t_start_in, t_end_in;
+            printf("arr_size_glob: %d\n", arr_size_glob);
+            t_start_in = get_time_ms();
+#endif
+            // forward_input_CA(arr, arr_size, net.batch, net.train);
+            forward_input_CA(arr, arr_size_glob, net.batch, net.train);
+#ifdef TIME_PROFILE_TRANSFER
+            t_end_in = get_time_ms();
+            forward_input_CA(net.input, l.inputs, net.batch, net.train);
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "IN[%d]", arr_size_glob);
+            record_segment(label, t_end_in - t_start_in);
+#endif
+#ifdef TIME_PROFILE_TASK
+            t_end_in = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "IN[%d]", partition_point1+1);
+            record_segment(label, t_end_in - t_start_in);
+#endif
+#ifdef TIME_PROFILE_TASK
+            double t_start_infer, t_end_infer;
+            t_start_infer = get_time_ms();
+#endif
+            forward_network_CA();
+#ifdef TIME_PROFILE_TASK
+            t_end_infer = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "INFER[%d-%d]", partition_point1+1, partition_point2);
+            record_segment(label, t_end_infer - t_start_infer);
+#endif
+            i = partition_point2;
+            if(partition_point2 < net.n - 1) {
+                layer l_pp2 = net.layers[partition_point2];
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                forward_network_back_CA(l_pp2.output, l_pp2.outputs, net.batch);
+                t_start_out = get_time_ms();
+#endif
+                // forward_network_back_CA(arr, arr_size, net.batch);
+                // forward_network_back_CA(l_pp2.output, arr_size_glob, net.batch);
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                memset(label, 0, sizeof(label));  
+                snprintf(label, sizeof(label), "OUT[%d]", partition_point2);
+                record_segment(label, t_end_out - t_start_out);
+#endif
+                net.input = l_pp2.output;
+            }
+            if(partition_point2 == net.n - 1) {
+#ifdef TIME_PROFILE_TASK
+                double t_start_out, t_end_out;
+                t_start_out = get_time_ms();
+#endif
+                //call TA to return output
+                if(net.layers[partition_point1].type != SOFTMAX){
+                    net_output_return_CA(net.outputs, 1);
+                }
+#ifdef TIME_PROFILE_TASK
+                t_end_out = get_time_ms();
+                char label[32];
+                snprintf(label, sizeof(label), "OUT[%d]", net.n-1);
+                record_segment(label, t_end_out - t_start_out);
+#endif
+            }
+#ifdef TIME_PROFILE_LAYER
+            t_end_layer = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "TEE[%d-%d]", partition_point1+1, partition_point2);
+            record_segment(label, t_end_layer - t_start_layer);
+#endif
+        } else {
+            if(l.delta){
+                fill_cpu(l.outputs * l.batch, 0, l.delta, 1);
+            }
+            l.forward(l, net);
+            net.input = l.output;
+            if(l.truth) {
+                net.truth = l.output;
+            }
+#ifdef TIME_PROFILE_LAYER
+            t_end_layer = get_time_ms();
+            char label[32];
+            snprintf(label, sizeof(label), "Layer[%d]", i);
+            record_segment(label, t_end_layer - t_start_layer);
+#endif
+        }
+
+    }
+    calc_network_cost(netp);
+}
 
 
 
@@ -722,6 +858,43 @@ float *network_predict(network *net, float *input)
     net->train = 0;
     net->delta = 0;
     forward_network(net);
+
+    float *out;
+    // this partition_point = (-pp) - 1
+    // all layers are outside of TEE
+    if(partition_point1 >= net->n-1){
+        out = net->output;
+
+     // at least several layers are inside of TEE
+    }else if(partition_point1 < net->n-1){
+         // begin at softmax
+         if(net->layers[partition_point1].type == SOFTMAX){
+             // only the softmax is the last layer in NW
+             out = net->output;
+
+         // end outside of TEE
+         }else if(partition_point2 < net->n-1){
+             out = net->output;
+
+         // end inside of TEE
+         }else{
+            // net_output_return_CA(net->outputs, 1);
+            out = net_output_back;
+        }
+     }
+
+     *net = orig;
+     return out;
+}
+
+float *network_predict_transfer(network *net, float *input)
+{
+    network orig = *net;
+    net->input = input;
+    net->truth = 0;
+    net->train = 0;
+    net->delta = 0;
+    forward_network_transfer(net);
 
     float *out;
     // this partition_point = (-pp) - 1

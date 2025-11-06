@@ -448,6 +448,9 @@ void darknet_main(int argc, char **argv)
     } else if (0 == strcmp(argv[1], "loop_back")){
         printf("loop_back\n");
         loop_back(argc, argv);
+    } else if (0 == strcmp(argv[1], "transfer")){
+        printf("transfer\n");
+        transfer(argc, argv);
     } else if (0 == strcmp(argv[1], "classify")){
         predict_classifier("cfg/imagenet1k.data", argv[2], argv[3], argv[4], 5);
     } else if (0 == strcmp(argv[1], "classifier")){

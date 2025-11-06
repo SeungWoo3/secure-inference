@@ -616,6 +616,7 @@ data *tile_data(data orig, int divs, int size);
 data select_data(data *orig, int *inds);
 
 void forward_network(network *net);
+void forward_network_transfer(network *net);
 void backward_network(network *net);
 void update_network(network *net);
 
@@ -744,6 +745,7 @@ matrix network_predict_data(network *net, data test);
 image **load_alphabet();
 image get_network_image(network *net);
 float *network_predict(network *net, float *input);
+float *network_predict_transfer(network *net, float *input);
 
 int network_width(network *net);
 int network_height(network *net);

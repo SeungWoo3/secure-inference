@@ -107,7 +107,7 @@ void forward_network_TA()
                 ta_net_output[z] = l.output[z];
             }
         }
-
+            
         // if(i == netta.n - 1)  // ready to back REE for the rest forward pass
         // {
         //     ta_net_input = malloc(sizeof(float)*l.outputs*l.batch);

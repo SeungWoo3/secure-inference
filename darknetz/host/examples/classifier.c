@@ -715,8 +715,43 @@ void predict_classifier(const char *datacfg, const char *cfgfile,
 
         int *indexes = calloc(top, sizeof(int));
         if (!indexes) { perror("calloc"); return; }
+        
+        for (int i = 0; i < num_exp; i++) {
+        for (int arr_size = 1; arr_size < 10; arr_size++){
+                char input_path[256];
+                if (filename) {
+                        strncpy(input_path, filename, sizeof(input_path));
+                        input_path[sizeof(input_path) - 1] = '\0';
+                } else {
+                        printf("Enter Image Path: "); fflush(stdout);
+                        if (!fgets(input_path, sizeof(input_path), stdin)) break;
+                        input_path[strcspn(input_path, "\n")] = '\0';
+                }
 
-        for (int i = 0; i < num_exp; i++) {                
+                image im = load_image_color(input_path, 0, 0);
+                if (!im.data) { fprintf(stderr, "Failed to load image\n"); continue; }
+                image r = letterbox_image(im, net->w, net->h);
+        
+#ifdef TIME_PROFILE_INFERENCE
+                double t_start_inference = get_time_ms();
+#endif
+                float *predictions = network_predict(net, r.data);
+
+#ifdef TIME_PROFILE_INFERENCE
+                double t_end_inference = get_time_ms();
+                record_segment("classifier", t_end_inference - t_start_inference);
+#endif
+                if (net->hierarchy)
+                        hierarchy_predictions(predictions, net->outputs, net->hierarchy, 1, 1);
+                top_k(predictions, net->outputs, top, indexes);
+                for (int i = 0; i < top; ++i) {
+                int idx = indexes[i];
+                if (idx < 0 || idx >= net->outputs) continue;
+                printf("%5.2f%% : %s\n", predictions[idx]*100, names[idx]);
+                }
+                free_image(im);
+                free_image(r);
+        }
                 char input_path[256];
                 if (filename) {
                         strncpy(input_path, filename, sizeof(input_path));
@@ -1222,6 +1257,8 @@ void run_classifier(int argc, char **argv)
         int ngpus;
         int *gpus = read_intlist(gpu_list, &ngpus, gpu_index);
 
+        int arr_size = find_int_arg(argc, argv, "-arr_size", 1);
+        
         // partition point of DNN
         int pp_start = find_int_arg(argc, argv, "-pp_start", 999);
         if(pp_start == 999){ // when using pp_start_f for forzen first layers outside TEE
@@ -1232,7 +1269,6 @@ void run_classifier(int argc, char **argv)
             pp_start = find_int_arg(argc, argv, "-pp_f_only", 999);
             frozen_bool = 2;
         }
-
         partition_point1 = pp_start - 1;
         int pp_end = find_int_arg(argc, argv, "-pp_end", 999);
         partition_point2 = pp_end;

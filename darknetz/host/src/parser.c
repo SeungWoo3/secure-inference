@@ -41,6 +41,7 @@
 
 
 int count_global = 0;
+int arr_size_glob = 1;
 int partition_point1 = 0;
 int partition_point2 = 0;
 int frozen_bool = 0;

@@ -23,22 +23,35 @@ done
 FAIL_COUNT=0
 
 # 실험 루프
-for NUM in "${NUM_LIST[@]}"; do
-  echo "==== 실행: NUM=$NUM ===="
-  
-  # 'nvidia'를 입력으로 전달하며 실행
-  echo "nvidia" | $CMD -arr_size "$NUM" -num_exp 100
-  ret=$?
+TOTAL_RUNS=10
 
-  if [ $ret -ne 0 ]; then
-    echo "⚠️ 실패: NUM=$NUM (exit code=$ret)"
-    FAIL_COUNT=$((FAIL_COUNT + 1))
-    echo "$(date): NUM=$NUM 실패" >> ~/fail_log.txt
-  fi
+for ((run=1; run<=TOTAL_RUNS; run++)); do
+  echo "=========================="
+  echo "▶ 전체 반복: $run / $TOTAL_RUNS"
+  echo "=========================="
+
+  for NUM in "${NUM_LIST[@]}"; do
+    echo "==== 실행: NUM=$NUM ===="
+    
+    echo "nvidia" | $CMD -arr_size "$NUM" -num_exp 100
+    ret=$?
+
+    if [ $ret -ne 0 ]; then
+      echo "⚠️ 실패: NUM=$NUM (exit code=$ret)"
+      FAIL_COUNT=$((FAIL_COUNT + 1))
+      echo "$(date): NUM=$NUM 실패 (run=$run)" >> ~/fail_log.txt
+    fi
+
+    # 프로세스 안정화를 위한 짧은 대기 (선택)
+    sleep 1s
+  done
+
+  echo "✅ 반복 $run 완료"
+  echo
 done
 
 echo "✅ 모든 실행 완료 (실패: $FAIL_COUNT회)"
-echo "nvidia" | sudo nmcli radio wifi on
+# echo "nvidia" | sudo nmcli radio wifi on
 sleep 5s
 poweroff
 # for start in {0..10}; do

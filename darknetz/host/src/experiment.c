@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
 #include <string.h>
 #include "experiment.h"
@@ -38,23 +39,26 @@ void record_segment(const char *name, double elapsed_ms) {
 
 // 헤더 + 결과 한 줄 동시에 기록
 void write_csv_results(void) {
-    FILE *fp = fopen(csv_output_path, csv_header_written ? "a" : "w");
+    // 기존 파일 존재 여부 확인 (헤더 중복 방지)
+    int file_exists = access(csv_output_path, F_OK) == 0;
+
+    // 이미 존재하면 append, 없으면 새로 생성
+    FILE *fp = fopen(csv_output_path, "a");
     if (!fp) {
         fprintf(stderr, "Failed to open %s\n", csv_output_path);
         return;
     }
 
-    // 첫 실행 시 헤더 작성
-    if (!csv_header_written) {
+    // 파일이 없었던 경우 → 헤더 작성
+    if (!file_exists) {
         for (int i = 0; i < segment_count; i++) {
             fprintf(fp, "%s", segments[i].name);
             if (i < segment_count - 1) fprintf(fp, ",");
         }
         fprintf(fp, "\n");
-        csv_header_written = 1;
     }
 
-    // 값 한 줄 출력
+    // 데이터 한 줄 작성
     for (int i = 0; i < segment_count; i++) {
         fprintf(fp, "%.6f", segments[i].value);
         if (i < segment_count - 1) fprintf(fp, ",");
@@ -62,7 +66,7 @@ void write_csv_results(void) {
     fprintf(fp, "\n");
 
     fclose(fp);
-    printf("[INFO] CSV line written to: %s\n", csv_output_path);
+    printf("[INFO] CSV line appended to: %s\n", csv_output_path);
 
     // 다음 회차 준비
     segment_count = 0;
@@ -84,7 +88,6 @@ void init_csv_filename_transfer(void) {
     struct tm *t = localtime(&now);
 
     snprintf(csv_output_path, sizeof(csv_output_path),
-             "/home/avees/tee/output/output_arr_size_%d_%02d%02d_%02d%02d.csv",
-             arr_size_glob,
-             t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min);
+             "/home/avees/tee/output/output_arr_size_%d.csv",
+             arr_size_glob);
 }

@@ -88,6 +88,15 @@ void init_csv_filename_transfer(void) {
     struct tm *t = localtime(&now);
 
     snprintf(csv_output_path, sizeof(csv_output_path),
-             "/home/avees/tee/output/output_arr_size_%d.csv",
+             "/home/avees/tee/output/transfer_arr_size_%d.csv",
+             arr_size_glob);
+}
+
+void init_csv_filename_gemm(void) {
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    snprintf(csv_output_path, sizeof(csv_output_path),
+             "/home/avees/tee/output/gemm_arr_size_%d.csv",
              arr_size_glob);
 }

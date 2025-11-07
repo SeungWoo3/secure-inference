@@ -2,6 +2,8 @@
 #include <tee_internal_api_extensions.h>
 
 #include "darknetp_ta.h"
+#include "gemm_TA.h"
+#include "im2col_TA.h"
 
 #include "convolutional_layer_TA.h"
 #include "maxpool_layer_TA.h"
@@ -977,6 +979,180 @@ static TEE_Result net_output_return_TA_params(uint32_t param_types,
 
 }
 
+static float *input = NULL;
+static float *kernel = NULL;
+static float *data_col = NULL;
+static float *output = NULL;
+
+static int channels, height, width, ksize, stride, pad;
+static int M, N, K;
+static int arr_size_glob = 1;
+
+static float* make_random_float_array_TA(int size)
+{
+    float *arr = TEE_Malloc(sizeof(float) * size, 0);
+    if (!arr) {
+        EMSG("메모리 할당 실패 (size=%d)", size);
+        return NULL;
+    }
+
+    // TEE 환경에서는 rand() 대신 TEE_GenerateRandom() 사용
+    for (int i = 0; i < size; i++) {
+        uint32_t r;
+        TEE_GenerateRandom(&r, sizeof(r));
+
+        // 0~1 사이 float 변환
+        float val = (float)(r & 0xFFFF) / 65535.0f;
+
+        // [-1, 1] 범위로 조정
+        arr[i] = val * 2.0f - 1.0f;
+    }
+
+    return arr;
+}
+
+// static TEE_Result pregemm_TA(uint32_t param_types, TEE_Param params[4]){
+//     uint32_t exp_param_types = TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INPUT,
+//                                                TEE_PARAM_TYPE_NONE,
+//                                                TEE_PARAM_TYPE_NONE,
+//                                                TEE_PARAM_TYPE_NONE);
+//     if (param_types != exp_param_types)
+//         return TEE_ERROR_BAD_PARAMETERS;
+
+//     arr_size_glob = params[0].value.a;
+
+//     channels = 1;
+//     height   = arr_size_glob;
+//     width    = arr_size_glob;
+//     ksize    = 3;
+//     stride   = 1;
+//     pad      = 0;
+
+//     // 출력 형태 계산
+//     int height_col   = (height + 2 * pad - ksize) / stride + 1;
+//     int width_col    = (width  + 2 * pad - ksize) / stride + 1;
+//     int channels_col = channels * ksize * ksize;
+//     M = height_col * width_col;
+//     N = 1; // 출력 채널 수
+//     K = channels_col;
+
+//     if (input)  { TEE_Free(input);  input = NULL; }
+//     if (kernel) { TEE_Free(kernel); kernel = NULL; }
+//     if (data_col) { TEE_Free(data_col); data_col = NULL; }
+//     if (output)   { TEE_Free(output);   output = NULL; }
+
+//     // input / kernel은 make_random_float_array_TA()로 생성
+//     input  = make_random_float_array_TA(channels * height * width);
+//     kernel = make_random_float_array_TA(ksize * ksize * channels);
+
+//     // data_col / output은 직접 할당
+//     data_col = TEE_Malloc(sizeof(float) * channels_col * height_col * width_col, 0);
+//     output   = TEE_Malloc(sizeof(float) * M * N, 0);
+
+//     // 메모리 검증
+//     if (!input || !kernel || !data_col || !output) {
+//         EMSG("메모리 할당 실패");
+//         if (input) TEE_Free(input);
+//         if (kernel) TEE_Free(kernel);
+//         if (data_col) TEE_Free(data_col);
+//         if (output) TEE_Free(output);
+//         return TEE_ERROR_OUT_OF_MEMORY;
+//     }
+//     return TEE_SUCCESS;
+// }
+
+
+static TEE_Result pregemm_TA(uint32_t param_types, TEE_Param params[4])
+{
+    uint32_t exp_param_types = TEE_PARAM_TYPES(
+        TEE_PARAM_TYPE_MEMREF_INPUT,  // input 전달됨
+        TEE_PARAM_TYPE_VALUE_INPUT,
+        TEE_PARAM_TYPE_NONE,
+        TEE_PARAM_TYPE_NONE
+    );
+
+
+    // 입력 버퍼와 크기
+    float *input_buf = (float *)params[0].memref.buffer;
+    size_t input_bytes = params[0].memref.size;
+    arr_size_glob = params[1].value.a;
+
+    channels = 1;
+    height   = arr_size_glob;
+    width    = arr_size_glob;
+    ksize    = 3;
+    stride   = 1;
+    pad      = 0;
+
+    // Conv output shape 계산
+    int height_col   = (height + 2 * pad - ksize) / stride + 1;
+    int width_col    = (width  + 2 * pad - ksize) / stride + 1;
+    int channels_col = channels * ksize * ksize;
+    M = height_col * width_col;
+    N = 1;
+    K = channels_col;
+
+    // 기존 메모리 해제
+    if (input)  { TEE_Free(input);  input = NULL; }
+    if (kernel) { TEE_Free(kernel); kernel = NULL; }
+    if (data_col) { TEE_Free(data_col); data_col = NULL; }
+    if (output)   { TEE_Free(output);   output = NULL; }
+
+    // 메모리 재할당
+    input    = TEE_Malloc(input_bytes, 0);
+    kernel   = TEE_Malloc(sizeof(float) * ksize * ksize * channels, 0);
+    data_col = TEE_Malloc(sizeof(float) * channels_col * height_col * width_col, 0);
+    output   = TEE_Malloc(sizeof(float) * M * N, 0);
+
+    if (!input || !kernel || !data_col || !output) {
+        EMSG("[pregemm_TA] Memory allocation failed!");
+        return TEE_ERROR_OUT_OF_MEMORY;
+    }
+
+    // REE → TEE 복사
+    TEE_MemMove(input, input_buf, input_bytes);
+
+    // 커널 값 랜덤 초기화 (기존 함수는 malloc 포함되어 있으므로 수정)
+    for (int i = 0; i < ksize * ksize * channels; i++) {
+        uint32_t r;
+        TEE_GenerateRandom(&r, sizeof(r));
+        float val = (float)(r & 0xFFFF) / 65535.0f;
+        kernel[i] = val * 2.0f - 1.0f;
+    }
+
+    EMSG("[pregemm_TA] Memory setup done successfully");
+    return TEE_SUCCESS;
+}
+
+
+static TEE_Result cal_gemm_TA(void)
+{
+    if (!input || !kernel || !data_col || !output) {
+        EMSG("[TA] 메모리 미초기화 상태! pregemm_TA() 호출 필요");
+        return TEE_ERROR_BAD_STATE;
+    }
+    if (M <= 0 || N <= 0 || K <= 0) {
+        EMSG("[TA] 잘못된 행렬 차원: M=%d, N=%d, K=%d", M, N, K);
+        return TEE_ERROR_BAD_PARAMETERS;
+    }
+
+    // Output 초기화
+    for (int i = 0; i < M * N; i++)
+        output[i] = 0.0f;
+
+    // ① im2col
+    im2col_cpu_TA(input, channels, height, width, ksize, stride, pad, data_col);
+
+    // ② GEMM
+    gemm_cpu_TA(0, 0, M, N, K, 1.0f,
+                data_col, K,
+                kernel, N,
+                0.0f,
+                output, N);
+
+    return TEE_SUCCESS;
+}
+
 TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
                                       uint32_t cmd_id,
                                       uint32_t param_types, TEE_Param params[4])
@@ -1055,6 +1231,12 @@ TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
 
         case TEE2REE:
         return tee_to_ree_TA(param_types, params);
+
+        case PREGEMM_TEE:
+        return pregemm_TA(param_types, params);
+
+        case GEMM_TEE:
+        return cal_gemm_TA();
 
         default:
         return TEE_ERROR_BAD_PARAMETERS;

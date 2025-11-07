@@ -22,9 +22,10 @@ darknetp_ta.o: darknetp_ta.c \
  /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/include/unistd.h \
  /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/include/string.h \
  /home/avees/Linux_for_Tegra/sources/tegra/optee-src/nv-optee/optee/build/t234/export-ta_arm64/include/sys/cdefs.h \
- include/network_TA.h include/convolutional_layer_TA.h \
- include/maxpool_layer_TA.h include/avgpool_layer_TA.h \
- include/dropout_layer_TA.h include/connected_layer_TA.h \
- include/softmax_layer_TA.h include/cost_layer_TA.h include/network_TA.h \
- include/activations_TA.h include/math_TA.h include/darknet_TA.h \
- include/diffprivate_TA.h include/parser_TA.h include/math_TA.h
+ include/network_TA.h include/gemm_TA.h include/im2col_TA.h \
+ include/convolutional_layer_TA.h include/maxpool_layer_TA.h \
+ include/avgpool_layer_TA.h include/dropout_layer_TA.h \
+ include/connected_layer_TA.h include/softmax_layer_TA.h \
+ include/cost_layer_TA.h include/network_TA.h include/activations_TA.h \
+ include/math_TA.h include/darknet_TA.h include/diffprivate_TA.h \
+ include/parser_TA.h include/math_TA.h

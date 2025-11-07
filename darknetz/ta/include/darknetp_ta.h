@@ -44,6 +44,9 @@ extern int debug_summary_pass;
 #define REE2TEE 23
 #define TEE2REE 24
 
+#define PREGEMM_TEE 25
+#define GEMM_TEE 26
+
 void summary_array(char *print_name, float *arr, int n);
 
 #endif /*TA_DARKNETP_H*/

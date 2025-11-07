@@ -36,6 +36,9 @@
 #define REE2TEE 23
 #define TEE2REE 24
 
+#define PREGEMM_TEE 25
+#define GEMM_TEE 26
+
 #define TA_DARKNETP_UUID \
 	{ 0x7fc5c039, 0x0542, 0x4ee1, \
 		{ 0x80, 0xaf, 0xb4, 0xea, 0xb2, 0xf1, 0x99, 0x8d} }

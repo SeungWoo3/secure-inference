@@ -1,11 +1,23 @@
 #include "darknet.h"
 #include "main.h"
-
+#include "parser.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <tee_client_api.h>
+#include "experiment.h"
 
+#include <sys/time.h>
+#include <assert.h>
+#include <sys/resource.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "tcp_transfer.h"
 
 #define EVICT_BYTES (16 * 1024 * 1024)   // L2/L3보다 크게 (보드에 맞게 8~64MB로 조정)
 #define EVICT_STRIDE 64                  // 보통 캐시라인 크기
@@ -159,69 +171,176 @@ ree_to_tee(rand_array, s);ree_to_tee(rand_array, s);
     fclose(fp);
     printf("✅ CSV 파일이 생성되었습니다: loop_back_result1.csv\n");
 }
-// #define NUM_THREADS 200   // 스레드 개수 (TEE의 CFG_NUM_THREADS 이하)
 
-// typedef struct {
-//     float *rand_array;
-//     float *output;
-//     int size;
-// } ThreadArgs;
+void analysis_gemm(int argc, char **argv){
+    num_exp = find_int_arg(argc, argv, "-num_exp", 10);
+    int arr_size = find_int_arg(argc, argv, "-arr_size", 1);
+    arr_size_glob = arr_size;
 
-// // ───────────────────────────────
-// // thread_func: 오직 ree_to_tee(), tee_to_ree()만 수행
-// // ───────────────────────────────
-// void* thread_func(void* arg)
-// {
-//     ThreadArgs *args = (ThreadArgs *)arg;
+    init_csv_filename_gemm();
 
-//     ree_to_tee(args->rand_array, args->size);
-//     tee_to_ree(args->output, args->size);
+    char *data = argv[3];
+    char *cfg = argv[4];
+    char *weights = (argc > 5) ? argv[5] : 0;
+    char *filename = (argc > 6) ? argv[6] : 0;
+    int top = find_int_arg(argc, argv, "-t", 0);
+    if(0==strcmp(argv[2], "predict")) {
+        for (int i=0; i< num_exp; i++){
+            state = 'p';
+            predict_gemm_REE(data, cfg, weights, filename, top);
+            predict_gemm_TEE(data, cfg, weights, filename, top);
+        
+            write_csv_results();
+        }
+    }
+    
+}
 
-//     return NULL;
+void predict_gemm_REE(const char *datacfg, const char *cfgfile, const char *weightfile, const char *filename, int top){       
+    srand(0);
+    char label[32];
+    
+    // --------------------------
+    // 실험 파라미터 설정
+    // --------------------------
+    int channels = 1;
+    int height   = arr_size_glob;
+    int width    = arr_size_glob;
+    int ksize    = 3;
+    int stride   = 1;
+    int pad      = 0;
+    int num_exp  = 100;   // 반복 횟수
+
+    // Conv output shape 계산
+    int height_col   = (height + 2*pad - ksize) / stride + 1;
+    int width_col    = (width  + 2*pad - ksize) / stride + 1;
+    int channels_col = channels * ksize * ksize;
+    int M = height_col * width_col;
+    int N = 1; // output 채널 1개
+    int K = channels_col;
+
+    // --------------------------
+    // 메모리 준비 (1회만)
+    // --------------------------
+    float* input   = make_random_float_array(channels * height * width);
+    float* kernel  = make_random_float_array(ksize * ksize * channels);
+    float* data_col = (float*)malloc(sizeof(float) * channels_col * height_col * width_col);
+    float* output   = (float*)malloc(sizeof(float) * M * N);
+
+    // --------------------------
+    // 반복 측정
+    // --------------------------
+    double total_time = 0.0;
+    
+    // output 초기화
+    for (int i = 0; i < M*N; i++) output[i] = 0.0f;
+
+#ifdef TIME_PROFILE_GEMM
+        double t_start_gemm, t_end_gemm;
+        t_start_gemm = get_time_ms();
+#endif
+
+    // 1️⃣ im2col
+    im2col_cpu(input, channels, height, width, ksize, stride, pad, data_col);
+
+    // 2️⃣ GEMM
+    gemm_cpu(0, 0, M, N, K, 1.0f,
+                data_col, K,
+                kernel, N,
+                0.0f,
+                output, N);
+
+#ifdef TIME_PROFILE_GEMM
+            t_end_gemm = get_time_ms();
+            memset(label, 0, sizeof(label));  
+            snprintf(label, sizeof(label), "REE[%d]", arr_size_glob);
+            record_segment(label, t_end_gemm - t_start_gemm);
+#endif
+    
+    // --------------------------
+    // 메모리 해제
+    // --------------------------
+    free(input);
+    free(kernel);
+    free(data_col);
+    free(output);
+    return 0;
+}
+
+// void predict_gemm_TEE(const char *datacfg, const char *cfgfile, const char *weightfile, const char *filename, int top){       
+//     TEEC_Result res;
+//     TEEC_Operation op;
+//     uint32_t origin;
+
+//     char label[32];
+    
+//     memset(&op, 0, sizeof(op));
+//     op.paramTypes = TEEC_PARAM_TYPES(TEEC_VALUE_INPUT,
+//                                      TEEC_VALUE_OUTPUT, TEEC_NONE, TEEC_NONE);
+
+
+//     op.params[0].value.a = arr_size_glob;
+    
+//     res = TEEC_InvokeCommand(&sess, PREGEMM_TEE, &op, &origin);
+// #ifdef TIME_PROFILE_GEMM
+//         double t_start_gemm_TA, t_end_gemm_TA;
+//         t_start_gemm_TA = get_time_ms();
+// #endif
+
+//     res = TEEC_InvokeCommand(&sess, GEMM_TEE, NULL, &origin);
+// #ifdef TIME_PROFILE_GEMM
+//         t_end_gemm_TA = get_time_ms();
+//         memset(label, 0, sizeof(label));  
+//         snprintf(label, sizeof(label), "TEE[%d]", arr_size_glob);
+//         record_segment(label, t_end_gemm_TA - t_start_gemm_TA);
+// #endif
+//     printf("done tee gemm\n");
 // }
 
-// // ───────────────────────────────
-// // loop_back: 병렬 vs 순차 실행 비교
-// // ───────────────────────────────
-// void loop_back(int argc, char **argv)
-// {
-//     int size = atoi(argv[2]);
-//     printf("size: %d\n", size);
+void predict_gemm_TEE(const char *datacfg, const char *cfgfile, const char *weightfile,
+                      const char *filename, int top)
+{
+    TEEC_Result res;
+    TEEC_Operation op;
+    uint32_t origin;
+    char label[32];
 
-//     pthread_t threads[NUM_THREADS];
-//     ThreadArgs targs[NUM_THREADS];
+    int input_size = arr_size_glob * arr_size_glob;  // height * width (채널=1)
+    float *input_buf = make_random_float_array(input_size);
 
-//     // 각 스레드용 랜덤 배열 생성
-//     for (int i = 0; i < NUM_THREADS; i++) {
-//         targs[i].rand_array = make_random_float_array(size);
-//         targs[i].output     = make_random_float_array(size);
-//         targs[i].size       = size;
-//     }
+    memset(&op, 0, sizeof(op));
+    op.paramTypes = TEEC_PARAM_TYPES(
+        TEEC_MEMREF_TEMP_INPUT,   // input 전달
+        TEEC_VALUE_INPUT,         // arr_size 값 전달
+        TEEC_NONE,
+        TEEC_NONE
+    );
 
-//     // 1️⃣ 병렬 실행
-//     double start = get_time_us();
-//     for (int i = 0; i < NUM_THREADS; i++)
-//         pthread_create(&threads[i], NULL, thread_func, &targs[i]);
+    op.params[0].tmpref.buffer = input_buf;
+    op.params[0].tmpref.size   = sizeof(float) * input_size;
+    op.params[1].value.a       = arr_size_glob;
 
-//     for (int i = 0; i < NUM_THREADS; i++)
-//         pthread_join(threads[i], NULL);
-//     double end = get_time_us();
-//     printf("[Parallel] elapsed time: %.3f us\n", end - start);
+    // TEE 내부 데이터 준비 (input 전달 + kernel 생성)
+    res = TEEC_InvokeCommand(&sess, PREGEMM_TEE, &op, &origin);
+    if (res != TEEC_SUCCESS)
+        errx(1, "PREGEMM_TEE failed 0x%x origin 0x%x", res, origin);
 
-//     // 2️⃣ 순차 실행
-//     start = get_time_us();
-//     for (int i = 0; i < NUM_THREADS; i++) {
-//         pthread_create(&threads[i], NULL, thread_func, &targs[i]);
-//         pthread_join(threads[i], NULL);
-//     }
-//     end = get_time_us();
-//     printf("[Sequential] elapsed time: %.3f us\n", end - start);
+#ifdef TIME_PROFILE_GEMM
+    double t_start, t_end;
+    t_start = get_time_ms();
+#endif
 
-//     printf("All threads finished.\n");
+    // 실제 GEMM 연산
+    res = TEEC_InvokeCommand(&sess, GEMM_TEE, NULL, &origin);
+    if (res != TEEC_SUCCESS)
+        errx(1, "GEMM_TEE failed 0x%x origin 0x%x", res, origin);
 
-//     // 메모리 해제
-//     for (int i = 0; i < NUM_THREADS; i++) {
-//         free(targs[i].rand_array);
-//         free(targs[i].output);
-//     }
-// }
+#ifdef TIME_PROFILE_GEMM
+    t_end = get_time_ms();
+    memset(label, 0, sizeof(label));
+    snprintf(label, sizeof(label), "TEE[%d]", arr_size_glob);
+    record_segment(label, t_end - t_start);
+#endif
+
+    free(input_buf);
+}
